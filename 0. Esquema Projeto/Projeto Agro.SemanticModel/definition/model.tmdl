@@ -1,0 +1,19 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["talhoes_goias_lat_long_virgula","fazendas_centroides_go_sp"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table talhoes_goias_lat_long_virgula
+ref table fazendas_centroides_go_sp
+
+ref cultureInfo pt-BR
+

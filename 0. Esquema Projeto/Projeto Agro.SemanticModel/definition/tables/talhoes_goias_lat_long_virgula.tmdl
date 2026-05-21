@@ -1,0 +1,244 @@
+table talhoes_goias_lat_long_virgula
+	lineageTag: 629c1353-6c35-4f5b-9651-3a6633e81c13
+
+	measure 'Cor Status' =
+			
+			SWITCH(
+			    SELECTEDVALUE(talhoes_goias_lat_long_virgula[status]),
+			    "Atenção", "#E6C84F",
+			    "Colheita", "#4F741F",
+			    "Crítico", "#C94B4B",
+			    "Em desenvolvimento", "#1F6F9A",
+			    "Plantado", "#B7D9A4",
+			    "#808080"
+			)
+		lineageTag: 1703c4ed-64c6-4825-a9ed-8ac5802b3f54
+
+	column id_talhao
+		dataType: string
+		lineageTag: 3c8aa5f3-7301-41f1-9581-9df02f634d86
+		summarizeBy: none
+		sourceColumn: id_talhao
+
+		annotation SummarizationSetBy = Automatic
+
+	column fazenda
+		dataType: string
+		lineageTag: bf10a400-9a64-4d19-bf6e-505c6e0e056e
+		summarizeBy: none
+		sourceColumn: fazenda
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: 6af47060-e941-4d54-bcc3-f10b133b8edf
+		dataCategory: Latitude
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: 2f0ad7b4-5a16-438b-810e-cd8d23b98d39
+		dataCategory: Longitude
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column area_ha
+		dataType: double
+		lineageTag: 965f86bf-8310-468b-a777-01d110539d36
+		summarizeBy: sum
+		sourceColumn: area_ha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cultura
+		dataType: string
+		lineageTag: 6623919a-f03a-4d91-97a9-30635e29388e
+		summarizeBy: none
+		sourceColumn: cultura
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 1bc3a060-2137-4873-9795-fb1f698e1aec
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column produtividade
+		dataType: double
+		lineageTag: e63f6f58-7ebb-45c2-b3d8-7069adf90c38
+		summarizeBy: sum
+		sourceColumn: produtividade
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column risco_climatico
+		dataType: string
+		lineageTag: 50aa0096-7175-45d5-ba96-456ee1e55de2
+		summarizeBy: none
+		sourceColumn: risco_climatico
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_talhao
+		dataType: string
+		lineageTag: 301c0c2e-2b87-45ef-9e38-e2dea54de6bf
+		summarizeBy: none
+		sourceColumn: nome_talhao
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_original_kmz
+		dataType: string
+		lineageTag: f2d20b74-8727-4f74-b98b-ed260fa15b2a
+		summarizeBy: none
+		sourceColumn: nome_original_kmz
+
+		annotation SummarizationSetBy = Automatic
+
+	column cidade
+		dataType: string
+		lineageTag: 4930311d-5eda-4ed3-b123-263f7a17ae48
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: cidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column uf
+		dataType: string
+		lineageTag: 99e993c5-073c-44f8-ba9f-f8a49f5b97c2
+		summarizeBy: none
+		sourceColumn: uf
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado
+		dataType: string
+		lineageTag: 1f30d112-91ba-4880-a086-184cdc3c4b64
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_geometria
+		dataType: string
+		lineageTag: 8932ce30-6768-4571-b0b6-5e62a8006446
+		summarizeBy: none
+		sourceColumn: tipo_geometria
+
+		annotation SummarizationSetBy = Automatic
+
+	column safra
+		dataType: string
+		lineageTag: 125466fc-9f8d-4f77-8bb6-2a0d446fce3f
+		summarizeBy: none
+		sourceColumn: safra
+
+		annotation SummarizationSetBy = Automatic
+
+	column unidade_produtividade
+		dataType: string
+		lineageTag: bcbc44c6-ac9e-44f6-b377-612da058ea51
+		summarizeBy: none
+		sourceColumn: unidade_produtividade
+
+		annotation SummarizationSetBy = Automatic
+
+	column custo_ha
+		dataType: double
+		lineageTag: 7590cc7e-c42d-4d41-9b27-e447c5c45167
+		summarizeBy: sum
+		sourceColumn: custo_ha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column receita_ha
+		dataType: double
+		lineageTag: a72d3fae-4f72-4b4f-9bff-57233efde08b
+		summarizeBy: sum
+		sourceColumn: receita_ha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column margem_ha
+		dataType: double
+		lineageTag: 1e7abe03-0e13-4cc1-866f-5dc440b55f0b
+		summarizeBy: sum
+		sourceColumn: margem_ha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column chuva_acumulada_mm
+		dataType: double
+		lineageTag: c7ab67bb-e25d-4270-b2c4-03891f444bf8
+		summarizeBy: sum
+		sourceColumn: chuva_acumulada_mm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dias_sem_chuva
+		dataType: int64
+		formatString: 0
+		lineageTag: 3493d3cc-7828-4759-8947-03d8d78fd37f
+		summarizeBy: sum
+		sourceColumn: dias_sem_chuva
+
+		annotation SummarizationSetBy = Automatic
+
+	column qtd_pontos_geometria
+		dataType: int64
+		formatString: 0
+		lineageTag: aa80f493-078a-4e50-b9c1-ba3d8b306593
+		summarizeBy: sum
+		sourceColumn: qtd_pontos_geometria
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_mapa
+		dataType: string
+		lineageTag: ba603519-3130-436f-b53f-ea72af7f6beb
+		summarizeBy: none
+		sourceColumn: label_mapa
+
+		annotation SummarizationSetBy = Automatic
+
+	partition talhoes_goias_lat_long_virgula = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("D:\Downloads HD\fazenda_jose_tomas_metricas_talhoes.csv"),[Delimiter=";", Columns=24, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"id_talhao", type text}, {"nome_talhao", type text}, {"nome_original_kmz", type text}, {"fazenda", type text}, {"cidade", type text}, {"uf", type text}, {"estado", type text}, {"tipo_geometria", type text}, {"latitude", type number}, {"longitude", type number}, {"area_ha", type number}, {"cultura", type text}, {"status", type text}, {"safra", type text}, {"produtividade", type number}, {"unidade_produtividade", type text}, {"custo_ha", type number}, {"receita_ha", type number}, {"margem_ha", type number}, {"risco_climatico", type text}, {"chuva_acumulada_mm", type number}, {"dias_sem_chuva", Int64.Type}, {"qtd_pontos_geometria", Int64.Type}, {"label_mapa", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

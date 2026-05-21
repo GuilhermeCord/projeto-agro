@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "6faafd531b10129686d6",
+  "position": {
+    "x": 0,
+    "y": 29.13821138211382,
+    "z": 1000,
+    "height": 318.4390243902439,
+    "width": 177.95121951219511,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "talhoes_goias_lat_long_virgula"
+                    }
+                  },
+                  "Property": "nome_talhao"
+                }
+              },
+              "queryRef": "talhoes_goias_lat_long_virgula.nome_talhao",
+              "nativeQueryRef": "nome_talhao"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

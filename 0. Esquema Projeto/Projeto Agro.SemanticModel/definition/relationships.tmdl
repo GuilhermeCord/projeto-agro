@@ -1,0 +1,4 @@
+relationship AutoDetected_2a3ebcf4-a543-48af-8ca5-cef61a12edce
+	fromColumn: talhoes_goias_lat_long_virgula.fazenda
+	toColumn: fazendas_centroides_go_sp.fazenda
+
