@@ -1,0 +1,59 @@
+table dim_cultura
+	lineageTag: 05fce3d9-6323-4e8c-830d-b2589e0c32ad
+
+	column id_cultura
+		dataType: string
+		lineageTag: f13e207a-d6c5-4a26-a6c5-356b5b29280c
+		summarizeBy: none
+		sourceColumn: id_cultura
+
+		annotation SummarizationSetBy = Automatic
+
+	column cultura
+		dataType: string
+		lineageTag: f56f535d-71c0-40d9-b68f-0e675e54422e
+		summarizeBy: none
+		sourceColumn: cultura
+
+		annotation SummarizationSetBy = Automatic
+
+	column grupo_cultura
+		dataType: string
+		lineageTag: 1cc7a4ac-8453-40f5-9c27-3d9b583e575a
+		summarizeBy: none
+		sourceColumn: grupo_cultura
+
+		annotation SummarizationSetBy = Automatic
+
+	column unidade_produtividade
+		dataType: string
+		lineageTag: f5874e8d-640f-4451-8cb8-7d39c8907c5d
+		summarizeBy: none
+		sourceColumn: unidade_produtividade
+
+		annotation SummarizationSetBy = Automatic
+
+	column ciclo_dias_estimado
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c2f1841-5442-40b0-9e6c-5cf4a9fe8d29
+		summarizeBy: none
+		sourceColumn: ciclo_dias_estimado
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_cultura = m
+		mode: import
+		queryGroup: Dimensão
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\dim_cultura.csv"),[Delimiter=";", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"id_cultura", type text}, {"cultura", type text}, {"grupo_cultura", type text}, {"unidade_produtividade", type text}, {"ciclo_dias_estimado", Int64.Type}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

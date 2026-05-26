@@ -1,0 +1,112 @@
+table fato_notificacoes
+	lineageTag: b8ac96fc-06ce-48ca-bc71-7b9c25aadfba
+
+	column id_notificacao
+		dataType: string
+		lineageTag: 931786b2-c815-4f7f-9345-a1c4aa0a87a6
+		summarizeBy: none
+		sourceColumn: id_notificacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_hora
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e198d1ef-76e7-4c21-b3c5-0558528dc4b6
+		summarizeBy: none
+		sourceColumn: data_hora
+
+		variation Variation
+			isDefault
+			relationship: 2afbd5b1-d086-4499-8a90-50610a160448
+			defaultHierarchy: LocalDateTable_932f04af-325f-4eae-af4b-5934d6984f2d.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_fazenda
+		dataType: string
+		lineageTag: 1b591ba5-07e1-49ac-becf-609e0dd21914
+		summarizeBy: none
+		sourceColumn: id_fazenda
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_talhao
+		dataType: string
+		lineageTag: 54786a7b-ec4d-413c-9b6e-3dafee70f9fc
+		summarizeBy: none
+		sourceColumn: id_talhao
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_notificacao
+		dataType: string
+		lineageTag: 50868a1e-3490-49f4-8aa4-3ea8cc09c5cb
+		summarizeBy: none
+		sourceColumn: tipo_notificacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column prioridade
+		dataType: string
+		lineageTag: abed6915-e191-451a-8185-2716ddea723a
+		summarizeBy: none
+		sourceColumn: prioridade
+
+		annotation SummarizationSetBy = Automatic
+
+	column titulo
+		dataType: string
+		lineageTag: bb16e875-cb62-4ca4-a003-a7ae36951609
+		summarizeBy: none
+		sourceColumn: titulo
+
+		annotation SummarizationSetBy = Automatic
+
+	column mensagem
+		dataType: string
+		lineageTag: b03ee518-4489-4c6a-ba68-97e075265754
+		summarizeBy: none
+		sourceColumn: mensagem
+
+		annotation SummarizationSetBy = Automatic
+
+	column recomendacao
+		dataType: string
+		lineageTag: f46a4435-ba9d-4ba2-963d-98665cfb564d
+		summarizeBy: none
+		sourceColumn: recomendacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column lida
+		dataType: string
+		lineageTag: 63dcbb3a-bbd5-4ee7-8009-432eeaeb34c6
+		summarizeBy: none
+		sourceColumn: lida
+
+		annotation SummarizationSetBy = Automatic
+
+	column status_notificacao
+		dataType: string
+		lineageTag: 581f851b-fe0a-4317-a22f-786af4862286
+		summarizeBy: none
+		sourceColumn: status_notificacao
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fato_notificacoes = m
+		mode: import
+		queryGroup: Fato
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\fato_notificacoes.csv"),[Delimiter=";", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"id_notificacao", type text}, {"data_hora", type datetime}, {"id_fazenda", type text}, {"id_talhao", type text}, {"tipo_notificacao", type text}, {"prioridade", type text}, {"titulo", type text}, {"mensagem", type text}, {"recomendacao", type text}, {"lida", type text}, {"status_notificacao", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

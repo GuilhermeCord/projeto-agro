@@ -1,0 +1,9 @@
+﻿id_cultura;cultura;grupo_cultura;unidade_produtividade;ciclo_dias_estimado
+CUL001;Soja;Grãos;sc/ha;125
+CUL002;Milho;Grãos;sc/ha;145
+CUL003;Trigo;Grãos;sc/ha;120
+CUL004;Feijão;Grãos;sc/ha;95
+CUL005;Algodão;Fibra;@/ha;180
+CUL006;Cana-de-açúcar;Cana;t/ha;365
+CUL007;Amendoim;Grãos;sc/ha;130
+CUL008;Aveia;Grãos;sc/ha;110

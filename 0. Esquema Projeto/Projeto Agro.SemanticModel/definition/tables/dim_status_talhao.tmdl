@@ -1,0 +1,59 @@
+table dim_status_talhao
+	lineageTag: 77cc95c4-537c-4b44-bd28-067da46c40d8
+
+	column id_status
+		dataType: string
+		lineageTag: 74a86443-3c79-45bd-b9e9-800051e94ed8
+		summarizeBy: none
+		sourceColumn: id_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column status_talhao
+		dataType: string
+		lineageTag: 07c53c5d-f520-4fef-b189-5d16d8a11c55
+		summarizeBy: none
+		sourceColumn: status_talhao
+
+		annotation SummarizationSetBy = Automatic
+
+	column classificacao
+		dataType: string
+		lineageTag: df5fdc42-d06f-4567-a3b2-604f78269b09
+		summarizeBy: none
+		sourceColumn: classificacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column cor_hex
+		dataType: string
+		lineageTag: 4a6513e9-0a90-4180-ac24-c3d96da4f9df
+		summarizeBy: none
+		sourceColumn: cor_hex
+
+		annotation SummarizationSetBy = Automatic
+
+	column ordem_status
+		dataType: int64
+		formatString: 0
+		lineageTag: e5f2f164-7eb7-484c-b38a-d74d157c4b5d
+		summarizeBy: none
+		sourceColumn: ordem_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_status_talhao = m
+		mode: import
+		queryGroup: Dimensão
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\dim_status_talhao.csv"),[Delimiter=";", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"id_status", type text}, {"status_talhao", type text}, {"classificacao", type text}, {"cor_hex", type text}, {"ordem_status", Int64.Type}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

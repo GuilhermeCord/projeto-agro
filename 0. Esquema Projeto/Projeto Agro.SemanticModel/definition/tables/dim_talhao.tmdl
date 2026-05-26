@@ -1,0 +1,114 @@
+table dim_talhao
+	lineageTag: 7e10200d-7b73-4aa5-8687-5e28a7a60168
+
+	column id_talhao
+		dataType: string
+		lineageTag: aab9ecde-879f-47f2-942e-5ade5a3ab48d
+		summarizeBy: none
+		sourceColumn: id_talhao
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_fazenda
+		dataType: string
+		lineageTag: 206047c9-460c-402a-81e6-e5e9f66e3574
+		summarizeBy: none
+		sourceColumn: id_fazenda
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_talhao
+		dataType: string
+		lineageTag: 5f53597b-369c-4dd6-bf89-794af63c8943
+		summarizeBy: none
+		sourceColumn: nome_talhao
+
+		annotation SummarizationSetBy = Automatic
+
+	column area_ha
+		dataType: double
+		lineageTag: d0ea9f72-70ef-4299-96a8-0f126595e668
+		summarizeBy: sum
+		sourceColumn: area_ha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column latitude
+		dataType: double
+		lineageTag: c389aec5-5cfa-427c-adb1-75d98a2b6f99
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: af0b30e4-79c4-4b3c-9dac-9d31c0e3f475
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tipo_solo
+		dataType: string
+		lineageTag: 1b258ee1-66d0-4265-bef1-e4c32fdc5c7d
+		summarizeBy: none
+		sourceColumn: tipo_solo
+
+		annotation SummarizationSetBy = Automatic
+
+	column declividade
+		dataType: string
+		lineageTag: 19829522-94cd-4f23-804a-46e27348b9ef
+		summarizeBy: none
+		sourceColumn: declividade
+
+		annotation SummarizationSetBy = Automatic
+
+	column irrigado
+		dataType: string
+		lineageTag: 087d617b-354c-46b3-a6e3-f0e95c77b61a
+		summarizeBy: none
+		sourceColumn: irrigado
+
+		annotation SummarizationSetBy = Automatic
+
+	column ativo
+		dataType: string
+		lineageTag: 9bf35ff8-f1d3-4851-bc9b-b1b1e4308bdb
+		summarizeBy: none
+		sourceColumn: ativo
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_mapa
+		dataType: string
+		lineageTag: fc78a3c0-90ad-4714-b6db-91eaba572932
+		summarizeBy: none
+		sourceColumn: label_mapa
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_talhao = m
+		mode: import
+		queryGroup: Dimensão
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\dim_talhao.csv"),[Delimiter=";", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"id_talhao", type text}, {"id_fazenda", type text}, {"nome_talhao", type text}, {"area_ha", type number}, {"latitude", type number}, {"longitude", type number}, {"tipo_solo", type text}, {"declividade", type text}, {"irrigado", type text}, {"ativo", type text}, {"label_mapa", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

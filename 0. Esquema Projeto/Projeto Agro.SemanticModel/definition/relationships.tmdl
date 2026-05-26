@@ -1,4 +1,55 @@
-relationship AutoDetected_2a3ebcf4-a543-48af-8ca5-cef61a12edce
-	fromColumn: talhoes_goias_lat_long_virgula.fazenda
-	toColumn: fazendas_centroides_go_sp.fazenda
+relationship 1f4693d0-b10f-40bd-b059-b6a0ba5df483
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_calendario.data
+	toColumn: LocalDateTable_f260eea4-4f6b-429f-932b-275fe5a68efc.Date
+
+relationship 2afbd5b1-d086-4499-8a90-50610a160448
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fato_notificacoes.data_hora
+	toColumn: LocalDateTable_932f04af-325f-4eae-af4b-5934d6984f2d.Date
+
+relationship AutoDetected_35ab1c49-87cf-42d2-9635-d78f30551e23
+	fromColumn: fato_clima_solo.id_talhao
+	toColumn: dim_talhao.id_talhao
+
+relationship AutoDetected_3d28d15f-d3b9-4ba2-b0c4-f8512ea7a2d7
+	fromColumn: fato_notificacoes.id_talhao
+	toColumn: dim_talhao.id_talhao
+
+relationship AutoDetected_6459c7f1-32ba-449b-a5d7-f5bc59598999
+	fromColumn: fato_saude_talhao.id_talhao
+	toColumn: dim_talhao.id_talhao
+
+relationship AutoDetected_6f66a2e5-de36-45d7-9180-f2d7a45e5e84
+	fromColumn: fato_saude_talhao.id_cultura
+	toColumn: dim_cultura.id_cultura
+
+relationship AutoDetected_37b9f742-0a80-46f6-8558-19dcf81d8b2c
+	isActive: false
+	fromColumn: dim_talhao.id_fazenda
+	toColumn: dim_fazenda.id_fazenda
+
+relationship AutoDetected_a52323f2-bc7f-4814-9e3a-b3855b52f618
+	fromColumn: fato_clima_solo.id_fazenda
+	toColumn: dim_fazenda.id_fazenda
+
+relationship AutoDetected_c2496c01-59c5-4bf0-bfd7-f6d5bf62a612
+	fromColumn: fato_notificacoes.id_fazenda
+	toColumn: dim_fazenda.id_fazenda
+
+relationship AutoDetected_7b96168a-057d-416e-a697-d4d9c6f21f46
+	fromColumn: fato_saude_talhao.id_fazenda
+	toColumn: dim_fazenda.id_fazenda
+
+relationship AutoDetected_5498090c-76f9-4f8c-b36b-723a1aed69fa
+	fromColumn: fato_saude_talhao.id_status
+	toColumn: dim_status_talhao.id_status
+
+relationship d7e256b5-297a-5a19-f405-ac6f5fdd7e73
+	fromColumn: fato_saude_talhao.data
+	toColumn: dim_calendario.data
+
+relationship a0a7d4d1-fadd-6624-7cbe-b922a878b3c3
+	fromColumn: fato_clima_solo.data
+	toColumn: dim_calendario.data
 

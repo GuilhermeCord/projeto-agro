@@ -1,0 +1,118 @@
+table fato_clima_solo
+	lineageTag: 3312b274-8276-43ff-bf85-7f71e4ab9da9
+
+	column id_registro_clima
+		dataType: string
+		lineageTag: 21a8c50d-47c4-4047-bb67-b6d61b9afacb
+		summarizeBy: none
+		sourceColumn: id_registro_clima
+
+		annotation SummarizationSetBy = Automatic
+
+	column data
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f541d985-ff9f-4f66-9b1b-ab28e22ca075
+		summarizeBy: none
+		sourceColumn: data
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column id_talhao
+		dataType: string
+		lineageTag: 94eb0f62-78cd-453c-a87b-111a38936e3d
+		summarizeBy: none
+		sourceColumn: id_talhao
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_fazenda
+		dataType: string
+		lineageTag: c0aa03f6-ea3b-4ac4-b8b1-effb625cbc75
+		summarizeBy: none
+		sourceColumn: id_fazenda
+
+		annotation SummarizationSetBy = Automatic
+
+	column chuva_acumulada_mm
+		dataType: double
+		lineageTag: a4c636e2-5fce-4c77-88e3-a1b944d33cb7
+		summarizeBy: sum
+		sourceColumn: chuva_acumulada_mm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dias_sem_chuva
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ae72a33-2bc3-4cb8-a949-d78e6a0d18d9
+		summarizeBy: sum
+		sourceColumn: dias_sem_chuva
+
+		annotation SummarizationSetBy = Automatic
+
+	column temperatura_media_c
+		dataType: double
+		lineageTag: 21a204f8-9701-4078-87c3-56fd1c2a2d14
+		summarizeBy: sum
+		sourceColumn: temperatura_media_c
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column umidade_solo_percentual
+		dataType: double
+		lineageTag: dc36126b-fa3b-431c-bc86-5292d1bd5dd3
+		summarizeBy: sum
+		sourceColumn: umidade_solo_percentual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column deficit_hidrico_mm
+		dataType: double
+		lineageTag: 3af4a82b-0cd5-4e27-896d-439bd424f7c4
+		summarizeBy: sum
+		sourceColumn: deficit_hidrico_mm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column risco_climatico
+		dataType: string
+		lineageTag: 400ed2c9-2ed6-48e8-b8b2-25da6e5f19a5
+		summarizeBy: none
+		sourceColumn: risco_climatico
+
+		annotation SummarizationSetBy = Automatic
+
+	column janela_operacional
+		dataType: string
+		lineageTag: b12300b9-de37-4b70-8dbb-565efb6c1176
+		summarizeBy: none
+		sourceColumn: janela_operacional
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fato_clima_solo = m
+		mode: import
+		queryGroup: Fato
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\fato_clima_solo.csv"),[Delimiter=";", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"id_registro_clima", type text}, {"data", type date}, {"id_talhao", type text}, {"id_fazenda", type text}, {"chuva_acumulada_mm", type number}, {"dias_sem_chuva", Int64.Type}, {"temperatura_media_c", type number}, {"umidade_solo_percentual", type number}, {"deficit_hidrico_mm", type number}, {"risco_climatico", type text}, {"janela_operacional", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

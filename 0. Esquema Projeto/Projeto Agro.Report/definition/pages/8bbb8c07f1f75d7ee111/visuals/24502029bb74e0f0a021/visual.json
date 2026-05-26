@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "73fbc358c6320c178e84",
+  "name": "24502029bb74e0f0a021",
   "position": {
-    "x": 528.55721393034833,
-    "y": 22.28855721393035,
-    "z": 1000,
-    "height": 658.0431177446103,
-    "width": 645.3067993366501,
-    "tabOrder": 1000
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 719.75683890577511,
+    "width": 1280,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "azureMap",
@@ -111,6 +111,9 @@
             }
           ]
         }
+      },
+      "options": {
+        "allowOverlappingPointsSample": false
       }
     },
     "objects": {
@@ -127,21 +130,21 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "14.37D"
+                  "Value": "13.73D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-21.26785455591545D"
+                  "Value": "-15.369028327594933D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-47.686527631434274D"
+                  "Value": "-49.62471959999999D"
                 }
               }
             },
@@ -666,7 +669,7 @@
             "position": {
               "expr": {
                 "Literal": {
-                  "Value": "'TopCenter'"
+                  "Value": "'BottomRight'"
                 }
               }
             },
@@ -741,6 +744,13 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            },
+            "showModern": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -1036,6 +1046,19 @@
             ]
           }
         }
+      ],
+      "tileLayer": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -1083,8 +1106,118 @@
             }
           }
         }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "keepLayerOrder": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e4d5c4794cad6e039a69",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "talhoes_goias_lat_long_virgula"
+              }
+            },
+            "Property": "estado"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7f4b0403ace9151ba127",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "talhoes_goias_lat_long_virgula"
+              }
+            },
+            "Property": "id_talhao"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a3384395b02b52327f65",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "talhoes_goias_lat_long_virgula"
+              }
+            },
+            "Property": "status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fe23b441fa0013d4c097",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "talhoes_goias_lat_long_virgula"
+                  }
+                },
+                "Property": "longitude"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3fd16e084d6f5226a502",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "talhoes_goias_lat_long_virgula"
+                  }
+                },
+                "Property": "latitude"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

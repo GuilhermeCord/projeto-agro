@@ -1,0 +1,103 @@
+table dim_calendario
+	lineageTag: 89c63ba0-6798-4765-bd7d-e55379936f2a
+
+	column data
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cac03e43-3a30-468d-9dcf-e1ca05acd1c2
+		summarizeBy: none
+		sourceColumn: data
+
+		variation Variation
+			isDefault
+			relationship: 1f4693d0-b10f-40bd-b059-b6a0ba5df483
+			defaultHierarchy: LocalDateTable_f260eea4-4f6b-429f-932b-275fe5a68efc.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ano
+		dataType: int64
+		formatString: 0
+		lineageTag: 018861ac-aa36-4a13-9795-9abb0e35da0c
+		summarizeBy: sum
+		sourceColumn: ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d2a188a-ccd7-46bb-b028-fdf517019bf5
+		summarizeBy: sum
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_mes
+		dataType: string
+		lineageTag: 1d2450f3-6c41-4410-b8a6-91915ad0e453
+		summarizeBy: none
+		sourceColumn: nome_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column trimestre
+		dataType: string
+		lineageTag: 3373ad72-5791-480b-bae1-4c5163b9e10a
+		summarizeBy: none
+		sourceColumn: trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column semana_ano
+		dataType: int64
+		formatString: 0
+		lineageTag: d6c0b96e-68ca-450e-88e9-37a63b9d1e1e
+		summarizeBy: sum
+		sourceColumn: semana_ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia
+		dataType: int64
+		formatString: 0
+		lineageTag: 700be667-c19b-459e-bfc3-49ad424f491d
+		summarizeBy: sum
+		sourceColumn: dia
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia_semana
+		dataType: int64
+		formatString: 0
+		lineageTag: 265ac024-c525-45f3-a925-3ae3e800152f
+		summarizeBy: sum
+		sourceColumn: dia_semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column safra
+		dataType: string
+		lineageTag: 8b21bd70-161b-451b-a7f8-34a8a6d341e4
+		summarizeBy: none
+		sourceColumn: safra
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_calendario = m
+		mode: import
+		queryGroup: Dimensão
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\dim_calendario.csv"),[Delimiter=";", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"data", type date}, {"ano", Int64.Type}, {"mes", Int64.Type}, {"nome_mes", type text}, {"trimestre", type text}, {"semana_ano", Int64.Type}, {"dia", Int64.Type}, {"dia_semana", Int64.Type}, {"safra", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
