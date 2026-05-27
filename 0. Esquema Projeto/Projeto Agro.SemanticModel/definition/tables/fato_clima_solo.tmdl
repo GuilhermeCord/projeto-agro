@@ -101,12 +101,20 @@ table fato_clima_solo
 
 		annotation SummarizationSetBy = Automatic
 
+	column ano_mes
+		dataType: string
+		lineageTag: 841f9bec-fad3-4928-b0f1-d8f17c249b3f
+		summarizeBy: none
+		sourceColumn: ano_mes
+
+		annotation SummarizationSetBy = Automatic
+
 	partition fato_clima_solo = m
 		mode: import
 		queryGroup: Fato
 		source =
 				let
-				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\fato_clima_solo.csv"),[Delimiter=";", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\fato_clima_solo.csv"),[Delimiter=";", Columns=12, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
 				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"id_registro_clima", type text}, {"data", type date}, {"id_talhao", type text}, {"id_fazenda", type text}, {"chuva_acumulada_mm", type number}, {"dias_sem_chuva", Int64.Type}, {"temperatura_media_c", type number}, {"umidade_solo_percentual", type number}, {"deficit_hidrico_mm", type number}, {"risco_climatico", type text}, {"janela_operacional", type text}})
 				in

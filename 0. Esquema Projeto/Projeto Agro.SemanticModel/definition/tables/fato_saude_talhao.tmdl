@@ -142,12 +142,28 @@ table fato_saude_talhao
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column ano_mes
+		dataType: string
+		lineageTag: b42e9fd7-d47a-46df-bb0d-9ad9ca8147f6
+		summarizeBy: none
+		sourceColumn: ano_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column status_talhao_mes
+		dataType: string
+		lineageTag: 4422b293-5d43-46c7-b102-64d65f0a0f27
+		summarizeBy: none
+		sourceColumn: status_talhao_mes
+
+		annotation SummarizationSetBy = Automatic
+
 	partition fato_saude_talhao = m
 		mode: import
 		queryGroup: Fato
 		source =
 				let
-				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\fato_saude_talhao.csv"),[Delimiter=";", Columns=15, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\fato_saude_talhao.csv"),[Delimiter=";", Columns=17, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
 				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"id_registro_saude", type text}, {"data", type date}, {"id_talhao", type text}, {"id_fazenda", type text}, {"id_cultura", type text}, {"id_status", type text}, {"score_saude", type number}, {"indice_vigor", type number}, {"uniformidade_percentual", type number}, {"area_saudavel_ha", type number}, {"area_atencao_ha", type number}, {"area_critica_ha", type number}, {"produtividade_estimada", type number}, {"produtividade_historica", type number}, {"desvio_produtividade_percentual", type number}})
 				in

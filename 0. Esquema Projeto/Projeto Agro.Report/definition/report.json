@@ -46,6 +46,11 @@
           "name": "fazenda_jose_tomas_talhoes_com6173893260143956.geojson",
           "path": "fazenda_jose_tomas_talhoes_com6173893260143956.geojson",
           "type": "ShapeMap"
+        },
+        {
+          "name": "fazendas_brasil_talhoes8077148296044298.geojson",
+          "path": "fazendas_brasil_talhoes8077148296044298.geojson",
+          "type": "ShapeMap"
         }
       ]
     }

@@ -40,6 +40,9 @@ table dim_calendario
 		lineageTag: 1d2450f3-6c41-4410-b8a6-91915ad0e453
 		summarizeBy: none
 		sourceColumn: nome_mes
+		sortByColumn: mes
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -86,12 +89,29 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
+	column ano_mes
+		dataType: string
+		lineageTag: 32b0eb1f-aff5-4c4e-acf4-915f57dae1ec
+		summarizeBy: none
+		sourceColumn: ano_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Coluna
+		type: calculated
+		lineageTag: d230cd0d-c0f6-4b21-b80b-fef34b851b05
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
 	partition dim_calendario = m
 		mode: import
 		queryGroup: Dimensão
 		source =
 				let
-				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\dim_calendario.csv"),[Delimiter=";", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\dim_calendario.csv"),[Delimiter=";", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
 				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"data", type date}, {"ano", Int64.Type}, {"mes", Int64.Type}, {"nome_mes", type text}, {"trimestre", type text}, {"semana_ano", Int64.Type}, {"dia", Int64.Type}, {"dia_semana", Int64.Type}, {"safra", type text}})
 				in

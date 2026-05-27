@@ -97,6 +97,16 @@ table dim_talhao
 
 		annotation SummarizationSetBy = Automatic
 
+	column cc_Nome_Fazenda = ```
+			
+			LOOKUPVALUE(dim_fazenda[nome_fazenda],dim_fazenda[id_fazenda],dim_talhao[id_fazenda])
+			
+			```
+		lineageTag: bb048624-eb8b-4c70-b924-581645fc668c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dim_talhao = m
 		mode: import
 		queryGroup: Dimensão

@@ -95,12 +95,28 @@ table fato_notificacoes
 
 		annotation SummarizationSetBy = Automatic
 
+	column data
+		dataType: string
+		lineageTag: 440987a2-8d99-46f9-b2fb-049b0b5528eb
+		summarizeBy: none
+		sourceColumn: data
+
+		annotation SummarizationSetBy = Automatic
+
+	column ano_mes
+		dataType: string
+		lineageTag: 27455111-6585-4775-8ef6-f96f9c97190f
+		summarizeBy: none
+		sourceColumn: ano_mes
+
+		annotation SummarizationSetBy = Automatic
+
 	partition fato_notificacoes = m
 		mode: import
 		queryGroup: Fato
 		source =
 				let
-				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\fato_notificacoes.csv"),[Delimiter=";", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\fato_notificacoes.csv"),[Delimiter=";", Columns=13, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
 				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"id_notificacao", type text}, {"data_hora", type datetime}, {"id_fazenda", type text}, {"id_talhao", type text}, {"tipo_notificacao", type text}, {"prioridade", type text}, {"titulo", type text}, {"mensagem", type text}, {"recomendacao", type text}, {"lida", type text}, {"status_notificacao", type text}})
 				in
