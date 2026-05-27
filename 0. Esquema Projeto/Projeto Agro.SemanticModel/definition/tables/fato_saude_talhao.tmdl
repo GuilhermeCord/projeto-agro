@@ -1,0 +1,175 @@
+table fato_saude_talhao
+	lineageTag: 9b2177ff-46c1-45bb-8c12-93a13ab6fe5d
+
+	column id_registro_saude
+		dataType: string
+		lineageTag: 709b4574-2b52-4ba9-adce-579b82843a5c
+		summarizeBy: none
+		sourceColumn: id_registro_saude
+
+		annotation SummarizationSetBy = Automatic
+
+	column data
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 530c9f8c-22a7-4ed9-9d6b-0c72482df978
+		summarizeBy: none
+		sourceColumn: data
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column id_talhao
+		dataType: string
+		lineageTag: 9c49eb58-4cfe-45d7-9209-f95f533522f3
+		summarizeBy: none
+		sourceColumn: id_talhao
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_fazenda
+		dataType: string
+		lineageTag: e4fd3ed0-f0b8-49e4-9052-f0b3c20fbb4e
+		summarizeBy: none
+		sourceColumn: id_fazenda
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_cultura
+		dataType: string
+		lineageTag: 2f47e646-1d95-4e9c-a4fe-0804e1ac3ee9
+		summarizeBy: none
+		sourceColumn: id_cultura
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_status
+		dataType: string
+		lineageTag: 17154ad5-0ce8-428d-a052-6246ccfe6a8a
+		summarizeBy: none
+		sourceColumn: id_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column score_saude
+		dataType: double
+		lineageTag: 5873d6f7-8471-4701-8bca-db9818ee182e
+		summarizeBy: sum
+		sourceColumn: score_saude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column indice_vigor
+		dataType: double
+		lineageTag: 803e1688-4678-40f6-a377-3aa354867516
+		summarizeBy: sum
+		sourceColumn: indice_vigor
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column uniformidade_percentual
+		dataType: double
+		lineageTag: c5339479-529e-4bae-a999-b6e2f215456f
+		summarizeBy: sum
+		sourceColumn: uniformidade_percentual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column area_saudavel_ha
+		dataType: double
+		lineageTag: b15a7b8a-c43d-493d-897f-a62648a277e8
+		summarizeBy: sum
+		sourceColumn: area_saudavel_ha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column area_atencao_ha
+		dataType: double
+		lineageTag: ba78a6e7-d061-4697-b2fc-b685fc937e63
+		summarizeBy: sum
+		sourceColumn: area_atencao_ha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column area_critica_ha
+		dataType: double
+		lineageTag: 96a8cbcd-3c3b-46e5-bbed-0817ea60adc3
+		summarizeBy: sum
+		sourceColumn: area_critica_ha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column produtividade_estimada
+		dataType: double
+		lineageTag: b3174c93-f175-424c-bfed-e6e670c682cc
+		summarizeBy: sum
+		sourceColumn: produtividade_estimada
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column produtividade_historica
+		dataType: double
+		lineageTag: d57cd86f-1c4d-49dd-908e-1edbac411ddd
+		summarizeBy: sum
+		sourceColumn: produtividade_historica
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column desvio_produtividade_percentual
+		dataType: double
+		lineageTag: c08fcd72-4795-4817-aa48-9b7c33b8c501
+		summarizeBy: sum
+		sourceColumn: desvio_produtividade_percentual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ano_mes
+		dataType: string
+		lineageTag: b42e9fd7-d47a-46df-bb0d-9ad9ca8147f6
+		summarizeBy: none
+		sourceColumn: ano_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column status_talhao_mes
+		dataType: string
+		lineageTag: 4422b293-5d43-46c7-b102-64d65f0a0f27
+		summarizeBy: none
+		sourceColumn: status_talhao_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fato_saude_talhao = m
+		mode: import
+		queryGroup: Fato
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\fato_saude_talhao.csv"),[Delimiter=";", Columns=17, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"id_registro_saude", type text}, {"data", type date}, {"id_talhao", type text}, {"id_fazenda", type text}, {"id_cultura", type text}, {"id_status", type text}, {"score_saude", type number}, {"indice_vigor", type number}, {"uniformidade_percentual", type number}, {"area_saudavel_ha", type number}, {"area_atencao_ha", type number}, {"area_critica_ha", type number}, {"produtividade_estimada", type number}, {"produtividade_historica", type number}, {"desvio_produtividade_percentual", type number}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

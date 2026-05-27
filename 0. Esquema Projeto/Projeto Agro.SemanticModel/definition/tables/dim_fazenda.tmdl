@@ -1,0 +1,107 @@
+table dim_fazenda
+	lineageTag: e93b96ef-409b-4f50-bdb6-79f9c68a7d08
+
+	column id_fazenda
+		dataType: string
+		lineageTag: 1d6876f2-3466-40d9-acb1-30c1ce9e8af2
+		summarizeBy: none
+		sourceColumn: id_fazenda
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_fazenda
+		dataType: string
+		lineageTag: 4dd2e99f-aa3c-4463-9de2-c2fe65d999e6
+		summarizeBy: none
+		sourceColumn: nome_fazenda
+
+		annotation SummarizationSetBy = Automatic
+
+	column cidade
+		dataType: string
+		lineageTag: 865e52a2-a369-44bf-97e1-2df18658d19c
+		summarizeBy: none
+		sourceColumn: cidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column uf
+		dataType: string
+		lineageTag: 51f64e04-eb64-4518-8899-32985d2e1205
+		summarizeBy: none
+		sourceColumn: uf
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado
+		dataType: string
+		lineageTag: e788847c-de68-4f63-8b4a-bff929f606e7
+		summarizeBy: none
+		sourceColumn: estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column regiao
+		dataType: string
+		lineageTag: dfa489c6-7010-45ce-b985-29078ef53de4
+		summarizeBy: none
+		sourceColumn: regiao
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude_fazenda
+		dataType: double
+		lineageTag: b9d2a308-ad51-438f-91dd-4460b4f16838
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: latitude_fazenda
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude_fazenda
+		dataType: double
+		lineageTag: f7271f6e-256e-4ddc-b0e8-85aee5a69354
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: longitude_fazenda
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column area_total_ha
+		dataType: double
+		lineageTag: 662ea08e-e9b2-44bd-ab1f-39a77d1f2d08
+		summarizeBy: sum
+		sourceColumn: area_total_ha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column qtd_talhoes
+		dataType: int64
+		formatString: 0
+		lineageTag: 244c22f7-2a2e-4c68-ba0c-7fd9b4a126fc
+		summarizeBy: sum
+		sourceColumn: qtd_talhoes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_fazenda = m
+		mode: import
+		queryGroup: Dimensão
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\gui_r\OneDrive\Projeto Agro\1. Complementos\Bases de Dados\dim_fazenda.csv"),[Delimiter=";", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"id_fazenda", type text}, {"nome_fazenda", type text}, {"cidade", type text}, {"uf", type text}, {"estado", type text}, {"regiao", type text}, {"latitude_fazenda", type number}, {"longitude_fazenda", type number}, {"area_total_ha", type number}, {"qtd_talhoes", Int64.Type}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

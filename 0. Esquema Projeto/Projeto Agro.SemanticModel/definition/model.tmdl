@@ -6,14 +6,33 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
+queryGroup Fato
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup Dimensão
+
+	annotation PBI_QueryGroupOrder = 1
+
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["talhoes_goias_lat_long_virgula","fazendas_centroides_go_sp"]
+annotation PBI_QueryOrder = ["talhoes_goias_lat_long_virgula","dim_calendario","dim_cultura","dim_fazenda","dim_status_talhao","dim_talhao","fato_clima_solo","fato_notificacoes","fato_saude_talhao","Medidas"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table talhoes_goias_lat_long_virgula
-ref table fazendas_centroides_go_sp
+ref table dim_calendario
+ref table DateTableTemplate_e7f0d827-0e68-4242-bfc0-b6d9ab7afce2
+ref table LocalDateTable_f260eea4-4f6b-429f-932b-275fe5a68efc
+ref table dim_cultura
+ref table dim_fazenda
+ref table dim_status_talhao
+ref table dim_talhao
+ref table fato_clima_solo
+ref table fato_notificacoes
+ref table LocalDateTable_932f04af-325f-4eae-af4b-5934d6984f2d
+ref table fato_saude_talhao
+ref table Medidas
 
 ref cultureInfo pt-BR
 

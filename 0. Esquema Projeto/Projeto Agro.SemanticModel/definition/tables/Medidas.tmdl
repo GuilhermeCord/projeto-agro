@@ -1,0 +1,199 @@
+table Medidas
+	lineageTag: 3b4bff63-a98e-4568-9ff0-a012b4a069cb
+
+	measure 'Total Fazendas Cadastradas' =
+			
+			DISTINCTCOUNT(dim_fazenda[id_fazenda])
+		formatString: 0
+		displayFolder: 00.Geral\00.Cadastros
+		lineageTag: 0369f81e-138c-4830-a103-15102756eb61
+
+	measure 'Total Talhões Cadastrados' =
+			
+			DISTINCTCOUNT(dim_talhao[id_talhao])
+		formatString: 0
+		displayFolder: 00.Geral\00.Cadastros
+		lineageTag: 8e9795bf-70be-4e39-8154-704739350830
+
+	measure 'Área Total Cadastrada HA' =
+			
+			SUM(dim_talhao[area_ha])
+		displayFolder: 00.Geral\00.Cadastros
+		lineageTag: 94432a28-eaff-4cdf-9af3-6e79cadd758f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Fazendas Monitoradas' =
+			
+			DISTINCTCOUNT(fato_saude_talhao[id_fazenda])
+		formatString: 0
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 1dde24ae-cbd9-42a0-9ef9-22ee49330875
+
+	measure 'Talhões Monitorados' =
+			
+			DISTINCTCOUNT(fato_saude_talhao[id_talhao])
+		formatString: 0
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: f21d37ca-2f8c-4f95-b838-a01883dc2ff1
+
+	measure 'Culturas Monitoradas' =
+			
+			DISTINCTCOUNT(fato_saude_talhao[id_cultura])
+		formatString: 0
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: cecd8b89-bcdd-4b30-ad56-997a8aa08f0f
+
+	measure 'Score Saúde Médio' =
+			
+			AVERAGE(fato_saude_talhao[score_saude])
+		formatString: 0.00
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: ef641235-b090-4dcd-bcf6-10b886bc065a
+
+	measure 'Índice Vigor Médio' =
+			
+			AVERAGE(fato_saude_talhao[indice_vigor])
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: e4d19a44-4f18-4e70-bb56-37c9431ffa7f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Uniformidade Média' =
+			
+			AVERAGE(fato_saude_talhao[uniformidade_percentual])
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 1a40747d-4c03-4d94-8eff-7a3351e74aaa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Produtividade Estimada Média' =
+			
+			AVERAGE(fato_saude_talhao[produtividade_estimada])
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 6855bd6f-6743-484e-b675-c7ae031c1fc7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Produtividade Histórica Média' =
+			
+			AVERAGE(fato_saude_talhao[produtividade_historica])
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: f38d8567-412e-48f4-b741-ef3c375e94c1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Desvio Produtividade %' =
+			
+			AVERAGE(fato_saude_talhao[desvio_produtividade_percentual])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 41d2c4d7-0e20-4273-bddb-c129935dbff5
+
+	measure 'Chuva Acumulada MM' =
+			
+			SUM(fato_clima_solo[chuva_acumulada_mm])
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: 8c474369-da41-4862-a84c-594ea47e8160
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Chuva Média MM' =
+			
+			AVERAGE(fato_clima_solo[chuva_acumulada_mm])
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: ba3e1647-997f-4bc0-b96d-30be7be8781c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Dias Sem Chuva Médio' =
+			
+			AVERAGE(fato_clima_solo[dias_sem_chuva])
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: 3339fbb2-1cb8-4b4d-a9d9-5accfc240c31
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Temperatura Média C' =
+			
+			AVERAGE(fato_clima_solo[temperatura_media_c])
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: 7d5fd4b2-f280-450f-83ac-d8a37e293448
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Umidade Solo Média %' =
+			
+			AVERAGE(fato_clima_solo[umidade_solo_percentual])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: 164567a0-91ca-422e-a3b1-84b7d61f0c20
+
+	measure 'Déficit Hídrico Médio MM' =
+			
+			AVERAGE(fato_clima_solo[deficit_hidrico_mm])
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: 9ba70385-a452-4e61-aea9-23e92738d342
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Score Saúde Atual' =
+			
+			VAR DataAtual =
+			    MAX(dim_calendario[data])
+			RETURN
+			CALCULATE(
+			    [Score Saúde Médio],
+			    dim_calendario[data] = DataAtual
+			)
+		displayFolder: 00.Geral\03.Evolucao
+		lineageTag: 4c5a50c2-38cb-42e8-9024-fddba8311a45
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Score Saúde Mês Anterior' =
+			
+			CALCULATE(
+			    [Score Saúde Médio],
+			    DATEADD(dim_calendario[data], -1, MONTH)
+			)
+		displayFolder: 00.Geral\03.Evolucao
+		lineageTag: 979154d0-8c13-4793-ac2b-ae8c4fd12bb6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Variação Score Saúde' =
+			
+			[Score Saúde Atual] - [Score Saúde Mês Anterior]
+		displayFolder: 00.Geral\03.Evolucao
+		lineageTag: c4306d2c-6367-481b-a209-78bafa88ea54
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tendência Saúde' =
+			
+			VAR Variacao = [Variação Score Saúde]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    ISBLANK(Variacao), "Sem histórico",
+			    Variacao > 2, "Melhorando",
+			    Variacao < -2, "Piorando",
+			    "Estável"
+			)
+		displayFolder: 00.Geral\03.Evolucao
+		lineageTag: f5a8d80e-bb46-4b64-9ab1-8540cc579780
+
+	partition Medidas = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t]),
+				    #"Colunas Removidas" = Table.RemoveColumns(Fonte,{"Coluna 1"})
+				in
+				    #"Colunas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

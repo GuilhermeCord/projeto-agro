@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "bc63a89f4597508ab72c",
+  "name": "01abb210f0d2f46da0cf",
   "position": {
     "x": 0,
-    "y": 43.515754560530681,
-    "z": 0,
-    "height": 150.71310116086235,
-    "width": 299.30348258706471,
-    "tabOrder": 0
+    "y": 477.25265739983649,
+    "z": 1,
+    "height": 219.7874080130826,
+    "width": 229.20686835650042,
+    "tabOrder": 1
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fazendas_centroides_go_sp"
+                      "Entity": "dim_talhao"
                     }
                   },
-                  "Property": "fazenda"
+                  "Property": "cc_Nome_Fazenda"
                 }
               },
-              "queryRef": "fazendas_centroides_go_sp.fazenda",
-              "nativeQueryRef": "fazenda",
+              "queryRef": "dim_talhao.cc_Nome_Fazenda",
+              "nativeQueryRef": "cc_Nome_Fazenda",
               "active": true
             }
           ]
@@ -56,8 +56,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "f",
-                    "Entity": "fazendas_centroides_go_sp",
+                    "Name": "d",
+                    "Entity": "dim_talhao",
                     "Type": 0
                   }
                 ],
@@ -70,10 +70,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "f"
+                                  "Source": "d"
                                 }
                               },
-                              "Property": "fazenda"
+                              "Property": "cc_Nome_Fazenda"
                             }
                           }
                         ],
@@ -81,7 +81,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Fazenda Tomás'"
+                                "Value": "'Fazenda dos Cordeiros'"
                               }
                             }
                           ]
@@ -97,5 +97,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f6d860c59056a72a3597",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_talhao"
+              }
+            },
+            "Property": "cc_Nome_Fazenda"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
