@@ -3,7 +3,7 @@ table dim_calendario
 
 	column data
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: cac03e43-3a30-468d-9dcf-e1ca05acd1c2
 		summarizeBy: none
 		sourceColumn: data

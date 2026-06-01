@@ -4,10 +4,10 @@
   "position": {
     "x": 180.70588235294119,
     "y": 202.71493212669682,
-    "z": 6,
+    "z": 4000,
     "height": 300.01809954751133,
     "width": 300.01809954751133,
-    "tabOrder": 6
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,7 +23,7 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Área Total Cadastrada HA"
+                  "Property": "Area Total Cadastrada HA"
                 }
               },
               "queryRef": "Medidas.Área Total Cadastrada HA",
@@ -42,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Área Total Cadastrada HA"
+                "Property": "Area Total Cadastrada HA"
               }
             },
             "direction": "Descending"
@@ -52,23 +52,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "025556460f43f9c9cf81",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Área Total Cadastrada HA"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

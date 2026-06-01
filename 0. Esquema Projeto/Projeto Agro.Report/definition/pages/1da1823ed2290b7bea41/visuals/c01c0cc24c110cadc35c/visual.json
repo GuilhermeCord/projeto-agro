@@ -4,10 +4,10 @@
   "position": {
     "x": 352.72398190045249,
     "y": 13.900452488687781,
-    "z": 2,
+    "z": 1000,
     "height": 1066.8597285067872,
     "width": 1567.2760180995474,
-    "tabOrder": 2
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "azureMap",
@@ -60,7 +60,7 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Área Total Cadastrada HA"
+                  "Property": "Area Total Cadastrada HA"
                 }
               },
               "queryRef": "Medidas.Área Total Cadastrada HA",
@@ -74,7 +74,7 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Score Saúde Médio"
+                  "Property": "Score Saude Medio"
                 }
               },
               "queryRef": "Medidas.Score Saúde Médio",
@@ -1285,103 +1285,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d1cfca91ac32e1596459",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_talhao"
-              }
-            },
-            "Property": "id_talhao"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a69dd2b1b6e6b8a763dc",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dim_talhao"
-                  }
-                },
-                "Property": "longitude"
-              }
-            },
-            "Function": 1
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "34be6bb9b9db3b9edb7a",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dim_talhao"
-                  }
-                },
-                "Property": "latitude"
-              }
-            },
-            "Function": 1
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1d5781dcf0dce1028bf6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_status_talhao"
-              }
-            },
-            "Property": "status_talhao"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a90b34acd116bdb2c03f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Área Total Cadastrada HA"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "14217833499c4e065e9c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Score Saúde Médio"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

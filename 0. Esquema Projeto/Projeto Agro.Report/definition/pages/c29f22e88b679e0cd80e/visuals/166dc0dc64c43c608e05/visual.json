@@ -1,0 +1,130 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "166dc0dc64c43c608e05",
+  "position": {
+    "x": 733.05976806422836,
+    "y": 29.11685994647636,
+    "z": 3002,
+    "height": 270.61552185548618,
+    "width": 505.26315789473682,
+    "tabOrder": 3002
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Indice Vigor Medio"
+                }
+              },
+              "queryRef": "Medidas.Índice Vigor Médio",
+              "nativeQueryRef": "Indice Vigor Medio"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Indice Vigor Medio - MoM"
+                }
+              },
+              "queryRef": "Medidas.Indice Vigor - MoM",
+              "nativeQueryRef": "Indice Vigor Medio - MoM"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "% Indice Vigor Medio - MoM"
+                }
+              },
+              "queryRef": "Medidas.% Indice Vigor - MoM",
+              "nativeQueryRef": "% Indice Vigor Medio - MoM"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Medidas"
+                  }
+                },
+                "Property": "Indice Vigor Medio"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ade134dad4768ae7d541",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Indice Vigor Medio"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f895f2e37379cbb682a6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Indice Vigor Medio - MoM"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4a5080e608819eb380e0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "% Indice Vigor Medio - MoM"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

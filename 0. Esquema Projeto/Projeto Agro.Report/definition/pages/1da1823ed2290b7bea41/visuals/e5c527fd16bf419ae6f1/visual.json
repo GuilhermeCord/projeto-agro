@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 14.406926406926408,
-    "z": 5,
+    "z": 3000,
     "height": 188.39826839826839,
     "width": 229.40259740259739,
-    "tabOrder": 5
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,7 +23,7 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Score Saúde Médio"
+                  "Property": "Score Saude Medio"
                 }
               },
               "queryRef": "Medidas.Score Saúde Médio",
@@ -42,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Score Saúde Médio"
+                "Property": "Score Saude Medio"
               }
             },
             "direction": "Descending"
@@ -52,23 +52,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "68f1b4738ced144da7b2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Score Saúde Médio"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 254.8917748917749,
-    "z": 4,
+    "z": 2000,
     "height": 150.71861471861473,
     "width": 180.64069264069263,
-    "tabOrder": 4
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -284,37 +284,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d7d93b71b941da00b2ee",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_calendario"
-              }
-            },
-            "Property": "nome_mes"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "4cd0f323153936ad9b47",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_calendario"
-              }
-            },
-            "Property": "ano"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

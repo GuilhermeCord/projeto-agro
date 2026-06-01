@@ -8,14 +8,14 @@ table Medidas
 		displayFolder: 00.Geral\00.Cadastros
 		lineageTag: 0369f81e-138c-4830-a103-15102756eb61
 
-	measure 'Total Talhões Cadastrados' =
+	measure 'Total Talhoes Cadastrados' =
 			
 			DISTINCTCOUNT(dim_talhao[id_talhao])
 		formatString: 0
 		displayFolder: 00.Geral\00.Cadastros
 		lineageTag: 8e9795bf-70be-4e39-8154-704739350830
 
-	measure 'Área Total Cadastrada HA' =
+	measure 'Area Total Cadastrada HA' =
 			
 			SUM(dim_talhao[area_ha])
 		displayFolder: 00.Geral\00.Cadastros
@@ -30,13 +30,6 @@ table Medidas
 		displayFolder: 00.Geral\01.Monitoramento
 		lineageTag: 1dde24ae-cbd9-42a0-9ef9-22ee49330875
 
-	measure 'Talhões Monitorados' =
-			
-			DISTINCTCOUNT(fato_saude_talhao[id_talhao])
-		formatString: 0
-		displayFolder: 00.Geral\01.Monitoramento
-		lineageTag: f21d37ca-2f8c-4f95-b838-a01883dc2ff1
-
 	measure 'Culturas Monitoradas' =
 			
 			DISTINCTCOUNT(fato_saude_talhao[id_cultura])
@@ -44,14 +37,14 @@ table Medidas
 		displayFolder: 00.Geral\01.Monitoramento
 		lineageTag: cecd8b89-bcdd-4b30-ad56-997a8aa08f0f
 
-	measure 'Score Saúde Médio' =
+	measure 'Score Saude Medio' =
 			
 			AVERAGE(fato_saude_talhao[score_saude])
 		formatString: 0.00
 		displayFolder: 00.Geral\01.Monitoramento
 		lineageTag: ef641235-b090-4dcd-bcf6-10b886bc065a
 
-	measure 'Índice Vigor Médio' =
+	measure 'Indice Vigor Medio' =
 			
 			AVERAGE(fato_saude_talhao[indice_vigor])
 		displayFolder: 00.Geral\01.Monitoramento
@@ -59,15 +52,14 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Uniformidade Média' =
+	measure 'Uniformidade Media' =
 			
 			AVERAGE(fato_saude_talhao[uniformidade_percentual])
+		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: 00.Geral\01.Monitoramento
 		lineageTag: 1a40747d-4c03-4d94-8eff-7a3351e74aaa
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Produtividade Estimada Média' =
+	measure 'Produtividade Estimada Media' =
 			
 			AVERAGE(fato_saude_talhao[produtividade_estimada])
 		displayFolder: 00.Geral\01.Monitoramento
@@ -75,7 +67,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Produtividade Histórica Média' =
+	measure 'Produtividade Historica Media' =
 			
 			AVERAGE(fato_saude_talhao[produtividade_historica])
 		displayFolder: 00.Geral\01.Monitoramento
@@ -98,7 +90,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Chuva Média MM' =
+	measure 'Chuva Media MM' =
 			
 			AVERAGE(fato_clima_solo[chuva_acumulada_mm])
 		displayFolder: 00.Geral\02.Clima e Solo
@@ -106,7 +98,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Dias Sem Chuva Médio' =
+	measure 'Dias Sem Chuva Medio' =
 			
 			AVERAGE(fato_clima_solo[dias_sem_chuva])
 		displayFolder: 00.Geral\02.Clima e Solo
@@ -114,7 +106,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Temperatura Média C' =
+	measure 'Temperatura Media C' =
 			
 			AVERAGE(fato_clima_solo[temperatura_media_c])
 		displayFolder: 00.Geral\02.Clima e Solo
@@ -122,14 +114,14 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Umidade Solo Média %' =
+	measure 'Umidade Solo Media %' =
 			
 			AVERAGE(fato_clima_solo[umidade_solo_percentual])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: 00.Geral\02.Clima e Solo
 		lineageTag: 164567a0-91ca-422e-a3b1-84b7d61f0c20
 
-	measure 'Déficit Hídrico Médio MM' =
+	measure 'Deficit Hidrico Medio MM' =
 			
 			AVERAGE(fato_clima_solo[deficit_hidrico_mm])
 		displayFolder: 00.Geral\02.Clima e Solo
@@ -143,36 +135,38 @@ table Medidas
 			    MAX(dim_calendario[data])
 			RETURN
 			CALCULATE(
-			    [Score Saúde Médio],
+			    [Score Saude Medio],
 			    dim_calendario[data] = DataAtual
 			)
-		displayFolder: 00.Geral\03.Evolucao
+		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: 4c5a50c2-38cb-42e8-9024-fddba8311a45
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Score Saúde Mês Anterior' =
+	measure 'Score Saude Medio - MoM' =
 			
 			CALCULATE(
-			    [Score Saúde Médio],
+			    [Score Saude Medio],
 			    DATEADD(dim_calendario[data], -1, MONTH)
 			)
-		displayFolder: 00.Geral\03.Evolucao
+		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: 979154d0-8c13-4793-ac2b-ae8c4fd12bb6
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Variação Score Saúde' =
+	measure '% Variação Score Saude Medio - MoM' =
 			
-			[Score Saúde Atual] - [Score Saúde Mês Anterior]
-		displayFolder: 00.Geral\03.Evolucao
+			DIVIDE(
+			    [Score Saude Medio] - [Score Saude Medio - MoM],
+			    [Score Saude Medio - MoM]
+			    )
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: c4306d2c-6367-481b-a209-78bafa88ea54
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Tendência Saúde' =
 			
-			VAR Variacao = [Variação Score Saúde]
+			VAR Variacao = [% Variação Score Saude Medio - MoM]
 			RETURN
 			SWITCH(
 			    TRUE(),
@@ -181,8 +175,98 @@ table Medidas
 			    Variacao < -2, "Piorando",
 			    "Estável"
 			)
-		displayFolder: 00.Geral\03.Evolucao
+		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: f5a8d80e-bb46-4b64-9ab1-8540cc579780
+
+	measure 'Talhoes Monitorados' =
+			
+			DISTINCTCOUNT(fato_saude_talhao[id_talhao])
+		formatString: 0
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 63c216a7-e181-45a4-86ae-bff8bf43049b
+
+	measure '% Rep Status por Talhao' = ```
+			
+			DIVIDE( [Talhoes Monitorados], 
+			        CALCULATE([Talhoes Monitorados],
+			        ALL(dim_status_talhao))
+			        )
+			```
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: eb867a4c-a379-4cef-8a99-3da5d6a18645
+
+		formatStringDefinition = """(""0.0%"")"""
+
+	measure 'Indice Vigor Medio - MoM' =
+			
+			CALCULATE(
+			    [Indice Vigor Medio],
+			    DATEADD(dim_calendario[data], -1, MONTH)
+			)
+		displayFolder: 00.Geral\03.Mom e YoY
+		lineageTag: 594663dd-9a9e-498f-879f-05494fe37e65
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Indice Vigor Medio - MoM' =
+			
+			DIVIDE(
+			    [Indice Vigor Medio] - [Indice Vigor Medio - MoM],
+			    [Indice Vigor Medio - MoM]
+			    )
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 00.Geral\03.Mom e YoY
+		lineageTag: 692cb38f-4344-4a51-b372-97774e9f5579
+
+	measure 'Uniformidade Media - MoM' =
+			
+			CALCULATE(
+			    [Uniformidade Media],
+			    DATEADD(dim_calendario[data], -1, MONTH)
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: 00.Geral\03.Mom e YoY
+		lineageTag: 57d4dc68-e0d0-4836-93b4-dc7acacb7c25
+
+	measure '% Variação Uniformidade Media - MoM' =
+			
+			DIVIDE(
+			    [Uniformidade Media] - [Uniformidade Media - MoM],
+			    [Uniformidade Media - MoM]
+			    )
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 00.Geral\03.Mom e YoY
+		lineageTag: d09e58ee-6136-46f7-8565-5221b787beda
+
+	measure 'Talhoes Criticos' =
+			
+			CALCULATE(
+			    [Talhoes Monitorados],
+			    fato_saude_talhao[id_status] = "ST003"
+			)
+		formatString: 0
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 0c88cf6b-0e20-4163-a0c2-2c4d5b2d3927
+
+	measure 'Talhoes Criticos - MoM' =
+			
+			CALCULATE(
+			    [Talhoes Criticos],
+			    DATEADD(dim_calendario[data], -1, MONTH)
+			)
+		formatString: 0
+		displayFolder: 00.Geral\03.Mom e YoY
+		lineageTag: f9acad22-42c8-48ad-8209-034f7b008fdf
+
+	measure '% Variação Talhoes Criticos - MoM' =
+			
+			DIVIDE(
+			    [Talhoes Criticos] - [Talhoes Criticos - MoM],
+			    [Talhoes Criticos - MoM]
+			    )
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 00.Geral\03.Mom e YoY
+		lineageTag: 493aca50-9269-4c89-b70a-ce696ca33008
 
 	partition Medidas = m
 		mode: import

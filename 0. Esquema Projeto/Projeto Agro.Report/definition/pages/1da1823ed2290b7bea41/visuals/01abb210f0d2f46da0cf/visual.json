@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 477.25265739983649,
-    "z": 1,
+    "z": 0,
     "height": 219.7874080130826,
     "width": 229.20686835650042,
-    "tabOrder": 1
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "slicer",
@@ -97,23 +97,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f6d860c59056a72a3597",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_talhao"
-              }
-            },
-            "Property": "cc_Nome_Fazenda"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

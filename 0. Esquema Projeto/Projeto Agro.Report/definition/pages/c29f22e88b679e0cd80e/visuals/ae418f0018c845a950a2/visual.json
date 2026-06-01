@@ -1,0 +1,130 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "ae418f0018c845a950a2",
+  "position": {
+    "x": 1351.3648528099911,
+    "y": 613.16681534344332,
+    "z": 3004,
+    "height": 286.03033006244425,
+    "width": 568.63514719000887,
+    "tabOrder": 3004
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Talhoes Criticos"
+                }
+              },
+              "queryRef": "Medidas.Talhoes Criticos",
+              "nativeQueryRef": "Talhoes Criticos"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Talhoes Criticos - MoM"
+                }
+              },
+              "queryRef": "Medidas.Talhoes Criticos - MoM",
+              "nativeQueryRef": "Talhoes Criticos - MoM"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "% Variação Talhoes Criticos - MoM"
+                }
+              },
+              "queryRef": "Medidas.% Variação Talhoes Criticos - MoM",
+              "nativeQueryRef": "% Variação Talhoes Criticos - MoM"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Medidas"
+                  }
+                },
+                "Property": "Talhoes Criticos"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6a1778963c6d2810a589",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Talhoes Criticos"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ce9fdb4402da48215052",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Talhoes Criticos - MoM"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9f59d3b042a0464c4e4c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "% Variação Talhoes Criticos - MoM"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

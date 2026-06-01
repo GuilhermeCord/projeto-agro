@@ -1,0 +1,84 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "b9a7c8f5edd5c865345e",
+  "position": {
+    "x": 94.953897736797984,
+    "y": 20.922045264040236,
+    "z": 0,
+    "height": 286.47108130762786,
+    "width": 566.50461022632021,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Score Saude Medio"
+                }
+              },
+              "queryRef": "Medidas.Score Saúde Médio",
+              "nativeQueryRef": "Score Saude Medio"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Score Saude Medio - MoM"
+                }
+              },
+              "queryRef": "Medidas.Score Saúde - MoM",
+              "nativeQueryRef": "Score Saude Medio - MoM"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "% Variação Score Saude Medio - MoM"
+                }
+              },
+              "queryRef": "Medidas.Variação Score Saúde - MoM",
+              "nativeQueryRef": "% Variação Score Saude Medio - MoM"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Medidas"
+                  }
+                },
+                "Property": "Score Saude Medio"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
