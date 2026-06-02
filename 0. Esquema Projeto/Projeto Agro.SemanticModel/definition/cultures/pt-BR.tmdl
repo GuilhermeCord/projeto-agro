@@ -1,2 +1,32 @@
 cultureInfo pt-BR
 
+	linguisticMetadata =
+			{
+			  "Version": "1.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dim_status_talhao.status_talhao": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_status_talhao",
+			        "ConceptualProperty": "status_talhao"
+			      },
+			      "State": "Generated"
+			    },
+			    "medidas.talhoes_monitorados": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas",
+			        "ConceptualProperty": "Talhoes Monitorados"
+			      },
+			      "State": "Generated"
+			    },
+			    "medidas.rep_status_por_talhao": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas",
+			        "ConceptualProperty": "% Rep Status por Talhao"
+			      },
+			      "State": "Generated"
+			    }
+			  }
+			}
+		contentType: json
+

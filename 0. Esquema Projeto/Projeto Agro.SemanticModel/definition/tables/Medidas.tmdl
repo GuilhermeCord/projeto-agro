@@ -242,7 +242,7 @@ table Medidas
 			
 			CALCULATE(
 			    [Talhoes Monitorados],
-			    fato_saude_talhao[id_status] = "ST003"
+			    dim_status_talhao[ordem_status] = 3
 			)
 		formatString: 0
 		displayFolder: 00.Geral\01.Monitoramento
@@ -267,6 +267,124 @@ table Medidas
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: 493aca50-9269-4c89-b70a-ce696ca33008
+
+	measure 'Risco Climático Atual' =
+			
+			VAR _DataAtual =
+			    MAX(dim_calendario[data])
+			RETURN
+			CALCULATE(
+			    SELECTEDVALUE(fato_clima_solo[risco_climatico]),
+			    dim_calendario[data] = _DataAtual
+			)
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: ce2fabbc-3594-4e7c-b8d6-d822a4e34f2a
+
+	measure 'Status Talhão Atual' =
+			
+			VAR _DataAtual =
+			    MAX(dim_calendario[data])
+			VAR _StatusId =
+			    CALCULATE(
+			        SELECTEDVALUE(fato_saude_talhao[id_status]),
+			        dim_calendario[data] = _DataAtual
+			    )
+			RETURN
+			LOOKUPVALUE(
+			    dim_status_talhao[status_talhao],
+			    dim_status_talhao[id_status], _StatusId
+			)
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: efbb7045-e0d5-40f4-9f39-f2ca6e80c9ca
+
+	measure 'Recomendação Atual' =
+			
+			VAR _DataAtual =
+			    MAX(dim_calendario[data])
+			VAR _StatusId =
+			    CALCULATE(
+			        SELECTEDVALUE(fato_notificacoes[recomendacao]),
+			        dim_calendario[data] = _DataAtual
+			    )
+			RETURN
+			COALESCE(
+			    CALCULATE(
+			    MAX(fato_notificacoes[recomendacao]),
+			    dim_calendario[data] = _DataAtual
+			    ),
+			    "Sem recomendação")
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: 40919148-f73f-4581-82e1-301609cb8b9d
+
+	measure 'SVG Risco Climatico' =
+			
+			VAR _DataAtual =
+			    MAX(dim_calendario[data])
+			
+			VAR _Risco =
+			    CALCULATE(
+			        SELECTEDVALUE(fato_clima_solo[risco_climatico]),
+			        dim_calendario[data] = _DataAtual
+			    )
+			
+			VAR _Cor =
+			    SWITCH(
+			        TRUE(),
+			        _Risco = "Baixo", "#F59E0B",
+			        _Risco = "Médio", "#3C71E3",
+			        _Risco = "Alto", "#E53935",
+			        "#9CA3AF"
+			    )
+			
+			VAR _CorUrl =
+			    SUBSTITUTE(_Cor, "#", "%23")
+			
+			VAR _Icone =
+			    SWITCH(
+			        TRUE(),
+			
+			        -- BAIXO = Sol
+			        _Risco = "Baixo",
+			            "<circle cx='25' cy='22' r='7' fill='none' stroke='" & _CorUrl & "' stroke-width='3'/>" &
+			            "<path d='M25 4 V9 M25 35 V40 M7 22 H12 M38 22 H43 M12 9 L16 13 M38 9 L34 13 M12 35 L16 31 M38 35 L34 31' stroke='" & _CorUrl & "' stroke-width='3' stroke-linecap='round'/>",
+			
+			        -- MÉDIO = Nuvem com chuva
+			        _Risco = "Médio",
+			            "<path d='M15 26 C12 26 9 23 9 19 C9 15 12 12 16 12 C18 7 23 5 28 7 C32 8 35 12 35 16 C39 16 42 19 42 23 C42 27 39 30 35 30 H16' fill='none' stroke='" & _CorUrl & "' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>" &
+			            "<path d='M18 36 L16 41 M27 36 L25 41 M36 36 L34 41' stroke='" & _CorUrl & "' stroke-width='3' stroke-linecap='round'/>",
+			
+			        -- ALTO = Nuvem com chuva e raio
+			        _Risco = "Alto",
+			            "<path d='M15 25 C12 25 9 22 9 18 C9 14 12 11 16 11 C18 6 23 4 28 6 C32 7 35 11 35 15 C39 15 42 18 42 22 C42 26 39 29 35 29 H16' fill='none' stroke='" & _CorUrl & "' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>" &
+			            "<path d='M17 35 L15 40 M36 35 L34 40' stroke='" & _CorUrl & "' stroke-width='3' stroke-linecap='round'/>" &
+			            "<path d='M26 32 L21 42 H27 L24 49 L34 36 H28 L31 32 Z' fill='" & _CorUrl & "'/>",
+			
+			        -- Sem risco
+			        "<circle cx='25' cy='25' r='16' fill='none' stroke='" & _CorUrl & "' stroke-width='3'/>"
+			    )
+			
+			VAR _Texto =
+			    COALESCE(_Risco, "Sem risco")
+			
+			VAR _TextoSvg =
+			    SUBSTITUTE(_Texto, "&", "&amp;")
+			
+			VAR _Svg =
+			    "data:image/svg+xml;utf8," &
+			    "<svg xmlns='http://www.w3.org/2000/svg' width='150' height='52' viewBox='0 0 150 52'>" &
+			        "<g transform='translate(0,0)'>" &
+			            _Icone &
+			        "</g>" &
+			        "<text x='62' y='31' font-family='Segoe UI' font-size='16' font-weight='600' fill='%23182712'>" &
+			            _TextoSvg &
+			        "</text>" &
+			    "</svg>"
+			
+			RETURN
+			    _Svg
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: 0ac29707-dee6-4622-b770-56be0f978eac
+		dataCategory: ImageUrl
 
 	partition Medidas = m
 		mode: import

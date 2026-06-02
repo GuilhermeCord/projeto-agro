@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "4dc6ff9085133166d359",
   "position": {
-    "x": 92.48884924174844,
-    "y": 570.34790365744868,
+    "x": 107.32006125574273,
+    "y": 299.90811638591117,
     "z": 3005,
-    "height": 328.84924174843889,
-    "width": 938.59054415700268,
+    "height": 329.31087289433384,
+    "width": 937.947932618683,
     "tabOrder": 3005
   },
   "visual": {
@@ -29,6 +29,24 @@
               "queryRef": "dim_calendario.ano_mes",
               "nativeQueryRef": "ano_mes",
               "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Score Saude Medio"
+                }
+              },
+              "queryRef": "Medidas.Score Saude Medio",
+              "nativeQueryRef": "Score Saude Medio"
             }
           ]
         }
@@ -68,6 +86,20 @@
           }
         },
         "type": "Categorical"
+      },
+      {
+        "name": "dab3864f0e7032c03934",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Score Saude Medio"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
