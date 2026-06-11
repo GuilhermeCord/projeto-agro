@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "cd74d2548857103d9e15",
   "position": {
-    "x": 1185.4055558111004,
-    "y": 449.41832064867816,
-    "z": 3001,
-    "height": 121.72442941673712,
-    "width": 123.34742180896028,
-    "tabOrder": 3001
+    "x": 1270.2357836338417,
+    "y": 419.4174757281553,
+    "z": 4000,
+    "height": 138.47434119278779,
+    "width": 110.5131761442441,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -58,13 +58,55 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
           },
           "selector": {
             "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Talhões Totais'"
+                }
+              }
+            },
+            "textWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'belowValue'"
+                }
+              }
+            },
+            "matchValueAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Talhoes Monitorados"
           }
         }
       ],
@@ -183,26 +225,39 @@
             "metadata": "Medidas.Talhoes Monitorados"
           }
         }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Talhoes Monitorados"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "74c4eb074c557924a85c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Talhoes Monitorados"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

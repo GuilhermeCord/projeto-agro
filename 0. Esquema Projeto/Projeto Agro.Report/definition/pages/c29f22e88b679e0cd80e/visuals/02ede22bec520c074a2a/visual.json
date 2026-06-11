@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "02ede22bec520c074a2a",
   "position": {
-    "x": 473.51351351351349,
-    "y": 745.94594594594594,
-    "z": 3006,
-    "height": 264.32432432432432,
-    "width": 864.32432432432427,
-    "tabOrder": 3006
+    "x": 113.03616484440707,
+    "y": 692.75021026072329,
+    "z": 7000,
+    "height": 348.79730866274178,
+    "width": 1141.6652649285113,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "tableEx",
@@ -23,11 +23,11 @@
                       "Entity": "dim_talhao"
                     }
                   },
-                  "Property": "id_talhao"
+                  "Property": "nome_talhao"
                 }
               },
-              "queryRef": "dim_talhao.id_talhao",
-              "nativeQueryRef": "id_talhao"
+              "queryRef": "dim_talhao.nome_talhao",
+              "nativeQueryRef": "nome_talhao"
             },
             {
               "field": {
@@ -40,7 +40,7 @@
                   "Property": "SVG Status Talhao"
                 }
               },
-              "queryRef": "dim_status_talhao.SVG State Idioma",
+              "queryRef": "dim_status_talhao.SVG Status Talhao",
               "nativeQueryRef": "SVG Status Talhao"
             },
             {
@@ -65,11 +65,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Risco Climático Atual"
+                  "Property": "SVG Score Saude"
                 }
               },
-              "queryRef": "Medidas.Risco Climático Atual",
-              "nativeQueryRef": "Risco Climático Atual"
+              "queryRef": "Medidas.SVG Score Saude",
+              "nativeQueryRef": "SVG Score Saude"
             },
             {
               "field": {
@@ -101,23 +101,6 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dim_talhao"
-                  }
-                },
-                "Property": "id_talhao"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "objects": {
@@ -127,14 +110,7 @@
             "imageHeight": {
               "expr": {
                 "Literal": {
-                  "Value": "35D"
-                }
-              }
-            },
-            "imageWidth": {
-              "expr": {
-                "Literal": {
-                  "Value": "125D"
+                  "Value": "55D"
                 }
               }
             },
@@ -170,17 +146,18 @@
                   "Value": "false"
                 }
               }
+            },
+            "imageWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "155D"
+                }
+              }
             }
           }
         }
       ],
       "columnWidth": [
-        {
-          "properties": {},
-          "selector": {
-            "metadata": "dim_status_talhao.SVG State Idioma"
-          }
-        },
         {
           "properties": {
             "value": {
@@ -252,7 +229,7 @@
             "columnAdjustment": {
               "expr": {
                 "Literal": {
-                  "Value": "'fitToContent'"
+                  "Value": "'growToFit'"
                 }
               }
             },
@@ -291,49 +268,7 @@
             }
           },
           "selector": {
-            "metadata": "dim_talhao.id_talhao"
-          }
-        },
-        {
-          "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Auto'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "dim_status_talhao.SVG State Idioma"
-          }
-        },
-        {
-          "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Center'"
-                }
-              }
-            }
-          },
-          "selector": {
             "metadata": "Medidas.Score Saude Medio"
-          }
-        },
-        {
-          "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Center'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.Risco Climático Atual"
           }
         },
         {
@@ -419,34 +354,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "49065e63c2792cba80bc",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_talhao"
-              }
-            },
-            "Property": "id_talhao"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "137fa56b379e9e10725a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_status_talhao"
-              }
-            },
-            "Property": "SVG Status Talhao"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "c369e3a742600ea02061",
         "field": {
           "Measure": {
@@ -497,48 +404,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "017b3d1f4d2ea8382221",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Risco Climático Atual"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "137a43605e74409d3312",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Recomendação Atual"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "fa99cc863d266c74b258",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "SVG Risco Climatico"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

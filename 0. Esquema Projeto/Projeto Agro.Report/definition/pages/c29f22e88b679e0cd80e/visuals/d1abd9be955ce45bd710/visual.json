@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "d1abd9be955ce45bd710",
   "position": {
-    "x": 1045.8282100799088,
-    "y": 296.85703577970088,
+    "x": 1111.7891816920942,
+    "y": 307.57281553398059,
     "z": 1000,
-    "height": 426.8469991546915,
-    "width": 400.87912087912093,
+    "height": 362.16366158113726,
+    "width": 427.4063800277392,
     "tabOrder": 1000
   },
   "visual": {
@@ -80,6 +80,27 @@
                   "Value": "false"
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
+            "showTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'RightCenter'"
+                }
+              }
             }
           }
         }
@@ -105,7 +126,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#D9DDDD'"
+                      "Value": "'#699056'"
                     }
                   }
                 }
@@ -187,7 +208,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#E5554D'"
+                      "Value": "'#E6524A'"
                     }
                   }
                 }
@@ -228,7 +249,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#194D1F'"
+                      "Value": "'#118DFF'"
                     }
                   }
                 }
@@ -269,7 +290,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#67B82E'"
+                      "Value": "'#D5E8CB'"
                     }
                   }
                 }
@@ -302,41 +323,81 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "borderColorMatchFill": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "borderSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "borderOutlineOnly": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "slices": [
+        {
+          "properties": {
+            "innerRadiusRatio": {
+              "expr": {
+                "Literal": {
+                  "Value": "55L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
         }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "09c9a4100a80384c7d99",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_status_talhao"
-              }
-            },
-            "Property": "status_talhao"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "15b820e10b82066c9ae3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Talhoes Monitorados"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

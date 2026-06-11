@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "d3d4bcf0d793530419ac",
   "position": {
-    "x": 1446.7073309590294,
-    "y": 296.85703577970088,
+    "x": 1515.2288488210818,
+    "y": 276.94868238557558,
     "z": 3000,
-    "height": 426.8469991546915,
-    "width": 404.12510566356724,
+    "height": 423.41192787794728,
+    "width": 404.77115117891816,
     "tabOrder": 3000
   },
   "visual": {
@@ -67,16 +67,16 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Medidas"
+                    "Entity": "dim_status_talhao"
                   }
                 },
-                "Property": "% Rep Status por Talhao"
+                "Property": "status_talhao"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
@@ -95,7 +95,7 @@
             "wordWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -115,6 +115,27 @@
               "expr": {
                 "Literal": {
                   "Value": "0D"
+                }
+              }
+            },
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'fitToContent'"
+                }
+              }
+            },
+            "defaultColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Auto'"
                 }
               }
             }
@@ -171,7 +192,7 @@
             "rowPadding": {
               "expr": {
                 "Literal": {
-                  "Value": "15D"
+                  "Value": "20D"
                 }
               }
             },
@@ -198,7 +219,21 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "12D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -258,7 +293,7 @@
                         },
                         "Value": {
                           "Literal": {
-                            "Value": "'CircleHigh'"
+                            "Value": "'status_saudavel'"
                           }
                         }
                       },
@@ -294,7 +329,7 @@
                         },
                         "Value": {
                           "Literal": {
-                            "Value": "'CircleMedium1'"
+                            "Value": "'status_em_desenvolvimento'"
                           }
                         }
                       },
@@ -330,7 +365,7 @@
                         },
                         "Value": {
                           "Literal": {
-                            "Value": "'CircleSymbolHigh'"
+                            "Value": "'status_plantado'"
                           }
                         }
                       },
@@ -366,7 +401,7 @@
                         },
                         "Value": {
                           "Literal": {
-                            "Value": "'SignMedium'"
+                            "Value": "'status_atencao'"
                           }
                         }
                       },
@@ -402,7 +437,7 @@
                         },
                         "Value": {
                           "Literal": {
-                            "Value": "'SignLow'"
+                            "Value": "'status_critico'"
                           }
                         }
                       }
@@ -443,6 +478,64 @@
             }
           }
         }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dim_status_talhao.status_talhao"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Talhoes Monitorados"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.% Rep Status por Talhao"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -461,51 +554,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f5f264147c8c2a0ca47d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Talhoes Monitorados"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "78b3335c50628e629850",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "% Rep Status por Talhao"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "280c23bdb5a30b49cd04",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_status_talhao"
-              }
-            },
-            "Property": "status_talhao"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -96,12 +96,17 @@ table fato_notificacoes
 		annotation SummarizationSetBy = Automatic
 
 	column data
-		dataType: string
+		dataType: dateTime
+		formatString: Long Date
 		lineageTag: 440987a2-8d99-46f9-b2fb-049b0b5528eb
 		summarizeBy: none
 		sourceColumn: data
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column ano_mes
 		dataType: string

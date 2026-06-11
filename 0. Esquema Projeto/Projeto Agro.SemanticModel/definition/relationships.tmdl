@@ -53,3 +53,7 @@ relationship a0a7d4d1-fadd-6624-7cbe-b922a878b3c3
 	fromColumn: fato_clima_solo.data
 	toColumn: dim_calendario.data
 
+relationship d58e9a08-cbf6-bfee-899a-a5b92d35ac66
+	fromColumn: fato_notificacoes.data
+	toColumn: dim_calendario.data
+

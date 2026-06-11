@@ -47,10 +47,9 @@ table Medidas
 	measure 'Indice Vigor Medio' =
 			
 			AVERAGE(fato_saude_talhao[indice_vigor])
+		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: 00.Geral\01.Monitoramento
 		lineageTag: e4d19a44-4f18-4e70-bb56-37c9431ffa7f
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Uniformidade Media' =
 			
@@ -145,9 +144,13 @@ table Medidas
 
 	measure 'Score Saude Medio - MoM' =
 			
-			CALCULATE(
-			    [Score Saude Medio],
-			    DATEADD(dim_calendario[data], -1, MONTH)
+			IF (
+			    NOT ISFILTERED ( dim_calendario ),
+			    BLANK(),
+			    CALCULATE(
+			        [Score Saude Medio],
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
 			)
 		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: 979154d0-8c13-4793-ac2b-ae8c4fd12bb6
@@ -160,9 +163,17 @@ table Medidas
 			    [Score Saude Medio] - [Score Saude Medio - MoM],
 			    [Score Saude Medio - MoM]
 			    )
-		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: c4306d2c-6367-481b-a209-78bafa88ea54
+
+		formatStringDefinition =
+				VAR _Valor = [% Variação Score Saude Medio - MoM]
+				
+				var _ValorFormatado = FORMAT(_Valor,"+ 0.00%; - 0.00%; 0.00%")
+				
+				
+				RETURN
+				"""" & _ValorFormatado & """"
 
 	measure 'Tendência Saúde' =
 			
@@ -199,30 +210,45 @@ table Medidas
 
 	measure 'Indice Vigor Medio - MoM' =
 			
-			CALCULATE(
-			    [Indice Vigor Medio],
-			    DATEADD(dim_calendario[data], -1, MONTH)
+			IF (
+			    NOT ISFILTERED ( dim_calendario ),
+			    BLANK(),
+			    CALCULATE(
+			        [Indice Vigor Medio],
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
 			)
+		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: 594663dd-9a9e-498f-879f-05494fe37e65
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure '% Indice Vigor Medio - MoM' =
+	measure '% Variação Indice Vigor Medio - MoM' =
 			
 			DIVIDE(
 			    [Indice Vigor Medio] - [Indice Vigor Medio - MoM],
 			    [Indice Vigor Medio - MoM]
 			    )
-		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: 692cb38f-4344-4a51-b372-97774e9f5579
 
+		formatStringDefinition =
+				VAR _Valor = [% Variação Indice Vigor Medio - MoM]
+				
+				var _ValorFormatado = FORMAT(_Valor,"+ 0.00%; - 0.00%; 0.00%")
+				
+				
+				RETURN
+				"""" & _ValorFormatado & """"
+
 	measure 'Uniformidade Media - MoM' =
 			
-			CALCULATE(
-			    [Uniformidade Media],
-			    DATEADD(dim_calendario[data], -1, MONTH)
+			IF (
+			    NOT ISFILTERED ( dim_calendario ),
+			    BLANK(),
+			    CALCULATE(
+			        [Uniformidade Media],
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
 			)
 		formatString: 0%;-0%;0%
 		displayFolder: 00.Geral\03.Mom e YoY
@@ -234,9 +260,17 @@ table Medidas
 			    [Uniformidade Media] - [Uniformidade Media - MoM],
 			    [Uniformidade Media - MoM]
 			    )
-		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: d09e58ee-6136-46f7-8565-5221b787beda
+
+		formatStringDefinition =
+				VAR _Valor = [% Variação Uniformidade Media - MoM]
+				
+				var _ValorFormatado = FORMAT(_Valor,"+ 0.00%; - 0.00%; 0.00%")
+				
+				
+				RETURN
+				"""" & _ValorFormatado & """"
 
 	measure 'Talhoes Criticos' =
 			
@@ -250,9 +284,13 @@ table Medidas
 
 	measure 'Talhoes Criticos - MoM' =
 			
-			CALCULATE(
-			    [Talhoes Criticos],
-			    DATEADD(dim_calendario[data], -1, MONTH)
+			IF (
+			    NOT ISFILTERED ( dim_calendario ),
+			    0,
+			    CALCULATE(
+			        [Talhoes Criticos],
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
 			)
 		formatString: 0
 		displayFolder: 00.Geral\03.Mom e YoY
@@ -264,9 +302,17 @@ table Medidas
 			    [Talhoes Criticos] - [Talhoes Criticos - MoM],
 			    [Talhoes Criticos - MoM]
 			    )
-		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: 493aca50-9269-4c89-b70a-ce696ca33008
+
+		formatStringDefinition =
+				VAR _Valor = [% Variação Talhoes Criticos - MoM]
+				
+				var _ValorFormatado = FORMAT(_Valor,"- 0.00%; +0.00%; 0.00%")
+				
+				
+				RETURN
+				"""" & _ValorFormatado & """"
 
 	measure 'Risco Climático Atual' =
 			
@@ -279,6 +325,7 @@ table Medidas
 			)
 		displayFolder: 00.Geral\02.Clima e Solo
 		lineageTag: ce2fabbc-3594-4e7c-b8d6-d822a4e34f2a
+		dataCategory: Uncategorized
 
 	measure 'Status Talhão Atual' =
 			
@@ -372,10 +419,10 @@ table Medidas
 			VAR _Svg =
 			    "data:image/svg+xml;utf8," &
 			    "<svg xmlns='http://www.w3.org/2000/svg' width='150' height='52' viewBox='0 0 150 52'>" &
-			        "<g transform='translate(0,0)'>" &
+			        "<g transform='translate(0,1)'>" &
 			            _Icone &
 			        "</g>" &
-			        "<text x='62' y='31' font-family='Segoe UI' font-size='16' font-weight='600' fill='%23182712'>" &
+			        "<text x='55' y='31' font-family='Segoe UI' font-size='16' font-weight='600' fill='%23182712'>" &
 			            _TextoSvg &
 			        "</text>" &
 			    "</svg>"
@@ -385,6 +432,235 @@ table Medidas
 		displayFolder: 00.Geral\02.Clima e Solo
 		lineageTag: 0ac29707-dee6-4622-b770-56be0f978eac
 		dataCategory: ImageUrl
+
+	measure 'SVG Score Saude' =
+			
+			VAR _ScoreOriginal = [Score Saude Medio]
+			VAR _Score =
+			    MIN(100, MAX(0, _ScoreOriginal))
+			
+			VAR _CorHex =
+			    SWITCH(
+			        TRUE(),
+			        _Score <= 49, "#D64550",
+			        _Score <= 79, "#F4C169",
+			        "#699056"
+			    )
+			
+			VAR _CorSvg =
+			    SUBSTITUTE(_CorHex, "#", "%23")
+			
+			VAR _TextoScore =
+			    FORMAT(_Score, "0.0") & "/100"
+			
+			VAR _BarraTotal = 120
+			VAR _BarraPreenchida =
+			    ROUND((_Score / 100) * _BarraTotal, 0)
+			
+			VAR _Svg =
+			    "data:image/svg+xml;utf8," &
+			    "<svg xmlns='http://www.w3.org/2000/svg' width='140' height='52' viewBox='0 0 140 52'>" &
+			        "<text x='0' y='24' font-family='Segoe UI' font-size='16' font-weight='600' fill='%23222222'>" &
+			            _TextoScore &
+			        "</text>" &
+			        "<rect x='0' y='34' rx='4' ry='4' width='" & _BarraTotal & "' height='8' fill='%23E5E7EB'/>" &
+			        "<rect x='0' y='34' rx='4' ry='4' width='" & _BarraPreenchida & "' height='8' fill='" & _CorSvg & "'/>" &
+			    "</svg>"
+			
+			RETURN
+			    _Svg
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 9ec3365b-38d1-4c5c-b0e1-c69486a30653
+		dataCategory: ImageUrl
+
+	measure 'Icone % Variação Score Medio MoM' = ```
+			
+			VAR _Valor = [% Variação Score Saude Medio - MoM]
+			VAR _PosicaoIcones = 
+			SWITCH(
+			    TRUE(),
+			    _Valor > 0, "Positivo",
+			    _Valor < 0, "Negativo",
+			    _Valor = 0, "Neutro"
+			)
+			VAR _Icone = 
+			    CALCULATE(SELECTEDVALUE(d_Icones_Visuais[Icone URL]),d_Icones_Visuais[Icone] = _PosicaoIcones)
+			
+			RETURN
+			_Icone
+			```
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 080716e6-bcd2-42c4-8298-666a1b9b8f93
+
+	measure 'Cor % Variação Score Medio MoM' =
+			
+			VAR _Valor = [% Variação Score Saude Medio - MoM]
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    _Valor > 0, "#00AA85",
+			    _Valor < 0, "#ED3559",
+			    _Valor = 0, "#777A8D"
+			)
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 38bdef71-1fac-4abf-9049-cff2b9b8b953
+
+	measure 'Vs Periodo Anterior' =
+			
+			VAR _TemMes =
+			    HASONEVALUE(dim_calendario[nome_mes])
+			
+			VAR _TemAno =
+			    HASONEVALUE(dim_calendario[ano])
+			
+			VAR _DataAnterior =
+			    CALCULATE(
+			        MAX(dim_calendario[data]),
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
+			
+			VAR _MesAnterior =
+			    CALCULATE(
+			        SELECTEDVALUE(dim_calendario[nome_mes]),
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
+			
+			VAR _AnoAnteriorMes =
+			    CALCULATE(
+			        SELECTEDVALUE(dim_calendario[ano]),
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
+			
+			VAR _AnoAnterior =
+			    SELECTEDVALUE(dim_calendario[ano]) - 1
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    _TemMes && _TemAno,
+			        "vs " & _MesAnterior & "/" & _AnoAnteriorMes & ":",
+			
+			    _TemAno,
+			        "vs " & _AnoAnterior & ":",
+			
+			    " "
+			)
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 2d684fc7-3002-4ee3-80af-5ee623552584
+
+	measure 'Score Saúde Médio Texto' =
+			
+			FORMAT([Score Saude Medio], "0.0") & "/100"
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 6839f9a4-05a1-4d2d-84ae-1b666100dbf4
+
+	measure 'Icone % Indice Vigor Medio MoM' = ```
+			
+			VAR _Valor = [% Variação Indice Vigor Medio - MoM]
+			VAR _PosicaoIcones = 
+			SWITCH(
+			    TRUE(),
+			    _Valor > 0, "Positivo",
+			    _Valor < 0, "Negativo",
+			    _Valor = 0, "Neutro"
+			)
+			VAR _Icone = 
+			    CALCULATE(SELECTEDVALUE(d_Icones_Visuais[Icone URL]),d_Icones_Visuais[Icone] = _PosicaoIcones)
+			
+			RETURN
+			_Icone
+			```
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 35730d94-e10b-4477-a047-19177a0e5c39
+
+	measure 'Cor % Variação Indice Vigor Medio MoM' =
+			
+			VAR _Valor = [% Variação Indice Vigor Medio - MoM]
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    _Valor > 0, "#00AA85",
+			    _Valor < 0, "#ED3559",
+			    _Valor = 0, "#777A8D"
+			)
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 7e1a9485-eed0-4dff-b582-2c47461ec481
+
+	measure 'Icone % Variação Uniformidade MoM' = ```
+			
+			VAR _Valor = [% Variação Uniformidade Media - MoM]
+			VAR _PosicaoIcones = 
+			SWITCH(
+			    TRUE(),
+			    _Valor > 0, "Positivo",
+			    _Valor < 0, "Negativo",
+			    _Valor = 0, "Neutro"
+			)
+			VAR _Icone = 
+			    CALCULATE(SELECTEDVALUE(d_Icones_Visuais[Icone URL]),d_Icones_Visuais[Icone] = _PosicaoIcones)
+			
+			RETURN
+			_Icone
+			```
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 2ea53fdc-b502-427d-a7dc-be0ecd9979f2
+
+	measure 'Cor % Variação Uniformidade MoM' =
+			
+			VAR _Valor = [% Variação Uniformidade Media - MoM]
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    _Valor > 0, "#00AA85",
+			    _Valor < 0, "#ED3559",
+			    _Valor = 0, "#777A8D"
+			)
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: ce21b2bb-a65e-4458-9c61-2ed06794af21
+
+	measure 'Icone % Variação Talhoes Criticos MoM' = ```
+			
+			VAR _Valor = [% Variação Talhoes Criticos - MoM]
+			VAR _PosicaoIcones = 
+			SWITCH(
+			    TRUE(),
+			    _Valor < 0, "Positivo",
+			    _Valor > 0, "Negativo",
+			    _Valor = 0, "Neutro"
+			)
+			VAR _Icone = 
+			    CALCULATE(SELECTEDVALUE(d_Icones_Visuais[Icone URL]),d_Icones_Visuais[Icone] = _PosicaoIcones)
+			
+			RETURN
+			_Icone
+			```
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 7dedd7ad-aa07-487a-a1a6-39cea46c26d8
+
+	measure 'Cor % Variação Talhoes Criticos - MoM' =
+			
+			VAR _Valor = [% Variação Talhoes Criticos - MoM]
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    _Valor < 0, "#00AA85",
+			    _Valor > 0, "#ED3559",
+			    _Valor = 0, "#777A8D"
+			)
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 29ba2c22-9dd0-473e-8595-751b86396b0b
+
+	measure 'Hectares Monitorados' =
+			
+			SUM(fato_saude_talhao[area_saudavel_ha]) + SUM(fato_saude_talhao[area_critica_ha]) + SUM(fato_saude_talhao[area_atencao_ha])
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 397b57a7-0e4b-44c5-ae4f-c6f9ca224f9e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition Medidas = m
 		mode: import

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "b9a7c8f5edd5c865345e",
+  "name": "6325f0610639058e197b",
   "position": {
-    "x": 260.2400795167826,
-    "y": 80.850217906567792,
-    "z": 0,
+    "x": 664.47205443841233,
+    "y": 86.3361113234957,
+    "z": 11000,
     "height": 115.86206896551725,
     "width": 379.18495297805646,
-    "tabOrder": 0
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,16 +23,31 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Score Saúde Médio Texto"
+                  "Property": "Indice Vigor Medio"
                 }
               },
-              "queryRef": "Medidas.Score Saúde Médio Texto",
-              "nativeQueryRef": "Score Saúde Médio Texto"
+              "queryRef": "Medidas.Indice Vigor Medio",
+              "nativeQueryRef": "Indice Vigor Medio"
             }
           ]
         }
       },
       "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Medidas"
+                  }
+                },
+                "Property": "Indice Vigor Medio"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
         "isDefaultSort": true
       }
     },

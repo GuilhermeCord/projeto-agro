@@ -1,19 +1,56 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "166dc0dc64c43c608e05",
+  "name": "407b63aac5801703900e",
   "position": {
-    "x": 733.05976806422836,
-    "y": 29.11685994647636,
-    "z": 3002,
-    "height": 270.61552185548618,
-    "width": 505.26315789473682,
-    "tabOrder": 3002
+    "x": 1296.686291000841,
+    "y": 692.75021026072329,
+    "z": 16001,
+    "height": 348.79730866274178,
+    "width": 595.86206896551721,
+    "tabOrder": 16001
   },
   "visual": {
-    "visualType": "cardVisual",
+    "visualType": "barChart",
     "query": {
       "queryState": {
-        "Data": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_cultura"
+                    }
+                  },
+                  "Property": "cultura"
+                }
+              },
+              "queryRef": "dim_cultura.cultura",
+              "nativeQueryRef": "cultura",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_cultura"
+                    }
+                  },
+                  "Property": "grupo_cultura"
+                }
+              },
+              "queryRef": "dim_cultura.grupo_cultura",
+              "nativeQueryRef": "grupo_cultura"
+            }
+          ]
+        },
+        "Y": {
           "projections": [
             {
               "field": {
@@ -23,39 +60,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Indice Vigor Medio"
+                  "Property": "Produtividade Estimada Media"
                 }
               },
-              "queryRef": "Medidas.Índice Vigor Médio",
-              "nativeQueryRef": "Indice Vigor Medio"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Indice Vigor Medio - MoM"
-                }
-              },
-              "queryRef": "Medidas.Indice Vigor - MoM",
-              "nativeQueryRef": "Indice Vigor Medio - MoM"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "% Indice Vigor Medio - MoM"
-                }
-              },
-              "queryRef": "Medidas.% Indice Vigor - MoM",
-              "nativeQueryRef": "% Indice Vigor Medio - MoM"
+              "queryRef": "Medidas.Produtividade Estimada Media",
+              "nativeQueryRef": "Produtividade Estimada Media"
             }
           ]
         }
@@ -70,7 +79,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Indice Vigor Medio"
+                "Property": "Produtividade Estimada Media"
               }
             },
             "direction": "Descending"
@@ -84,46 +93,32 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "ade134dad4768ae7d541",
+        "name": "bb6ffa020c061ae8ba08",
         "field": {
-          "Measure": {
+          "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Medidas"
+                "Entity": "dim_cultura"
               }
             },
-            "Property": "Indice Vigor Medio"
+            "Property": "cultura"
           }
         },
-        "type": "Advanced"
+        "type": "Categorical"
       },
       {
-        "name": "f895f2e37379cbb682a6",
+        "name": "fc436faf27be4d296e62",
         "field": {
-          "Measure": {
+          "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Medidas"
+                "Entity": "dim_cultura"
               }
             },
-            "Property": "Indice Vigor Medio - MoM"
+            "Property": "grupo_cultura"
           }
         },
-        "type": "Advanced"
-      },
-      {
-        "name": "4a5080e608819eb380e0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "% Indice Vigor Medio - MoM"
-          }
-        },
-        "type": "Advanced"
+        "type": "Categorical"
       }
     ]
   }

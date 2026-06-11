@@ -97,15 +97,6 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
-	column Coluna
-		type: calculated
-		lineageTag: d230cd0d-c0f6-4b21-b80b-fef34b851b05
-		summarizeBy: sum
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
-
 	partition dim_calendario = m
 		mode: import
 		queryGroup: Dimensão

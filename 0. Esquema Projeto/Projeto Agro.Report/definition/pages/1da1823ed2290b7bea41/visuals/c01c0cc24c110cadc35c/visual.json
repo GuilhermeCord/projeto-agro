@@ -147,21 +147,21 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "16.55D"
+                  "Value": "15.95D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-26.180065860244426D"
+                  "Value": "-18.871656326987434D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-54.527621148850415D"
+                  "Value": "-47.60710464999997D"
                 }
               }
             },
@@ -958,9 +958,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 8,
-                      "Percent": 0.6
+                    "Literal": {
+                      "Value": "'#F4C169'"
                     }
                   }
                 }
@@ -1000,9 +999,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 9,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#D64550'"
                     }
                   }
                 }
