@@ -97,6 +97,28 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
+	column nome_mes_abrev =
+			
+			LEFT(dim_calendario[nome_mes],3)
+		lineageTag: 3f72ee46-7243-499d-b46b-34d7eed7093d
+		summarizeBy: none
+		sortByColumn: mes
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes_abrev_ano =
+			
+			dim_calendario[nome_mes_abrev] & "/" & dim_calendario[ano]
+		lineageTag: cbfc922d-082e-4a52-bb62-7cf608e4f1e4
+		summarizeBy: none
+		sortByColumn: ano_mes
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dim_calendario = m
 		mode: import
 		queryGroup: Dimensão

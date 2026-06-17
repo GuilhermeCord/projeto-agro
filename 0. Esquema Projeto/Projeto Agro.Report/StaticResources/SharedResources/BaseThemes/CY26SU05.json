@@ -1,5 +1,5 @@
 {
-  "name": "CY26SU04",
+  "name": "CY26SU05",
   "dataColors": [
     "#118DFF",
     "#12239E",
@@ -193,7 +193,6 @@
         "bubbles": [
           {
             "bubbleSize": -10,
-            "preventOverflow": true,
             "markerRangeType": "auto"
           }
         ],

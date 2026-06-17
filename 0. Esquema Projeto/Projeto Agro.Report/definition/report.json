@@ -2,19 +2,19 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
   "themeCollection": {
     "baseTheme": {
-      "name": "CY26SU04",
+      "name": "CY26SU05",
       "reportVersionAtImport": {
-        "visual": "2.8.0",
-        "report": "3.2.0",
+        "visual": "2.9.0",
+        "report": "3.3.0",
         "page": "2.3.1"
       },
       "type": "SharedResources"
     },
     "customTheme": {
-      "name": "AgroPulse_BI08698664704235459.json",
+      "name": "AgroPulse_BI9265709185573495.json",
       "reportVersionAtImport": {
-        "visual": "2.9.0",
-        "report": "3.3.0",
+        "visual": "2.10.0",
+        "report": "3.4.0",
         "page": "2.3.1"
       },
       "type": "RegisteredResources"
@@ -40,7 +40,7 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "false"
+                "Value": "true"
               }
             }
           }
@@ -57,8 +57,8 @@
       "type": "SharedResources",
       "items": [
         {
-          "name": "CY26SU04",
-          "path": "BaseThemes/CY26SU04.json",
+          "name": "CY26SU05",
+          "path": "BaseThemes/CY26SU05.json",
           "type": "BaseTheme"
         }
       ]
@@ -68,8 +68,8 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "AgroPulse_BI08698664704235459.json",
-          "path": "AgroPulse_BI08698664704235459.json",
+          "name": "AgroPulse_BI9265709185573495.json",
+          "path": "AgroPulse_BI9265709185573495.json",
           "type": "CustomTheme"
         },
         {

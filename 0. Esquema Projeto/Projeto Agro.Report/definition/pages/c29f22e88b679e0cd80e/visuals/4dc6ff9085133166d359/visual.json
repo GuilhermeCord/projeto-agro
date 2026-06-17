@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "4dc6ff9085133166d359",
   "position": {
-    "x": 113.03616484440707,
-    "y": 324.57527333894029,
-    "z": 6000,
-    "height": 329.41968040370057,
-    "width": 938.2001682085787,
-    "tabOrder": 6000
+    "x": 104.79784366576818,
+    "y": 329.91913746630729,
+    "z": 5000,
+    "height": 328.62533692722371,
+    "width": 939.299191374663,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "lineChart",
@@ -23,11 +23,26 @@
                       "Entity": "dim_calendario"
                     }
                   },
-                  "Property": "ano_mes"
+                  "Property": "ano"
                 }
               },
-              "queryRef": "dim_calendario.ano_mes",
-              "nativeQueryRef": "ano_mes",
+              "queryRef": "dim_calendario.ano",
+              "nativeQueryRef": "ano",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_calendario"
+                    }
+                  },
+                  "Property": "nome_mes_abrev"
+                }
+              },
+              "queryRef": "dim_calendario.nome_mes_abrev",
+              "nativeQueryRef": "nome_mes_abrev",
               "active": true
             }
           ]
@@ -46,27 +61,27 @@
                 }
               },
               "queryRef": "Medidas.Score Saude Medio",
-              "nativeQueryRef": "Score Saude Medio"
+              "nativeQueryRef": "Score Saúde",
+              "displayName": "Score Saúde"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "aux_medidas_dinamicas"
+                    }
+                  },
+                  "Property": "aux_medidas_dinamicas"
+                }
+              },
+              "index": 0,
+              "length": 1
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dim_calendario"
-                  }
-                },
-                "Property": "ano_mes"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "objects": {
@@ -96,23 +111,117 @@
           }
         }
       ],
-      "dataPoint": [
+      "y2Axis": [
         {
           "properties": {
-            "fill": {
+            "secShowAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "preferredCategoryWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            },
+            "concatenateLabels": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "maxMarginFactor": {
+              "expr": {
+                "Literal": {
+                  "Value": "50L"
+                }
+              }
+            },
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridlineColor": {
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#699056'"
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.4
                     }
                   }
                 }
               }
+            },
+            "gridlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'dashed'"
+                }
+              }
+            },
+            "gridlineAutoScale": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridlineThickness": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
-          },
-          "selector": {
-            "metadata": "Medidas.Score Saude Medio"
           }
         }
       ]

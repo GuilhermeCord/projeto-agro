@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "7f7f1b3496608083bc17",
   "position": {
-    "x": 573.29153605015676,
+    "x": 572.84671532846721,
     "y": 0,
     "z": 2000,
-    "height": 69.21630094043887,
-    "width": 303.94984326018812,
+    "height": 69.635036496350367,
+    "width": 187.88321167883214,
     "tabOrder": 2000
   },
   "visual": {
@@ -105,6 +105,16 @@
                 }
               ],
               "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "2025L"
+                  }
+                }
+              ],
+              "isToggled": true
             }
           ]
         }
@@ -172,7 +182,7 @@
                             },
                             {
                               "Literal": {
-                                "Value": "'Março'"
+                                "Value": "'Fevereiro'"
                               }
                             }
                           ]
@@ -219,7 +229,7 @@
                                 "1": [
                                   {
                                     "Literal": {
-                                      "Value": "'Março'"
+                                      "Value": "'Fevereiro'"
                                     }
                                   }
                                 ]
@@ -256,13 +266,93 @@
                         "valueMap": [
                           {
                             "0": "2026",
-                            "1": "Março"
+                            "1": "Fevereiro"
                           }
                         ]
                       }
                     }
                   }
                 ]
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "properties": {
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selectionIcon": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.4
+                    }
+                  }
+                }
               }
             }
           }

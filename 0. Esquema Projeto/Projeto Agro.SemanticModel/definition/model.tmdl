@@ -34,6 +34,8 @@ ref table LocalDateTable_932f04af-325f-4eae-af4b-5934d6984f2d
 ref table fato_saude_talhao
 ref table Medidas
 ref table d_icones_visuais
+ref table aux_medidas_dinamicas
+ref table aux_medidas_saude_hectares
 
 ref cultureInfo pt-BR
 

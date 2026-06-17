@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "9a1d12130c740d6db182",
   "position": {
-    "x": 0,
-    "y": 254.8917748917749,
-    "z": 2000,
-    "height": 150.71861471861473,
-    "width": 180.64069264069263,
-    "tabOrder": 2000
+    "x": 501.89781021897812,
+    "y": 0,
+    "z": 3000,
+    "height": 76.2043795620438,
+    "width": 282.48175182481754,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -131,7 +131,7 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Basic'"
+                  "Value": "'Dropdown'"
                 }
               }
             }
@@ -186,7 +186,7 @@
                             },
                             {
                               "Literal": {
-                                "Value": "'Fevereiro'"
+                                "Value": "'Março'"
                               }
                             }
                           ]
@@ -233,7 +233,7 @@
                                 "1": [
                                   {
                                     "Literal": {
-                                      "Value": "'Fevereiro'"
+                                      "Value": "'Março'"
                                     }
                                   }
                                 ]
@@ -270,7 +270,7 @@
                         "valueMap": [
                           {
                             "0": "2026",
-                            "1": "Fevereiro"
+                            "1": "Março"
                           }
                         ]
                       }

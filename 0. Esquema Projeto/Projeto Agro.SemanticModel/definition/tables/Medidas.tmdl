@@ -662,6 +662,41 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Hectares Saudaveis' =
+			
+			SUM(fato_saude_talhao[area_saudavel_ha])
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 16e3fbcf-6be7-42bd-b1d3-e5f80c277cb7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Hectares Criticos' =
+			
+			SUM(fato_saude_talhao[area_critica_ha])
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: f7525333-01a6-4d01-8ce5-cca94658c793
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Hectares Atenção' =
+			
+			SUM(fato_saude_talhao[area_atencao_ha])
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 0959481f-efac-4264-8e99-a3ab1076d6ff
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ultima atualização da Fazenda' =
+			
+			CALCULATE(
+			    MAX(fato_notificacoes[data_hora]),
+			    ALL(dim_calendario),
+			    ALL(dim_talhao)
+			)
+		formatString: General Date
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 1fafbe51-06e6-44d0-a6d8-bf5bf1b8a2aa
+
 	partition Medidas = m
 		mode: import
 		source =

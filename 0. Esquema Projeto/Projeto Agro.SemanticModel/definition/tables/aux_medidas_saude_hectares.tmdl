@@ -1,0 +1,49 @@
+table aux_medidas_saude_hectares
+	lineageTag: 5203315b-7752-42dc-86a7-da0699450492
+
+	column aux_medidas_saude_hectares
+		lineageTag: 628a3a0e-8d86-4c81-b517-29390377add4
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'aux_medidas_saude_hectares Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'aux_medidas_saude_hectares Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'aux_medidas_saude_hectares Campos'
+		isHidden
+		lineageTag: 2980218c-7ec0-40da-ae4b-403a6dec75c8
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'aux_medidas_saude_hectares Pedido'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'aux_medidas_saude_hectares Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: 6ef47561-da27-4f8b-84d4-7ec470966f2e
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition aux_medidas_saude_hectares = calculated
+		mode: import
+		source =
+				{
+				    ("Hectares Saudáveis", NAMEOF('Medidas'[Hectares Saudaveis]), 0),
+				    ("Hectares Atenção", NAMEOF('Medidas'[Hectares Atenção]), 1),
+				    ("Hectares Críticos", NAMEOF('Medidas'[Hectares Criticos]), 2)
+				}
+
+	annotation PBI_Id = 579b7c609ec14c77ae9bc908423ada0d
+

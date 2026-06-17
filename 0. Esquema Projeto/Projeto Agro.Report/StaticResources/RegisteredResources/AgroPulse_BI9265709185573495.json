@@ -9,7 +9,7 @@
   "icons": {
     "status_saudavel": {
       "description": "Status - Saudável",
-      "url": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='6' fill='white' stroke='%232E7D32' stroke-width='3'/></svg>"
+      "url": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='6' fill='%23D6FEC2' stroke='%23D6FEC2' stroke-width='2'/></svg>"
     },
     "status_atencao": {
       "description": "Status - Atenção",
@@ -25,7 +25,7 @@
     },
     "status_plantado": {
       "description": "Status - Plantado",
-      "url": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='6' fill='%238BC34A' stroke='%238BC34A' stroke-width='2'/></svg>"
+      "url": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='6' fill='%23699056' stroke='%23699056' stroke-width='2'/></svg>"
     }
   }
 }
