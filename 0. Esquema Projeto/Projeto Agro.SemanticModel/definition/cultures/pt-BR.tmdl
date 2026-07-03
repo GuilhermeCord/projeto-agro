@@ -127,7 +127,7 @@ cultureInfo pt-BR
 			          }
 			        },
 			        {
-			          "Status dos Talhoes": {
+			          "Status": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -8877,16 +8877,6 @@ cultureInfo pt-BR
 			          "hectares criticos": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "Hectares Críticos": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -9393,144 +9383,686 @@ cultureInfo pt-BR
 			          "ultima atualização da fazenda": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
 			        }
 			      ],
 			      "SemanticType": "Time"
+			    },
+			    "medida.card_fazenda_HTML": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Card Fazenda HTML"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "card fazenda HTML": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.rep_hectares_por_cultura": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "% Rep Hectares por Cultura"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% rep hectares por cultura": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage rep hectare por cultura": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "pct rep hectare por cultura": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "medida.fechar": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Fechar"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fechar": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.abrir": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Abrir"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "abrir": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.rep_hectares_por_talhao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "% Rep Hectares por Talhao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% rep hectares por talhao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage rep hectare por talhao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "pct rep hectare por talhao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "medida.score_saúde_médio_MoM_texto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Score Saúde Médio MoM Texto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "score saúde médio MoM texto": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.analise_sazonal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Analise Sazonal"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "analise sazonal": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.layout_tela_1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Layout Tela 1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "layout tela 1": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.cor_titulos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Cor Titulos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cor titulos": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.cor_SubTitulos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Cor SubTitulos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cor SubTitulos": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.cor_botoes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Cor Botoes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cor botoes": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.layout_tela_2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Layout Tela 2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "layout tela 2": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.distribuicao_por_status": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Distribuicao por Status"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distribuicao por status": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "distribuicao por category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "distribuicao por importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "distribuicao por prestige": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "distribuicao por prominence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "distribuicao por condition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "distribuicao por class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "distribuicao por grade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "distribuicao por level": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "distribuicao por position": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "distribuicao por rank": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resumo_por_talhao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resumo por Talhao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resumo por talhao": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_tema": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_temas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "d tema": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "d_temas": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "d_tema.ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_temas",
+			          "ConceptualProperty": "ID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "NameType": "Identifier"
+			    },
+			    "d_tema.tema": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_temas",
+			          "ConceptualProperty": "Tema"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tema": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_tema.texto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_temas",
+			          "ConceptualProperty": "Texto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "texto": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_tema.fundo_botoe": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_temas",
+			          "ConceptualProperty": "Fundo Botoes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fundo botoe": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_tema.sub_titulo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_temas",
+			          "ConceptualProperty": "SubTitulo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sub titulo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SubTitulo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "medida.filtros": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Filtros"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "filtros": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.SVG_hectares_analise": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "SVG Hectares Analise"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SVG hectares analise": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.HTML_tabela_talhoes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "HTML Tabela Talhoes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "HTML tabela talhoes": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.SVG_status_talhao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "SVG Status Talhao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SVG status talhao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "svg category talhao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "svg importance talhao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "svg prestige talhao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "svg prominence talhao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "svg condition talhao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "svg class talhao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "svg grade talhao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "svg level talhao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "svg position talhao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "svg rank talhao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_dia": {
-			      "Binding": {
-			        "ConceptualEntity": "fato_notificacoes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fato_notificacoe.data_hora.hierarquia_de_data": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
-			          }
-			        },
-			        "fato_notificacoe.data_hora.dia": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.dia"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
-			            },
-			            "Object": {
-			              "Role": "fato_notificacoe.data_hora.dia"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_dias"
-			        }
-			      ]
-			    },
-			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_mê": {
-			      "Binding": {
-			        "ConceptualEntity": "fato_notificacoes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fato_notificacoe.data_hora.hierarquia_de_data": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
-			          }
-			        },
-			        "fato_notificacoe.data_hora.mê": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.mê"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
-			            },
-			            "Object": {
-			              "Role": "fato_notificacoe.data_hora.mê"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_mê"
-			        }
-			      ]
-			    },
-			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_trimestre": {
-			      "Binding": {
-			        "ConceptualEntity": "fato_notificacoes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fato_notificacoe.data_hora.hierarquia_de_data": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
-			          }
-			        },
-			        "fato_notificacoe.data_hora.trimestre": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.trimestre"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
-			            },
-			            "Object": {
-			              "Role": "fato_notificacoe.data_hora.trimestre"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_trimestres"
-			        }
-			      ]
-			    },
-			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_ano": {
-			      "Binding": {
-			        "ConceptualEntity": "fato_notificacoes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fato_notificacoe.data_hora.hierarquia_de_data": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
-			          }
-			        },
-			        "fato_notificacoe.data_hora.ano": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.ano"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
-			            },
-			            "Object": {
-			              "Role": "fato_notificacoe.data_hora.ano"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_anos"
-			        }
-			      ]
-			    },
 			    "fato_notificacoe_data_hora_has_hierarquia_de_data": {
 			      "Binding": {
 			        "ConceptualEntity": "fato_notificacoes"
@@ -9791,7 +10323,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_dias1"
+			          "ID": "hierarquia_de_data_have_dias"
 			        }
 			      ]
 			    },
@@ -9824,7 +10356,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_mê1"
+			          "ID": "hierarquia_de_data_have_mê"
 			        }
 			      ]
 			    },
@@ -9857,7 +10389,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_trimestres1"
+			          "ID": "hierarquia_de_data_have_trimestres"
 			        }
 			      ]
 			    },
@@ -9890,7 +10422,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_anos1"
+			          "ID": "hierarquia_de_data_have_anos"
 			        }
 			      ]
 			    },
@@ -10451,6 +10983,1009 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_talhaos_have_fato_clima_solos"
+			        }
+			      ]
+			    },
+			    "medida_has_SVG_status_talhao": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.SVG_status_talhao": {
+			          "Target": {
+			            "Entity": "medida.SVG_status_talhao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.SVG_status_talhao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_SVG_status_talhao"
+			        }
+			      ]
+			    },
+			    "medida_has_HTML_tabela_talhoes": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.HTML_tabela_talhoes": {
+			          "Target": {
+			            "Entity": "medida.HTML_tabela_talhoes"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.HTML_tabela_talhoes"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_HTML_tabela_talhoes"
+			        }
+			      ]
+			    },
+			    "fato_saude_talhao_has_medida_SVG_hectares_analise": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_saude_talhao"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_saude_talhao": {
+			          "Target": {
+			            "Entity": "fato_saude_talhao"
+			          }
+			        },
+			        "medida.SVG_hectares_analise": {
+			          "Target": {
+			            "Entity": "medida.SVG_hectares_analise"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_saude_talhao"
+			            },
+			            "Object": {
+			              "Role": "medida.SVG_hectares_analise"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_saude_talhaos_have_SVG_hectares_analise"
+			        }
+			      ]
+			    },
+			    "d_tema_has_medida_SVG_hectares_analise": {
+			      "Binding": {
+			        "ConceptualEntity": "d_temas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_tema": {
+			          "Target": {
+			            "Entity": "d_tema"
+			          }
+			        },
+			        "medida.SVG_hectares_analise": {
+			          "Target": {
+			            "Entity": "medida.SVG_hectares_analise"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Object": {
+			              "Role": "medida.SVG_hectares_analise"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_temas_have_SVG_hectares_analise"
+			        }
+			      ]
+			    },
+			    "medida_has_filtros": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.filtros": {
+			          "Target": {
+			            "Entity": "medida.filtros"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.filtros"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_filtros"
+			        }
+			      ]
+			    },
+			    "d_tema_has_sub_titulo": {
+			      "Binding": {
+			        "ConceptualEntity": "d_temas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_tema": {
+			          "Target": {
+			            "Entity": "d_tema"
+			          }
+			        },
+			        "d_tema.sub_titulo": {
+			          "Target": {
+			            "Entity": "d_tema.sub_titulo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Object": {
+			              "Role": "d_tema.sub_titulo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_temas_have_sub_titulos"
+			        }
+			      ]
+			    },
+			    "d_tema_has_fundo_botoe": {
+			      "Binding": {
+			        "ConceptualEntity": "d_temas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_tema": {
+			          "Target": {
+			            "Entity": "d_tema"
+			          }
+			        },
+			        "d_tema.fundo_botoe": {
+			          "Target": {
+			            "Entity": "d_tema.fundo_botoe"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Object": {
+			              "Role": "d_tema.fundo_botoe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_temas_have_fundo_botoes"
+			        }
+			      ]
+			    },
+			    "d_tema_has_texto": {
+			      "Binding": {
+			        "ConceptualEntity": "d_temas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_tema": {
+			          "Target": {
+			            "Entity": "d_tema"
+			          }
+			        },
+			        "d_tema.texto": {
+			          "Target": {
+			            "Entity": "d_tema.texto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Object": {
+			              "Role": "d_tema.texto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_temas_have_textos"
+			        }
+			      ]
+			    },
+			    "d_tema_has_tema": {
+			      "Binding": {
+			        "ConceptualEntity": "d_temas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_tema": {
+			          "Target": {
+			            "Entity": "d_tema"
+			          }
+			        },
+			        "d_tema.tema": {
+			          "Target": {
+			            "Entity": "d_tema.tema"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Object": {
+			              "Role": "d_tema.tema"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_temas_have_temas"
+			        }
+			      ]
+			    },
+			    "d_tema_has_ID": {
+			      "Binding": {
+			        "ConceptualEntity": "d_temas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_tema": {
+			          "Target": {
+			            "Entity": "d_tema"
+			          }
+			        },
+			        "d_tema.ID": {
+			          "Target": {
+			            "Entity": "d_tema.ID"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Object": {
+			              "Role": "d_tema.ID"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_temas_have_ID"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Name": {
+			              "Role": "d_tema.ID"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ID_are_names_IDs_of_d_temas"
+			        }
+			      ]
+			    },
+			    "medida_has_resumo_por_talhao": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.resumo_por_talhao": {
+			          "Target": {
+			            "Entity": "medida.resumo_por_talhao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.resumo_por_talhao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_resumo_por_talhao"
+			        }
+			      ]
+			    },
+			    "medida_has_distribuicao_por_status": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.distribuicao_por_status": {
+			          "Target": {
+			            "Entity": "medida.distribuicao_por_status"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.distribuicao_por_status"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_distribuicao_por_status"
+			        }
+			      ]
+			    },
+			    "d_tema_has_medida_layout_tela_2": {
+			      "Binding": {
+			        "ConceptualEntity": "d_temas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_tema": {
+			          "Target": {
+			            "Entity": "d_tema"
+			          }
+			        },
+			        "medida.layout_tela_2": {
+			          "Target": {
+			            "Entity": "medida.layout_tela_2"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Object": {
+			              "Role": "medida.layout_tela_2"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_temas_have_layout_tela_2"
+			        }
+			      ]
+			    },
+			    "d_tema_has_medida_cor_botoes": {
+			      "Binding": {
+			        "ConceptualEntity": "d_temas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_tema": {
+			          "Target": {
+			            "Entity": "d_tema"
+			          }
+			        },
+			        "medida.cor_botoes": {
+			          "Target": {
+			            "Entity": "medida.cor_botoes"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Object": {
+			              "Role": "medida.cor_botoes"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_temas_have_cor_botoes"
+			        }
+			      ]
+			    },
+			    "d_tema_has_medida_cor_SubTitulos": {
+			      "Binding": {
+			        "ConceptualEntity": "d_temas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_tema": {
+			          "Target": {
+			            "Entity": "d_tema"
+			          }
+			        },
+			        "medida.cor_SubTitulos": {
+			          "Target": {
+			            "Entity": "medida.cor_SubTitulos"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Object": {
+			              "Role": "medida.cor_SubTitulos"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_temas_have_cor_SubTitulos"
+			        }
+			      ]
+			    },
+			    "d_tema_has_medida_cor_titulos": {
+			      "Binding": {
+			        "ConceptualEntity": "d_temas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_tema": {
+			          "Target": {
+			            "Entity": "d_tema"
+			          }
+			        },
+			        "medida.cor_titulos": {
+			          "Target": {
+			            "Entity": "medida.cor_titulos"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Object": {
+			              "Role": "medida.cor_titulos"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_temas_have_cor_titulos"
+			        }
+			      ]
+			    },
+			    "d_tema_has_medida_layout_tela_1": {
+			      "Binding": {
+			        "ConceptualEntity": "d_temas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_tema": {
+			          "Target": {
+			            "Entity": "d_tema"
+			          }
+			        },
+			        "medida.layout_tela_1": {
+			          "Target": {
+			            "Entity": "medida.layout_tela_1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Object": {
+			              "Role": "medida.layout_tela_1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_temas_have_layout_tela_1"
+			        }
+			      ]
+			    },
+			    "aux_medidas_dinamica_has_medida_analise_sazonal": {
+			      "Binding": {
+			        "ConceptualEntity": "aux_medidas_dinamicas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "aux_medidas_dinamica": {
+			          "Target": {
+			            "Entity": "aux_medidas_dinamica"
+			          }
+			        },
+			        "medida.analise_sazonal": {
+			          "Target": {
+			            "Entity": "medida.analise_sazonal"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "aux_medidas_dinamica"
+			            },
+			            "Object": {
+			              "Role": "medida.analise_sazonal"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "aux_medidas_dinamicas_have_analise_sazonal"
+			        }
+			      ]
+			    },
+			    "fato_saude_talhao_has_medida_score_saúde_médio_MoM_texto": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_saude_talhao"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_saude_talhao": {
+			          "Target": {
+			            "Entity": "fato_saude_talhao"
+			          }
+			        },
+			        "medida.score_saúde_médio_MoM_texto": {
+			          "Target": {
+			            "Entity": "medida.score_saúde_médio_MoM_texto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_saude_talhao"
+			            },
+			            "Object": {
+			              "Role": "medida.score_saúde_médio_MoM_texto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_saude_talhaos_have_score_saúde_médio_MoM_texto"
+			        }
+			      ]
+			    },
+			    "dim_calendario_has_medida_score_saúde_médio_MoM_texto": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_calendario": {
+			          "Target": {
+			            "Entity": "dim_calendario"
+			          }
+			        },
+			        "medida.score_saúde_médio_MoM_texto": {
+			          "Target": {
+			            "Entity": "medida.score_saúde_médio_MoM_texto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_calendario"
+			            },
+			            "Object": {
+			              "Role": "medida.score_saúde_médio_MoM_texto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_calendarios_have_score_saúde_médio_MoM_texto"
+			        }
+			      ]
+			    },
+			    "fato_saude_talhao_has_medida_rep_hectares_por_talhao": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_saude_talhao"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_saude_talhao": {
+			          "Target": {
+			            "Entity": "fato_saude_talhao"
+			          }
+			        },
+			        "medida.rep_hectares_por_talhao": {
+			          "Target": {
+			            "Entity": "medida.rep_hectares_por_talhao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_saude_talhao"
+			            },
+			            "Object": {
+			              "Role": "medida.rep_hectares_por_talhao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_saude_talhaos_have__rep_hectares_por_talhao"
+			        }
+			      ]
+			    },
+			    "medida_has_abrir": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.abrir": {
+			          "Target": {
+			            "Entity": "medida.abrir"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.abrir"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_abrir"
+			        }
+			      ]
+			    },
+			    "medida_has_fechar": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.fechar": {
+			          "Target": {
+			            "Entity": "medida.fechar"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.fechar"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_fechar"
+			        }
+			      ]
+			    },
+			    "fato_saude_talhao_has_medida_rep_hectares_por_cultura": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_saude_talhao"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_saude_talhao": {
+			          "Target": {
+			            "Entity": "fato_saude_talhao"
+			          }
+			        },
+			        "medida.rep_hectares_por_cultura": {
+			          "Target": {
+			            "Entity": "medida.rep_hectares_por_cultura"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_saude_talhao"
+			            },
+			            "Object": {
+			              "Role": "medida.rep_hectares_por_cultura"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_saude_talhaos_have__rep_hectares_por_cultura"
+			        }
+			      ]
+			    },
+			    "fato_saude_talhao_has_medida_card_fazenda_HTML": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_saude_talhao"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_saude_talhao": {
+			          "Target": {
+			            "Entity": "fato_saude_talhao"
+			          }
+			        },
+			        "medida.card_fazenda_HTML": {
+			          "Target": {
+			            "Entity": "medida.card_fazenda_HTML"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_saude_talhao"
+			            },
+			            "Object": {
+			              "Role": "medida.card_fazenda_HTML"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_saude_talhaos_have_card_fazenda_HTML"
+			        }
+			      ]
+			    },
+			    "fato_notificacoe_has_medida_card_fazenda_HTML": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_notificacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_notificacoe": {
+			          "Target": {
+			            "Entity": "fato_notificacoe"
+			          }
+			        },
+			        "medida.card_fazenda_HTML": {
+			          "Target": {
+			            "Entity": "medida.card_fazenda_HTML"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_notificacoe"
+			            },
+			            "Object": {
+			              "Role": "medida.card_fazenda_HTML"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_notificacoes_have_card_fazenda_HTML"
+			        }
+			      ]
+			    },
+			    "fato_clima_solo_has_medida_card_fazenda_HTML": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_clima_solo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_clima_solo": {
+			          "Target": {
+			            "Entity": "fato_clima_solo"
+			          }
+			        },
+			        "medida.card_fazenda_HTML": {
+			          "Target": {
+			            "Entity": "medida.card_fazenda_HTML"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_clima_solo"
+			            },
+			            "Object": {
+			              "Role": "medida.card_fazenda_HTML"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_clima_solos_have_card_fazenda_HTML"
+			        }
+			      ]
+			    },
+			    "dim_fazenda_has_medida_card_fazenda_HTML": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_fazenda"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_fazenda": {
+			          "Target": {
+			            "Entity": "dim_fazenda"
+			          }
+			        },
+			        "medida.card_fazenda_HTML": {
+			          "Target": {
+			            "Entity": "medida.card_fazenda_HTML"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_fazenda"
+			            },
+			            "Object": {
+			              "Role": "medida.card_fazenda_HTML"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_fazendas_have_card_fazenda_HTML"
+			        }
+			      ]
+			    },
+			    "dim_cultura_has_medida_card_fazenda_HTML": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_cultura"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_cultura": {
+			          "Target": {
+			            "Entity": "dim_cultura"
+			          }
+			        },
+			        "medida.card_fazenda_HTML": {
+			          "Target": {
+			            "Entity": "medida.card_fazenda_HTML"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_cultura"
+			            },
+			            "Object": {
+			              "Role": "medida.card_fazenda_HTML"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_culturas_have_card_fazenda_HTML"
+			        }
+			      ]
+			    },
+			    "d_tema_has_medida_card_fazenda_HTML": {
+			      "Binding": {
+			        "ConceptualEntity": "d_temas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_tema": {
+			          "Target": {
+			            "Entity": "d_tema"
+			          }
+			        },
+			        "medida.card_fazenda_HTML": {
+			          "Target": {
+			            "Entity": "medida.card_fazenda_HTML"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Object": {
+			              "Role": "medida.card_fazenda_HTML"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_temas_have_card_fazenda_HTML"
 			        }
 			      ]
 			    },
@@ -11302,6 +12837,39 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fato_saude_talhaos_have_SVG_score_saude"
+			        }
+			      ]
+			    },
+			    "d_tema_has_medida_SVG_score_saude": {
+			      "Binding": {
+			        "ConceptualEntity": "d_temas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_tema": {
+			          "Target": {
+			            "Entity": "d_tema"
+			          }
+			        },
+			        "medida.SVG_score_saude": {
+			          "Target": {
+			            "Entity": "medida.SVG_score_saude"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_tema"
+			            },
+			            "Object": {
+			              "Role": "medida.SVG_score_saude"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_temas_have_SVG_score_saude"
 			        }
 			      ]
 			    },
@@ -16276,6 +17844,138 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "talhoes_goias_lat_long_virgulas_are_in_cidades"
+			        }
+			      ]
+			    },
+			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_ano": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_notificacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_notificacoe.data_hora.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
+			          }
+			        },
+			        "fato_notificacoe.data_hora.ano": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.ano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "fato_notificacoe.data_hora.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_anos1"
+			        }
+			      ]
+			    },
+			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_notificacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_notificacoe.data_hora.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
+			          }
+			        },
+			        "fato_notificacoe.data_hora.trimestre": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "fato_notificacoe.data_hora.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_trimestres1"
+			        }
+			      ]
+			    },
+			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_mê": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_notificacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_notificacoe.data_hora.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
+			          }
+			        },
+			        "fato_notificacoe.data_hora.mê": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.mê"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "fato_notificacoe.data_hora.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_mê1"
+			        }
+			      ]
+			    },
+			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_dia": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_notificacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_notificacoe.data_hora.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
+			          }
+			        },
+			        "fato_notificacoe.data_hora.dia": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.dia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "fato_notificacoe.data_hora.dia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_dias1"
 			        }
 			      ]
 			    },

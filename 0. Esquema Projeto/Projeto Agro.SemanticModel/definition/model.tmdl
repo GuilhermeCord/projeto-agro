@@ -16,7 +16,7 @@ queryGroup Dimensão
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["talhoes_goias_lat_long_virgula","dim_calendario","dim_cultura","dim_fazenda","dim_status_talhao","dim_talhao","d_icones_visuais","fato_clima_solo","fato_notificacoes","fato_saude_talhao","Medidas"]
+annotation PBI_QueryOrder = ["talhoes_goias_lat_long_virgula","dim_calendario","dim_cultura","dim_fazenda","dim_status_talhao","dim_talhao","d_icones_visuais","fato_clima_solo","fato_notificacoes","fato_saude_talhao","Medidas","d_temas"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -36,6 +36,7 @@ ref table Medidas
 ref table d_icones_visuais
 ref table aux_medidas_dinamicas
 ref table aux_medidas_saude_hectares
+ref table d_temas
 
 ref cultureInfo pt-BR
 

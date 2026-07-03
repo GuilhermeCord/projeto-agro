@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "1dc6c56ca7b9e57a5024",
   "position": {
-    "x": 1375.2244055355914,
-    "y": 189.1887759002982,
-    "z": 13000,
-    "height": 126.39498432601881,
-    "width": 373.166144200627,
-    "tabOrder": 13000
+    "x": 1445.6385542168675,
+    "y": 240,
+    "z": 15000,
+    "height": 109.30120481927712,
+    "width": 441.10843373493975,
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -322,6 +322,22 @@
                   "Property": "Vs Periodo Anterior"
                 }
               }
+            },
+            "titleFontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Medidas"
+                        }
+                      },
+                      "Property": "Cor SubTitulos"
+                    }
+                  }
+                }
+              }
             }
           },
           "selector": {
@@ -334,6 +350,20 @@
             ],
             "metadata": "Medidas.% Variação Talhoes Criticos - MoM",
             "id": "field-d5c623b7-6271-00f5-19a6-4115d89beb3d"
+          }
+        },
+        {
+          "properties": {
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.% Variação Talhoes Criticos - MoM"
           }
         }
       ],
@@ -351,6 +381,140 @@
           "selector": {
             "metadata": "Medidas.% Variação Talhoes Criticos - MoM",
             "id": "field-d5c623b7-6271-00f5-19a6-4115d89beb3d"
+          }
+        },
+        {
+          "properties": {
+            "valueFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.% Variação Talhoes Criticos - MoM"
+          }
+        },
+        {
+          "properties": {
+            "valueFontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Medidas"
+                        }
+                      },
+                      "Property": "Cor Titulos"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "Medidas.% Variação Talhoes Criticos - MoM",
+            "id": "field-d5c623b7-6271-00f5-19a6-4115d89beb3d"
+          }
+        }
+      ],
+      "fillCustom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "divider": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "layout": [
+        {
+          "properties": {
+            "backgroundShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ]

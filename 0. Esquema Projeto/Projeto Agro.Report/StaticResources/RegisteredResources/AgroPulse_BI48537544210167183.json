@@ -1,0 +1,41 @@
+{
+  "name": "AgroPulse BI",
+  "textClasses": {
+    "label": {
+      "color": "#000000",
+      "fontSize": 12,
+      "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif"
+    },
+    "callout": {
+      "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif"
+    },
+    "title": {
+      "fontFace": "'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif"
+    },
+    "header": {
+      "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif"
+    }
+  },
+  "icons": {
+    "status_saudavel": {
+      "description": "Status - Saudável",
+      "url": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='6' fill='%23D6FEC2' stroke='%23D6FEC2' stroke-width='2'/></svg>"
+    },
+    "status_atencao": {
+      "description": "Status - Atenção",
+      "url": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='6' fill='%23F5A623' stroke='%23F5A623' stroke-width='2'/></svg>"
+    },
+    "status_critico": {
+      "description": "Status - Crítico",
+      "url": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='6' fill='%23F44336' stroke='%23F44336' stroke-width='2'/></svg>"
+    },
+    "status_em_desenvolvimento": {
+      "description": "Status - Em desenvolvimento",
+      "url": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='6' fill='%234A90E2' stroke='%234A90E2' stroke-width='2'/></svg>"
+    },
+    "status_plantado": {
+      "description": "Status - Plantado",
+      "url": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='6' fill='%23699056' stroke='%23699056' stroke-width='2'/></svg>"
+    }
+  }
+}

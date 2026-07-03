@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "d1abd9be955ce45bd710",
   "position": {
-    "x": 1111.7891816920942,
-    "y": 307.57281553398059,
-    "z": 1000,
-    "height": 362.16366158113726,
-    "width": 427.4063800277392,
+    "x": 1208.3031301482702,
+    "y": 403.2948929159802,
+    "z": 3000,
+    "height": 289.42339373970344,
+    "width": 330.54365733113673,
     "tabOrder": 1000
   },
   "visual": {
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "dim_status_talhao.status_talhao",
-              "nativeQueryRef": "status_talhao",
-              "active": true
+              "nativeQueryRef": "Status",
+              "active": true,
+              "displayName": "Status"
             }
           ]
         },
@@ -336,7 +337,7 @@
             "borderColorMatchFill": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -391,6 +392,45 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

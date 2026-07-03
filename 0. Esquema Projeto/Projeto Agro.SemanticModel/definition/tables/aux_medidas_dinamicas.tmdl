@@ -43,7 +43,7 @@ table aux_medidas_dinamicas
 				    ("Score Saúde", NAMEOF('Medidas'[Score Saude Medio]), 0),
 				    ("Indice Vigor", NAMEOF('Medidas'[Indice Vigor Medio]), 1),
 				    ("Uniformidade", NAMEOF('Medidas'[Uniformidade Media]), 2),
-				    ("Produtividade Historica", NAMEOF('Medidas'[Produtividade Historica Media]), 3)
+				    ("Produtividade Hist.", NAMEOF('Medidas'[Produtividade Historica Media]), 3)
 				}
 
 	annotation PBI_Id = 8e7807ffa8dc4ce3a8854cd832ec7936

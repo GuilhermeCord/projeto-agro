@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "c01c0cc24c110cadc35c",
   "position": {
-    "x": 211.53284671532847,
-    "y": 85.4014598540146,
+    "x": 25,
+    "y": 96.666666666666671,
     "z": 1000,
-    "height": 994.59854014598545,
-    "width": 1708.0291970802921,
-    "tabOrder": 2000
+    "height": 970,
+    "width": 1870,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "azureMap",
@@ -88,11 +88,31 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "% Rep Status por Talhao"
+                  "Property": "% Rep Hectares por Talhao"
                 }
               },
-              "queryRef": "Medidas.% Rep Status por Talhao",
-              "nativeQueryRef": "% Rep Status por Talhao"
+              "queryRef": "Medidas.% Rep Hectares por Talhao",
+              "nativeQueryRef": "% Rep Hectares por Talhao"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_talhao"
+                        }
+                      },
+                      "Property": "nome_talhao"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(dim_talhao.nome_talhao)",
+              "nativeQueryRef": "nome_talhao",
+              "displayName": "nome_talhao"
             }
           ]
         },
@@ -161,21 +181,21 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "15.31D"
+                  "Value": "5.77D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-21.26661934630509D"
+                  "Value": "-20.865476624038507D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-47.684202513601804D"
+                  "Value": "-51.06585105000002D"
                 }
               }
             },
@@ -1182,34 +1202,6 @@
                 }
               }
             },
-            "showChartSpecificTooltips": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "showSentenceFormat": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "sentenceTemplate": {
-              "expr": {
-                "Literal": {
-                  "Value": "'O Talhão possuí {Area Total Cadastrada HA} de Hectares, com um Score de Saúde Médio de {Score Saude Medio}/100. Sua representatividade está em torno de {% Rep Status por Talhao} em relação aos demais talhões da Fazenda'"
-                }
-              }
-            },
-            "showValuesInBold": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "themedTitleFontColor": {
               "solid": {
                 "color": {
@@ -1243,6 +1235,34 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "showSentenceFormat": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showChartSpecificTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "sentenceTemplate": {
+              "expr": {
+                "Literal": {
+                  "Value": "'O {nome_talhao} possuí um total de {Area Total Cadastrada HA} ha. Sua representatividade está em {% Rep Hectares por Talhao} dos demais talhões.'"
                 }
               }
             }
@@ -1407,117 +1427,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "40d0a1ac8e23ba7b262b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_talhao"
-              }
-            },
-            "Property": "id_talhao"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "07ee05c16dc833c7314e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_status_talhao"
-              }
-            },
-            "Property": "status_talhao"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e37aa5dc4909112da240",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Area Total Cadastrada HA"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "160b1e838ce73b2a6add",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Score Saude Medio"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "2834b6964b3cb1704655",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dim_talhao"
-                  }
-                },
-                "Property": "longitude"
-              }
-            },
-            "Function": 1
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "8289c4a28a2e08ec8530",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dim_talhao"
-                  }
-                },
-                "Property": "latitude"
-              }
-            },
-            "Function": 1
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "57814337741b0c548e22",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "% Rep Status por Talhao"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

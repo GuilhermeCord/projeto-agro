@@ -79,7 +79,7 @@ table dim_status_talhao
 			    )
 			
 			VAR _CorTexto =
-			    IF(_OrdemStatus IN {1,2}, "black","white")
+			    IF(_OrdemStatus IN {1,2,4}, "black","white")
 			
 			VAR _TextoSvg =
 			    SUBSTITUTE(

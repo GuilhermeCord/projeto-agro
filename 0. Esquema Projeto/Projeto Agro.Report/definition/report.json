@@ -11,7 +11,7 @@
       "type": "SharedResources"
     },
     "customTheme": {
-      "name": "AgroPulse_BI9265709185573495.json",
+      "name": "AgroPulse_BI48537544210167183.json",
       "reportVersionAtImport": {
         "visual": "2.10.0",
         "report": "3.4.0",
@@ -40,7 +40,7 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "true"
+                "Value": "false"
               }
             }
           }
@@ -49,7 +49,10 @@
     ]
   },
   "publicCustomVisuals": [
-    "htmlContent443BE3AD55E043BF878BED274D3A6855"
+    "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "ToggleSwitchA3F1C2B48E7D4EFC9A0D3D3E6B59C712",
+    "advancedtoggleswitch",
+    "textFilter25A4896A83E0487089E2B90C9AE57C8A"
   ],
   "resourcePackages": [
     {
@@ -68,9 +71,14 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "AgroPulse_BI9265709185573495.json",
-          "path": "AgroPulse_BI9265709185573495.json",
+          "name": "AgroPulse_BI48537544210167183.json",
+          "path": "AgroPulse_BI48537544210167183.json",
           "type": "CustomTheme"
+        },
+        {
+          "name": "Close09637765721872005.png",
+          "path": "Close09637765721872005.png",
+          "type": "Image"
         },
         {
           "name": "fazenda_jose_tomas_talhoes_com6173893260143956.geojson",
@@ -81,6 +89,56 @@
           "name": "fazendas_brasil_talhoes8077148296044298.geojson",
           "path": "fazendas_brasil_talhoes8077148296044298.geojson",
           "type": "ShapeMap"
+        },
+        {
+          "name": "filter_206165913355026831.png",
+          "path": "filter_206165913355026831.png",
+          "type": "Image"
+        },
+        {
+          "name": "filter_24823364194730927.png",
+          "path": "filter_24823364194730927.png",
+          "type": "Image"
+        },
+        {
+          "name": "Indice-vigor3913395451062409.png",
+          "path": "Indice-vigor3913395451062409.png",
+          "type": "Image"
+        },
+        {
+          "name": "Score-Saude8720926986093702.png",
+          "path": "Score-Saude8720926986093702.png",
+          "type": "Image"
+        },
+        {
+          "name": "Seta-abaixo6513963349358727.png",
+          "path": "Seta-abaixo6513963349358727.png",
+          "type": "Image"
+        },
+        {
+          "name": "Seta-acima36809319899044746.png",
+          "path": "Seta-acima36809319899044746.png",
+          "type": "Image"
+        },
+        {
+          "name": "Seta-acima7415455245704687.png",
+          "path": "Seta-acima7415455245704687.png",
+          "type": "Image"
+        },
+        {
+          "name": "Talhoes-criticos958340452520467.png",
+          "path": "Talhoes-criticos958340452520467.png",
+          "type": "Image"
+        },
+        {
+          "name": "Tela_1_-_Dashboard18963016394621823.png",
+          "path": "Tela_1_-_Dashboard18963016394621823.png",
+          "type": "Image"
+        },
+        {
+          "name": "Uniformidade-media36007657282097183.png",
+          "path": "Uniformidade-media36007657282097183.png",
+          "type": "Image"
         }
       ]
     }

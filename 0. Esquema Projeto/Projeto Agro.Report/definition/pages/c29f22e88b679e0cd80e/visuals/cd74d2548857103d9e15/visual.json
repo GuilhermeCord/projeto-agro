@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "cd74d2548857103d9e15",
   "position": {
-    "x": 1270.2357836338417,
-    "y": 419.4174757281553,
-    "z": 4000,
-    "height": 138.47434119278779,
-    "width": 110.5131761442441,
-    "tabOrder": 4000
+    "x": 1319.0115321252058,
+    "y": 495.02471169686982,
+    "z": 5000,
+    "height": 102.80065897858319,
+    "width": 110.70840197693575,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -61,6 +61,22 @@
                   "Value": "true"
                 }
               }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Medidas"
+                        }
+                      },
+                      "Property": "Cor SubTitulos"
+                    }
+                  }
+                }
+              }
             }
           },
           "selector": {
@@ -72,7 +88,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Talhões Totais'"
+                  "Value": "'Talhões'"
                 }
               }
             },
@@ -223,6 +239,29 @@
           },
           "selector": {
             "metadata": "Medidas.Talhoes Monitorados"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Medidas"
+                        }
+                      },
+                      "Property": "Cor Titulos"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ],
