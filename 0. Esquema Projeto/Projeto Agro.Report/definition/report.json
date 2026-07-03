@@ -2,13 +2,22 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
   "themeCollection": {
     "baseTheme": {
-      "name": "CY26SU04",
+      "name": "CY26SU05",
       "reportVersionAtImport": {
-        "visual": "2.8.0",
-        "report": "3.2.0",
+        "visual": "2.9.0",
+        "report": "3.3.0",
         "page": "2.3.1"
       },
       "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "AgroPulse_BI48537544210167183.json",
+      "reportVersionAtImport": {
+        "visual": "2.10.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "RegisteredResources"
     }
   },
   "objects": {
@@ -24,16 +33,35 @@
           }
         }
       }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
     ]
   },
+  "publicCustomVisuals": [
+    "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "ToggleSwitchA3F1C2B48E7D4EFC9A0D3D3E6B59C712",
+    "advancedtoggleswitch",
+    "textFilter25A4896A83E0487089E2B90C9AE57C8A"
+  ],
   "resourcePackages": [
     {
       "name": "SharedResources",
       "type": "SharedResources",
       "items": [
         {
-          "name": "CY26SU04",
-          "path": "BaseThemes/CY26SU04.json",
+          "name": "CY26SU05",
+          "path": "BaseThemes/CY26SU05.json",
           "type": "BaseTheme"
         }
       ]
@@ -43,6 +71,16 @@
       "type": "RegisteredResources",
       "items": [
         {
+          "name": "AgroPulse_BI48537544210167183.json",
+          "path": "AgroPulse_BI48537544210167183.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "Close09637765721872005.png",
+          "path": "Close09637765721872005.png",
+          "type": "Image"
+        },
+        {
           "name": "fazenda_jose_tomas_talhoes_com6173893260143956.geojson",
           "path": "fazenda_jose_tomas_talhoes_com6173893260143956.geojson",
           "type": "ShapeMap"
@@ -51,6 +89,56 @@
           "name": "fazendas_brasil_talhoes8077148296044298.geojson",
           "path": "fazendas_brasil_talhoes8077148296044298.geojson",
           "type": "ShapeMap"
+        },
+        {
+          "name": "filter_206165913355026831.png",
+          "path": "filter_206165913355026831.png",
+          "type": "Image"
+        },
+        {
+          "name": "filter_24823364194730927.png",
+          "path": "filter_24823364194730927.png",
+          "type": "Image"
+        },
+        {
+          "name": "Indice-vigor3913395451062409.png",
+          "path": "Indice-vigor3913395451062409.png",
+          "type": "Image"
+        },
+        {
+          "name": "Score-Saude8720926986093702.png",
+          "path": "Score-Saude8720926986093702.png",
+          "type": "Image"
+        },
+        {
+          "name": "Seta-abaixo6513963349358727.png",
+          "path": "Seta-abaixo6513963349358727.png",
+          "type": "Image"
+        },
+        {
+          "name": "Seta-acima36809319899044746.png",
+          "path": "Seta-acima36809319899044746.png",
+          "type": "Image"
+        },
+        {
+          "name": "Seta-acima7415455245704687.png",
+          "path": "Seta-acima7415455245704687.png",
+          "type": "Image"
+        },
+        {
+          "name": "Talhoes-criticos958340452520467.png",
+          "path": "Talhoes-criticos958340452520467.png",
+          "type": "Image"
+        },
+        {
+          "name": "Tela_1_-_Dashboard18963016394621823.png",
+          "path": "Tela_1_-_Dashboard18963016394621823.png",
+          "type": "Image"
+        },
+        {
+          "name": "Uniformidade-media36007657282097183.png",
+          "path": "Uniformidade-media36007657282097183.png",
+          "type": "Image"
         }
       ]
     }

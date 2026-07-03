@@ -3,7 +3,7 @@ table dim_calendario
 
 	column data
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: cac03e43-3a30-468d-9dcf-e1ca05acd1c2
 		summarizeBy: none
 		sourceColumn: data
@@ -97,14 +97,27 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
-	column Coluna
-		type: calculated
-		lineageTag: d230cd0d-c0f6-4b21-b80b-fef34b851b05
-		summarizeBy: sum
+	column nome_mes_abrev =
+			
+			LEFT(dim_calendario[nome_mes],3)
+		lineageTag: 3f72ee46-7243-499d-b46b-34d7eed7093d
+		summarizeBy: none
+		sortByColumn: mes
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+	column mes_abrev_ano =
+			
+			dim_calendario[nome_mes_abrev] & "/" & dim_calendario[ano]
+		lineageTag: cbfc922d-082e-4a52-bb62-7cf608e4f1e4
+		summarizeBy: none
+		sortByColumn: ano_mes
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
 
 	partition dim_calendario = m
 		mode: import

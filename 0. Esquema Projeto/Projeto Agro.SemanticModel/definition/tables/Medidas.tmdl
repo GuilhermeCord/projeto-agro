@@ -8,14 +8,14 @@ table Medidas
 		displayFolder: 00.Geral\00.Cadastros
 		lineageTag: 0369f81e-138c-4830-a103-15102756eb61
 
-	measure 'Total Talhões Cadastrados' =
+	measure 'Total Talhoes Cadastrados' =
 			
 			DISTINCTCOUNT(dim_talhao[id_talhao])
 		formatString: 0
 		displayFolder: 00.Geral\00.Cadastros
 		lineageTag: 8e9795bf-70be-4e39-8154-704739350830
 
-	measure 'Área Total Cadastrada HA' =
+	measure 'Area Total Cadastrada HA' =
 			
 			SUM(dim_talhao[area_ha])
 		displayFolder: 00.Geral\00.Cadastros
@@ -30,13 +30,6 @@ table Medidas
 		displayFolder: 00.Geral\01.Monitoramento
 		lineageTag: 1dde24ae-cbd9-42a0-9ef9-22ee49330875
 
-	measure 'Talhões Monitorados' =
-			
-			DISTINCTCOUNT(fato_saude_talhao[id_talhao])
-		formatString: 0
-		displayFolder: 00.Geral\01.Monitoramento
-		lineageTag: f21d37ca-2f8c-4f95-b838-a01883dc2ff1
-
 	measure 'Culturas Monitoradas' =
 			
 			DISTINCTCOUNT(fato_saude_talhao[id_cultura])
@@ -44,30 +37,28 @@ table Medidas
 		displayFolder: 00.Geral\01.Monitoramento
 		lineageTag: cecd8b89-bcdd-4b30-ad56-997a8aa08f0f
 
-	measure 'Score Saúde Médio' =
+	measure 'Score Saude Medio' =
 			
 			AVERAGE(fato_saude_talhao[score_saude])
 		formatString: 0.00
 		displayFolder: 00.Geral\01.Monitoramento
 		lineageTag: ef641235-b090-4dcd-bcf6-10b886bc065a
 
-	measure 'Índice Vigor Médio' =
+	measure 'Indice Vigor Medio' =
 			
 			AVERAGE(fato_saude_talhao[indice_vigor])
+		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: 00.Geral\01.Monitoramento
 		lineageTag: e4d19a44-4f18-4e70-bb56-37c9431ffa7f
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Uniformidade Média' =
+	measure 'Uniformidade Media' =
 			
 			AVERAGE(fato_saude_talhao[uniformidade_percentual])
+		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: 00.Geral\01.Monitoramento
 		lineageTag: 1a40747d-4c03-4d94-8eff-7a3351e74aaa
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Produtividade Estimada Média' =
+	measure 'Produtividade Estimada Media' =
 			
 			AVERAGE(fato_saude_talhao[produtividade_estimada])
 		displayFolder: 00.Geral\01.Monitoramento
@@ -75,7 +66,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Produtividade Histórica Média' =
+	measure 'Produtividade Historica Media' =
 			
 			AVERAGE(fato_saude_talhao[produtividade_historica])
 		displayFolder: 00.Geral\01.Monitoramento
@@ -98,7 +89,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Chuva Média MM' =
+	measure 'Chuva Media MM' =
 			
 			AVERAGE(fato_clima_solo[chuva_acumulada_mm])
 		displayFolder: 00.Geral\02.Clima e Solo
@@ -106,7 +97,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Dias Sem Chuva Médio' =
+	measure 'Dias Sem Chuva Medio' =
 			
 			AVERAGE(fato_clima_solo[dias_sem_chuva])
 		displayFolder: 00.Geral\02.Clima e Solo
@@ -114,7 +105,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Temperatura Média C' =
+	measure 'Temperatura Media C' =
 			
 			AVERAGE(fato_clima_solo[temperatura_media_c])
 		displayFolder: 00.Geral\02.Clima e Solo
@@ -122,14 +113,14 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Umidade Solo Média %' =
+	measure 'Umidade Solo Media %' =
 			
 			AVERAGE(fato_clima_solo[umidade_solo_percentual])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: 00.Geral\02.Clima e Solo
 		lineageTag: 164567a0-91ca-422e-a3b1-84b7d61f0c20
 
-	measure 'Déficit Hídrico Médio MM' =
+	measure 'Deficit Hidrico Medio MM' =
 			
 			AVERAGE(fato_clima_solo[deficit_hidrico_mm])
 		displayFolder: 00.Geral\02.Clima e Solo
@@ -143,36 +134,50 @@ table Medidas
 			    MAX(dim_calendario[data])
 			RETURN
 			CALCULATE(
-			    [Score Saúde Médio],
+			    [Score Saude Medio],
 			    dim_calendario[data] = DataAtual
 			)
-		displayFolder: 00.Geral\03.Evolucao
+		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: 4c5a50c2-38cb-42e8-9024-fddba8311a45
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Score Saúde Mês Anterior' =
+	measure 'Score Saude Medio - MoM' =
 			
-			CALCULATE(
-			    [Score Saúde Médio],
-			    DATEADD(dim_calendario[data], -1, MONTH)
+			IF (
+			    NOT ISFILTERED ( dim_calendario ),
+			    BLANK(),
+			    CALCULATE(
+			        [Score Saude Medio],
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
 			)
-		displayFolder: 00.Geral\03.Evolucao
+		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: 979154d0-8c13-4793-ac2b-ae8c4fd12bb6
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Variação Score Saúde' =
+	measure '% Variação Score Saude Medio - MoM' =
 			
-			[Score Saúde Atual] - [Score Saúde Mês Anterior]
-		displayFolder: 00.Geral\03.Evolucao
+			DIVIDE(
+			    [Score Saude Medio] - [Score Saude Medio - MoM],
+			    [Score Saude Medio - MoM]
+			    )
+		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: c4306d2c-6367-481b-a209-78bafa88ea54
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		formatStringDefinition =
+				VAR _Valor = [% Variação Score Saude Medio - MoM]
+				
+				var _ValorFormatado = FORMAT(_Valor,"+ 0.00%; - 0.00%; 0.00%")
+				
+				
+				RETURN
+				"""" & _ValorFormatado & """"
 
 	measure 'Tendência Saúde' =
 			
-			VAR Variacao = [Variação Score Saúde]
+			VAR Variacao = [% Variação Score Saude Medio - MoM]
 			RETURN
 			SWITCH(
 			    TRUE(),
@@ -181,8 +186,1515 @@ table Medidas
 			    Variacao < -2, "Piorando",
 			    "Estável"
 			)
-		displayFolder: 00.Geral\03.Evolucao
+		displayFolder: 00.Geral\03.Mom e YoY
 		lineageTag: f5a8d80e-bb46-4b64-9ab1-8540cc579780
+
+	measure 'Talhoes Monitorados' =
+			
+			DISTINCTCOUNT(fato_saude_talhao[id_talhao])
+		formatString: 0
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 63c216a7-e181-45a4-86ae-bff8bf43049b
+
+	measure '% Rep Status por Talhao' = ```
+			
+			DIVIDE( [Talhoes Monitorados], 
+			        CALCULATE([Talhoes Monitorados],
+			        ALL(dim_status_talhao))
+			        )
+			```
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: eb867a4c-a379-4cef-8a99-3da5d6a18645
+
+		formatStringDefinition = """(""0.0%"")"""
+
+	measure 'Indice Vigor Medio - MoM' =
+			
+			IF (
+			    NOT ISFILTERED ( dim_calendario ),
+			    BLANK(),
+			    CALCULATE(
+			        [Indice Vigor Medio],
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 00.Geral\03.Mom e YoY
+		lineageTag: 594663dd-9a9e-498f-879f-05494fe37e65
+
+	measure '% Variação Indice Vigor Medio - MoM' =
+			
+			DIVIDE(
+			    [Indice Vigor Medio] - [Indice Vigor Medio - MoM],
+			    [Indice Vigor Medio - MoM]
+			    )
+		displayFolder: 00.Geral\03.Mom e YoY
+		lineageTag: 692cb38f-4344-4a51-b372-97774e9f5579
+
+		formatStringDefinition =
+				VAR _Valor = [% Variação Indice Vigor Medio - MoM]
+				
+				var _ValorFormatado = FORMAT(_Valor,"+ 0.00%; - 0.00%; 0.00%")
+				
+				
+				RETURN
+				"""" & _ValorFormatado & """"
+
+	measure 'Uniformidade Media - MoM' =
+			
+			IF (
+			    NOT ISFILTERED ( dim_calendario ),
+			    BLANK(),
+			    CALCULATE(
+			        [Uniformidade Media],
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: 00.Geral\03.Mom e YoY
+		lineageTag: 57d4dc68-e0d0-4836-93b4-dc7acacb7c25
+
+	measure '% Variação Uniformidade Media - MoM' =
+			
+			DIVIDE(
+			    [Uniformidade Media] - [Uniformidade Media - MoM],
+			    [Uniformidade Media - MoM]
+			    )
+		displayFolder: 00.Geral\03.Mom e YoY
+		lineageTag: d09e58ee-6136-46f7-8565-5221b787beda
+
+		formatStringDefinition =
+				VAR _Valor = [% Variação Uniformidade Media - MoM]
+				
+				var _ValorFormatado = FORMAT(_Valor,"+ 0.00%; - 0.00%; 0.00%")
+				
+				
+				RETURN
+				"""" & _ValorFormatado & """"
+
+	measure 'Talhoes Criticos' =
+			
+			CALCULATE(
+			    [Talhoes Monitorados],
+			    dim_status_talhao[ordem_status] = 3
+			)
+		formatString: 0
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 0c88cf6b-0e20-4163-a0c2-2c4d5b2d3927
+
+	measure 'Talhoes Criticos - MoM' =
+			
+			IF (
+			    NOT ISFILTERED ( dim_calendario ),
+			    0,
+			    CALCULATE(
+			        [Talhoes Criticos],
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
+			)
+		formatString: 0
+		displayFolder: 00.Geral\03.Mom e YoY
+		lineageTag: f9acad22-42c8-48ad-8209-034f7b008fdf
+
+	measure '% Variação Talhoes Criticos - MoM' =
+			
+			DIVIDE(
+			    [Talhoes Criticos] - [Talhoes Criticos - MoM],
+			    [Talhoes Criticos - MoM]
+			    )
+		displayFolder: 00.Geral\03.Mom e YoY
+		lineageTag: 493aca50-9269-4c89-b70a-ce696ca33008
+
+		formatStringDefinition =
+				VAR _Valor = [% Variação Talhoes Criticos - MoM]
+				
+				var _ValorFormatado = FORMAT(_Valor,"- 0.00%; +0.00%; 0.00%")
+				
+				
+				RETURN
+				"""" & _ValorFormatado & """"
+
+	measure 'Risco Climático Atual' =
+			
+			VAR _DataAtual =
+			    MAX(dim_calendario[data])
+			RETURN
+			CALCULATE(
+			    SELECTEDVALUE(fato_clima_solo[risco_climatico]),
+			    dim_calendario[data] = _DataAtual
+			)
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: ce2fabbc-3594-4e7c-b8d6-d822a4e34f2a
+		dataCategory: Uncategorized
+
+	measure 'Status Talhão Atual' =
+			
+			VAR _DataAtual =
+			    MAX(dim_calendario[data])
+			VAR _StatusId =
+			    CALCULATE(
+			        SELECTEDVALUE(fato_saude_talhao[id_status]),
+			        dim_calendario[data] = _DataAtual
+			    )
+			RETURN
+			LOOKUPVALUE(
+			    dim_status_talhao[status_talhao],
+			    dim_status_talhao[id_status], _StatusId
+			)
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: efbb7045-e0d5-40f4-9f39-f2ca6e80c9ca
+
+	measure 'Recomendação Atual' =
+			
+			VAR _DataAtual =
+			    MAX(dim_calendario[data])
+			VAR _StatusId =
+			    CALCULATE(
+			        SELECTEDVALUE(fato_notificacoes[recomendacao]),
+			        dim_calendario[data] = _DataAtual
+			    )
+			RETURN
+			COALESCE(
+			    CALCULATE(
+			    MAX(fato_notificacoes[recomendacao]),
+			    dim_calendario[data] = _DataAtual
+			    ),
+			    "Sem recomendação")
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: 40919148-f73f-4581-82e1-301609cb8b9d
+
+	measure 'SVG Risco Climatico' =
+			
+			VAR _DataAtual =
+			    MAX(dim_calendario[data])
+			
+			VAR _Risco =
+			    CALCULATE(
+			        SELECTEDVALUE(fato_clima_solo[risco_climatico]),
+			        dim_calendario[data] = _DataAtual
+			    )
+			
+			VAR _Cor =
+			    SWITCH(
+			        TRUE(),
+			        _Risco = "Baixo", "#F59E0B",
+			        _Risco = "Médio", "#3C71E3",
+			        _Risco = "Alto", "#E53935",
+			        "#9CA3AF"
+			    )
+			
+			VAR _CorUrl =
+			    SUBSTITUTE(_Cor, "#", "%23")
+			
+			VAR _Icone =
+			    SWITCH(
+			        TRUE(),
+			
+			        -- BAIXO = Sol
+			        _Risco = "Baixo",
+			            "<circle cx='25' cy='22' r='7' fill='none' stroke='" & _CorUrl & "' stroke-width='3'/>" &
+			            "<path d='M25 4 V9 M25 35 V40 M7 22 H12 M38 22 H43 M12 9 L16 13 M38 9 L34 13 M12 35 L16 31 M38 35 L34 31' stroke='" & _CorUrl & "' stroke-width='3' stroke-linecap='round'/>",
+			
+			        -- MÉDIO = Nuvem com chuva
+			        _Risco = "Médio",
+			            "<path d='M15 26 C12 26 9 23 9 19 C9 15 12 12 16 12 C18 7 23 5 28 7 C32 8 35 12 35 16 C39 16 42 19 42 23 C42 27 39 30 35 30 H16' fill='none' stroke='" & _CorUrl & "' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>" &
+			            "<path d='M18 36 L16 41 M27 36 L25 41 M36 36 L34 41' stroke='" & _CorUrl & "' stroke-width='3' stroke-linecap='round'/>",
+			
+			        -- ALTO = Nuvem com chuva e raio
+			        _Risco = "Alto",
+			            "<path d='M15 25 C12 25 9 22 9 18 C9 14 12 11 16 11 C18 6 23 4 28 6 C32 7 35 11 35 15 C39 15 42 18 42 22 C42 26 39 29 35 29 H16' fill='none' stroke='" & _CorUrl & "' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>" &
+			            "<path d='M17 35 L15 40 M36 35 L34 40' stroke='" & _CorUrl & "' stroke-width='3' stroke-linecap='round'/>" &
+			            "<path d='M26 32 L21 42 H27 L24 49 L34 36 H28 L31 32 Z' fill='" & _CorUrl & "'/>",
+			
+			        -- Sem risco
+			        "<circle cx='25' cy='25' r='16' fill='none' stroke='" & _CorUrl & "' stroke-width='3'/>"
+			    )
+			
+			VAR _Texto =
+			    COALESCE(_Risco, "Sem risco")
+			
+			VAR _TextoSvg =
+			    SUBSTITUTE(_Texto, "&", "&amp;")
+			
+			VAR _Svg =
+			    "data:image/svg+xml;utf8," &
+			    "<svg xmlns='http://www.w3.org/2000/svg' width='150' height='52' viewBox='0 0 150 52'>" &
+			        "<g transform='translate(0,1)'>" &
+			            _Icone &
+			        "</g>" &
+			        "<text x='55' y='31' font-family='Segoe UI' font-size='16' font-weight='600' fill='%23182712'>" &
+			            _TextoSvg &
+			        "</text>" &
+			    "</svg>"
+			
+			RETURN
+			    _Svg
+		displayFolder: 00.Geral\02.Clima e Solo
+		lineageTag: 0ac29707-dee6-4622-b770-56be0f978eac
+		dataCategory: ImageUrl
+
+	measure 'SVG Score Saude' =
+			
+			VAR _ScoreOriginal = [Score Saude Medio]
+			VAR _Score =
+			    MIN(100, MAX(0, _ScoreOriginal))
+			
+			VAR _CorHex =
+			    SWITCH(
+			        TRUE(),
+			        _Score <= 49, "#D64550",
+			        _Score <= 79, "#F4C169",
+			        "#699056"
+			    )
+			
+			VAR _CorSvg =
+			    SUBSTITUTE(_CorHex, "#", "%23")
+			
+			VAR _CorLabelHex =
+			    SELECTEDVALUE(d_temas[Texto], "#222222")
+			
+			VAR _CorLabelSvg =
+			    SUBSTITUTE(_CorLabelHex, "#", "%23")
+			
+			VAR _TextoScore =
+			    FORMAT(_Score, "0.0") & "/100"
+			
+			VAR _BarraTotal = 120
+			
+			VAR _BarraPreenchida =
+			    ROUND((_Score / 100) * _BarraTotal, 0)
+			
+			VAR _Svg =
+			    "data:image/svg+xml;utf8," &
+			    "<svg xmlns='http://www.w3.org/2000/svg' width='140' height='52' viewBox='0 0 140 52'>" &
+			        "<text x='0' y='24' font-family='Segoe UI' font-size='16' font-weight='600' fill='" & _CorLabelSvg & "'>" &
+			            _TextoScore &
+			        "</text>" &
+			        "<rect x='0' y='34' rx='4' ry='4' width='" & _BarraTotal & "' height='8' fill='%23E5E7EB'/>" &
+			        "<rect x='0' y='34' rx='4' ry='4' width='" & _BarraPreenchida & "' height='8' fill='" & _CorSvg & "'/>" &
+			    "</svg>"
+			
+			RETURN
+			    _Svg
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 9ec3365b-38d1-4c5c-b0e1-c69486a30653
+		dataCategory: ImageUrl
+
+	measure 'Icone % Variação Score Medio MoM' = ```
+			
+			VAR _Valor = [% Variação Score Saude Medio - MoM]
+			VAR _PosicaoIcones = 
+			SWITCH(
+			    TRUE(),
+			    _Valor > 0, "Positivo",
+			    _Valor < 0, "Negativo",
+			    _Valor = 0, "Neutro"
+			)
+			VAR _Icone = 
+			    CALCULATE(SELECTEDVALUE(d_Icones_Visuais[Icone URL]),d_Icones_Visuais[Icone] = _PosicaoIcones)
+			
+			RETURN
+			_Icone
+			```
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 080716e6-bcd2-42c4-8298-666a1b9b8f93
+
+	measure 'Cor % Variação Score Medio MoM' =
+			
+			VAR _Valor = [% Variação Score Saude Medio - MoM]
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    _Valor > 0, "#00AA85",
+			    _Valor < 0, "#ED3559",
+			    _Valor = 0, "#777A8D"
+			)
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 38bdef71-1fac-4abf-9049-cff2b9b8b953
+
+	measure 'Vs Periodo Anterior' =
+			
+			VAR _TemMes =
+			    HASONEVALUE(dim_calendario[nome_mes])
+			
+			VAR _TemAno =
+			    HASONEVALUE(dim_calendario[ano])
+			
+			VAR _DataAnterior =
+			    CALCULATE(
+			        MAX(dim_calendario[data]),
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
+			
+			VAR _MesAnterior =
+			    CALCULATE(
+			        SELECTEDVALUE(dim_calendario[nome_mes]),
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
+			
+			VAR _AnoAnteriorMes =
+			    CALCULATE(
+			        SELECTEDVALUE(dim_calendario[ano]),
+			        DATEADD(dim_calendario[data], -1, MONTH)
+			    )
+			
+			VAR _AnoAnterior =
+			    SELECTEDVALUE(dim_calendario[ano]) - 1
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    _TemMes && _TemAno,
+			        "vs " & _MesAnterior & "/" & _AnoAnteriorMes & ":",
+			
+			    _TemAno,
+			        "vs " & _AnoAnterior & ":",
+			
+			    " "
+			)
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 2d684fc7-3002-4ee3-80af-5ee623552584
+
+	measure 'Score Saúde Médio Texto' =
+			
+			FORMAT([Score Saude Medio], "0.0") & "/100"
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 6839f9a4-05a1-4d2d-84ae-1b666100dbf4
+
+	measure 'Icone % Indice Vigor Medio MoM' = ```
+			
+			VAR _Valor = [% Variação Indice Vigor Medio - MoM]
+			VAR _PosicaoIcones = 
+			SWITCH(
+			    TRUE(),
+			    _Valor > 0, "Positivo",
+			    _Valor < 0, "Negativo",
+			    _Valor = 0, "Neutro"
+			)
+			VAR _Icone = 
+			    CALCULATE(SELECTEDVALUE(d_Icones_Visuais[Icone URL]),d_Icones_Visuais[Icone] = _PosicaoIcones)
+			
+			RETURN
+			_Icone
+			```
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 35730d94-e10b-4477-a047-19177a0e5c39
+
+	measure 'Cor % Variação Indice Vigor Medio MoM' =
+			
+			VAR _Valor = [% Variação Indice Vigor Medio - MoM]
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    _Valor > 0, "#00AA85",
+			    _Valor < 0, "#ED3559",
+			    _Valor = 0, "#777A8D"
+			)
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 7e1a9485-eed0-4dff-b582-2c47461ec481
+
+	measure 'Icone % Variação Uniformidade MoM' = ```
+			
+			VAR _Valor = [% Variação Uniformidade Media - MoM]
+			VAR _PosicaoIcones = 
+			SWITCH(
+			    TRUE(),
+			    _Valor > 0, "Positivo",
+			    _Valor < 0, "Negativo",
+			    _Valor = 0, "Neutro"
+			)
+			VAR _Icone = 
+			    CALCULATE(SELECTEDVALUE(d_Icones_Visuais[Icone URL]),d_Icones_Visuais[Icone] = _PosicaoIcones)
+			
+			RETURN
+			_Icone
+			```
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 2ea53fdc-b502-427d-a7dc-be0ecd9979f2
+
+	measure 'Cor % Variação Uniformidade MoM' =
+			
+			VAR _Valor = [% Variação Uniformidade Media - MoM]
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    _Valor > 0, "#00AA85",
+			    _Valor < 0, "#ED3559",
+			    _Valor = 0, "#777A8D"
+			)
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: ce21b2bb-a65e-4458-9c61-2ed06794af21
+
+	measure 'Icone % Variação Talhoes Criticos MoM' = ```
+			
+			VAR _Valor = [% Variação Talhoes Criticos - MoM]
+			VAR _PosicaoIcones = 
+			SWITCH(
+			    TRUE(),
+			    _Valor < 0, "Positivo",
+			    _Valor > 0, "Negativo",
+			    _Valor = 0, "Neutro"
+			)
+			VAR _Icone = 
+			    CALCULATE(SELECTEDVALUE(d_Icones_Visuais[Icone URL]),d_Icones_Visuais[Icone] = _PosicaoIcones)
+			
+			RETURN
+			_Icone
+			```
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 7dedd7ad-aa07-487a-a1a6-39cea46c26d8
+
+	measure 'Cor % Variação Talhoes Criticos - MoM' =
+			
+			VAR _Valor = [% Variação Talhoes Criticos - MoM]
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    _Valor < 0, "#00AA85",
+			    _Valor > 0, "#ED3559",
+			    _Valor = 0, "#777A8D"
+			)
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 29ba2c22-9dd0-473e-8595-751b86396b0b
+
+	measure 'Hectares Monitorados' =
+			
+			SUM(fato_saude_talhao[area_saudavel_ha]) + SUM(fato_saude_talhao[area_critica_ha]) + SUM(fato_saude_talhao[area_atencao_ha])
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 397b57a7-0e4b-44c5-ae4f-c6f9ca224f9e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Hectares Saudaveis' =
+			
+			SUM(fato_saude_talhao[area_saudavel_ha])
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 16e3fbcf-6be7-42bd-b1d3-e5f80c277cb7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Hectares Criticos' =
+			
+			SUM(fato_saude_talhao[area_critica_ha])
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: f7525333-01a6-4d01-8ce5-cca94658c793
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Hectares Atenção' =
+			
+			SUM(fato_saude_talhao[area_atencao_ha])
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 0959481f-efac-4264-8e99-a3ab1076d6ff
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ultima atualização da Fazenda' =
+			
+			CALCULATE(
+			    MAX(fato_notificacoes[data_hora]),
+			    ALL(dim_calendario),
+			    ALL(dim_talhao)
+			)
+		formatString: General Date
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 1fafbe51-06e6-44d0-a6d8-bf5bf1b8a2aa
+
+	measure 'Card Fazenda HTML' =
+			
+			VAR _Fazenda = SELECTEDVALUE(dim_fazenda[nome_fazenda], "Fazenda")
+			VAR _Hectares = FORMAT([Hectares Monitorados], "#,##0.00")
+			VAR _Talhoes = FORMAT([Talhoes Monitorados], "#,##0")
+			VAR _Score = FORMAT([Score Saude Medio], "#,##0.00")
+			VAR _Vigor = FORMAT([Indice Vigor Medio], "#,##0.00%")
+			VAR _Uniformidade = FORMAT([Uniformidade Media], "#,##0.00%")
+			VAR _Temperatura = FORMAT([Temperatura Media C], "#,##0.00")
+			VAR _DiasSemChuva = FORMAT([Dias Sem Chuva Medio], "#,##0.00")
+			VAR _Chuva = FORMAT([Chuva Acumulada MM], "#,##0.00")
+			VAR _UltimaAtualizacao = FORMAT([Ultima atualização da Fazenda], "dd/mm/yyyy hh:mm")
+			VAR _Tema = SELECTEDVALUE(d_temas[ID])
+			VAR _CorTema = SWITCH(
+			                        _Tema,
+			                         1,"#383838",
+			                         2,"#FFFFFF"
+			                    )
+			
+			VAR _CorTituloTema = SELECTEDVALUE(d_temas[Texto])
+			VAR _CorSubTituloTema = SELECTEDVALUE(d_temas[SubTitulo])
+			
+			
+			VAR _IconeTalhoes =
+			"<svg class='svg-icone' viewBox='0 0 24 24'>
+			    <rect x='3' y='3' width='7' height='7'/>
+			    <rect x='14' y='3' width='7' height='7'/>
+			    <rect x='3' y='14' width='7' height='7'/>
+			    <rect x='14' y='14' width='7' height='7'/>
+			</svg>"
+			
+			VAR _IconeSaude =
+			"<svg class='svg-icone' viewBox='0 0 24 24'>
+			    <path d='M20.8 4.6c-1.5-1.4-3.9-1.4-5.4 0L12 8 8.6 4.6c-1.5-1.4-3.9-1.4-5.4 0-1.6 1.5-1.6 4 0 5.5L12 19l8.8-8.9c1.6-1.5 1.6-4 0-5.5z'/>
+			</svg>"
+			
+			VAR _IconeVigor =
+			"<svg class='svg-icone verde' viewBox='0 0 24 24'>
+			    <path d='M5 21c8 0 14-6 14-14V3h-4C7 3 3 8 3 15c0 3 2 6 2 6z'/>
+			    <path d='M5 21c3-6 7-9 14-12'/>
+			</svg>"
+			
+			VAR _IconeChuva =
+			"<svg class='svg-icone azul' viewBox='0 0 24 24'>
+			    <path d='M12 2C8 7 6 10 6 14a6 6 0 0 0 12 0c0-4-2-7-6-12z'/>
+			</svg>"
+			
+			VAR _IconeRelogio =
+			"<svg class='svg-icone' viewBox='0 0 24 24'>
+			    <circle cx='12' cy='12' r='9'/>
+			    <path d='M12 7v5l3 2'/>
+			</svg>"
+			
+			VAR _IconeTemp =
+			"<svg class='svg-icone vermelho' viewBox='0 0 24 24'>
+			    <path d='M14 14.76V5a2 2 0 0 0-4 0v9.76a4 4 0 1 0 4 0z'/>
+			</svg>"
+			
+			VAR _IconeSol =
+			"<svg class='svg-icone amarelo' viewBox='0 0 24 24'>
+			    <circle cx='12' cy='12' r='4'/>
+			    <path d='M12 2v2'/>
+			    <path d='M12 20v2'/>
+			    <path d='M4.93 4.93l1.41 1.41'/>
+			    <path d='M17.66 17.66l1.41 1.41'/>
+			    <path d='M2 12h2'/>
+			    <path d='M20 12h2'/>
+			    <path d='M4.93 19.07l1.41-1.41'/>
+			    <path d='M17.66 6.34l1.41-1.41'/>
+			</svg>"
+			
+			VAR _IconeArea =
+			"<svg class='svg-icone verde' viewBox='0 0 24 24'>
+			    <path d='m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z'/>
+			    <path d='M12 22v-3'/>
+			</svg>"
+			
+			VAR _IconeUniformidade =
+			"<svg class='svg-icone' viewBox='0 0 24 24'>
+			    <circle cx='5' cy='5' r='1.5'/>
+			    <circle cx='12' cy='5' r='1.5'/>
+			    <circle cx='19' cy='5' r='1.5'/>
+			    <circle cx='5' cy='12' r='1.5'/>
+			    <circle cx='12' cy='12' r='1.5'/>
+			    <circle cx='19' cy='12' r='1.5'/>
+			    <circle cx='5' cy='19' r='1.5'/>
+			    <circle cx='12' cy='19' r='1.5'/>
+			    <circle cx='19' cy='19' r='1.5'/>
+			</svg>"
+			
+			VAR _Culturas =
+			    CONCATENATEX(
+			        VALUES(dim_cultura[cultura]),
+			        VAR _Cultura = dim_cultura[cultura]
+			        VAR _HectaresCultura =
+			            FORMAT(
+			                COALESCE([Hectares Monitorados], 0),
+			                "#,##0.00"
+			            )
+			
+			        VAR _RepCultura =
+			            FORMAT(
+			                COALESCE([% Rep Hectares por Cultura], 0),
+			                "0.00%"
+			            )
+			        VAR _IconeCultura =
+			            SWITCH(
+			                TRUE(),
+			
+			                _Cultura = "Soja",
+			                    "<svg class='svg-cultura dourado' viewBox='0 0 24 24'>
+			                        <ellipse cx='8' cy='8' rx='3' ry='5'/>
+			                        <ellipse cx='16' cy='16' rx='3' ry='5'/>
+			                        <path d='M10 10l4 4'/>
+			                    </svg>",
+			
+			                _Cultura = "Milho",
+			                    "<svg class='svg-cultura verde' viewBox='0 0 24 24'>
+			                        <path d='M12 3c3 3 5 6 5 10a5 5 0 0 1-10 0c0-4 2-7 5-10z'/>
+			                        <path d='M7 14c-2-2-3-5-3-8 3 1 5 3 6 6'/>
+			                        <path d='M17 14c2-2 3-5 3-8-3 1-5 3-6 6'/>
+			                    </svg>",
+			
+			                _Cultura = "Trigo",
+			                    "<svg class='svg-cultura dourado' viewBox='0 0 24 24'>
+			                        <path d='M12 21V3'/>
+			                        <path d='M12 6l-4-3'/>
+			                        <path d='M12 9l4-3'/>
+			                        <path d='M12 12l-4-3'/>
+			                        <path d='M12 15l4-3'/>
+			                        <path d='M12 18l-4-3'/>
+			                    </svg>",
+			
+			                _Cultura = "Feijão",
+			                    "<svg class='svg-cultura marrom' viewBox='0 0 24 24'>
+			                        <ellipse cx='9' cy='10' rx='4' ry='6'/>
+			                        <ellipse cx='16' cy='15' rx='4' ry='6'/>
+			                        <path d='M8 7c2 2 2 4 0 6'/>
+			                        <path d='M15 12c2 2 2 4 0 6'/>
+			                    </svg>",
+			
+			                _Cultura = "Algodão",
+			                    "<svg class='svg-cultura azul' viewBox='0 0 24 24'>
+			                        <circle cx='8' cy='12' r='4'/>
+			                        <circle cx='12' cy='8' r='4'/>
+			                        <circle cx='16' cy='12' r='4'/>
+			                        <path d='M7 16h10'/>
+			                    </svg>",
+			
+			                _Cultura = "Cana-de-açúcar",
+			                    "<svg class='svg-cultura verde' viewBox='0 0 24 24'>
+			                        <path d='M8 22L16 2'/>
+			                        <path d='M6 16l6-2'/>
+			                        <path d='M10 10l6-2'/>
+			                        <path d='M13 5l5-2'/>
+			                    </svg>",
+			
+			                _Cultura = "Amendoim",
+			                    "<svg class='svg-cultura marrom' viewBox='0 0 24 24'>
+			                        <path d='M9 4c-3 0-5 3-5 6 0 2 1 4 3 5-1 3 1 5 4 5 2 0 4-1 5-3 3 0 5-2 5-5 0-2-1-4-3-5 0-3-3-5-6-5-1 0-2 1-3 2z'/>
+			                    </svg>",
+			
+			                _Cultura = "Aveia",
+			                    "<svg class='svg-cultura dourado' viewBox='0 0 24 24'>
+			                        <path d='M12 22V4'/>
+			                        <ellipse cx='9' cy='8' rx='2' ry='4'/>
+			                        <ellipse cx='15' cy='11' rx='2' ry='4'/>
+			                        <ellipse cx='9' cy='15' rx='2' ry='4'/>
+			                    </svg>",
+			
+			                "<svg class='svg-cultura verde' viewBox='0 0 24 24'>
+			                    <path d='M5 21c8 0 14-6 14-14V3h-4C7 3 3 8 3 15c0 3 2 6 2 6z'/>
+			                    <path d='M5 21c3-6 7-9 14-12'/>
+			                </svg>"
+			            )
+			        RETURN
+			        "
+			        <div class='linha cultura-linha'>
+			            <div class='label'>
+			                " & _IconeCultura & "
+			                <span>" & _Cultura & "</span>
+			            </div>
+			            <strong>" & _HectaresCultura & " ha <span class='rep-cultura'>(" & _RepCultura & ")</span></strong>
+			        </div>
+			        ",
+			        "",
+			        [Hectares Monitorados],
+			        DESC
+			    )
+			
+			RETURN
+			"
+			<div class='card'>
+			
+			    <div class='fazenda'>
+			        " & _IconeArea & "
+			        <span>" & _Fazenda & "</span>
+			    </div>
+			
+			    <div class='secao'>
+			
+			        <div class='linha'>
+			            <div class='label'>" & _IconeArea & "<span>Hectares Monitorados</span></div>
+			            <strong>" & _Hectares & " ha</strong>
+			        </div>
+			
+			        <div class='linha'>
+			            <div class='label'>" & _IconeTalhoes & "<span>Talhões Monitorados</span></div>
+			            <strong>" & _Talhoes & "</strong>
+			        </div>
+			
+			        <div class='linha'>
+			            <div class='label'>" & _IconeSaude & "<span>Score Saúde Médio</span></div>
+			            <strong>" & _Score & "</strong>
+			        </div>
+			
+			        <div class='linha'>
+			            <div class='label'>" & _IconeVigor & "<span>Índice Vigor Médio</span></div>
+			            <strong>" & _Vigor & "</strong>
+			        </div>
+			
+			        <div class='linha'>
+			            <div class='label'>" & _IconeUniformidade & "<span>Uniformidade Média</span></div>
+			            <strong>" & _Uniformidade & "</strong>
+			        </div>
+			
+			        <div class='linha'>
+			            <div class='label'>" & _IconeTemp & "<span>Temperatura Média C</span></div>
+			            <strong>" & _Temperatura & " °C</strong>
+			        </div>
+			
+			        <div class='linha'>
+			            <div class='label'>" & _IconeSol & "<span>Dias Sem Chuva Médio</span></div>
+			            <strong>" & _DiasSemChuva & "</strong>
+			        </div>
+			
+			        <div class='linha'>
+			            <div class='label'>" & _IconeChuva & "<span>Chuva Acumulada MM</span></div>
+			            <strong>" & _Chuva & " mm</strong>
+			        </div>
+			
+			        <div class='linha'>
+			            <div class='label'>" & _IconeRelogio & "<span>Última atualização da Fazenda</span></div>
+			            <strong>" & _UltimaAtualizacao & "</strong>
+			        </div>
+			
+			    </div>
+			
+			    <div class='secao culturas'>
+			        <div class='subtitulo'>" & _IconeVigor & "<span>Culturas</span></div>
+			        " & _Culturas & "
+			    </div>
+			
+			</div>
+			
+			<style>
+			.card {
+			    width: 100%;
+			    box-sizing: border-box;
+			    background: " & _CorTema & ";
+			    border-radius: 14px;
+			    padding: 18px;
+			    font-family: Segoe UI;
+			    color: #222;
+			    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+			}
+			
+			.fazenda {
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
+			    gap: 8px;
+			    color: #2e8b57;
+			    font-weight: 650;
+			    margin-bottom: 16px;
+			}
+			
+			.secao {
+			    border: 1px solid #d9d9d9;
+			    border-radius: 8px;
+			    padding: 12px;
+			    margin-bottom: 14px;
+			}
+			
+			.linha {
+			    display: flex;
+			    justify-content: space-between;
+			    align-items: center;
+			    gap: 12px;
+			    padding: 8px 0;
+			    border-bottom: 1px solid #eeeeee;
+			}
+			
+			.linha:last-child {
+			    border-bottom: none;
+			}
+			
+			.label {
+			    display: flex;
+			    align-items: center;
+			    gap: 8px;
+			    font-size: 14px;
+			    font-weight: 700;
+			    color: "& _CorTituloTema & ";
+			}
+			
+			.linha strong {
+			    font-size: 14px;
+			    font-weight: 600;
+			    color: "& _CorTituloTema & ";
+			    text-align: right;
+			    white-space: nowrap;
+			}
+			
+			.subtitulo {
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
+			    gap: 8px;
+			    font-size: 18px;
+			    font-weight: 700;
+			    margin-bottom: 12px;
+			    color: #2e8b57;
+			}
+			
+			.cultura-linha {
+			    margin-bottom: 0;
+			}
+			
+			.rep-cultura {
+			    color: "& _CorSubTituloTema & ";
+			    font-weight: 500;
+			    margin-left: 4px;
+			}
+			
+			.svg-icone,
+			.svg-cultura {
+			    width: 18px;
+			    height: 18px;
+			    min-width: 18px;
+			    fill: none;
+			    stroke: currentColor;
+			    stroke-width: 2;
+			    stroke-linecap: round;
+			    stroke-linejoin: round;
+			}
+			
+			.verde {
+			    color: #2e8b57;
+			}
+			
+			.azul {
+			    color: #2f80ed;
+			}
+			
+			.amarelo {
+			    color: #f2a900;
+			}
+			
+			.dourado {
+			    color: #c79a2b;
+			}
+			
+			.marrom {
+			    color: #9b6a3c;
+			}
+			
+			.vermelho {
+			    color: #d9534f;
+			}
+			</style>
+			"
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: c92ad4b6-2d8f-416a-b787-afe297c5ef9f
+
+	measure '% Rep Hectares por Cultura' = ```
+			
+			DIVIDE( [Hectares Monitorados], 
+			        CALCULATE([Hectares Monitorados],
+			        ALL(dim_cultura))
+			        )
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 794c4145-e538-4bbf-856c-1e222c58b834
+
+	measure Fechar =
+			
+			"Clique para Fechar"
+		displayFolder: 00.Geral\05. Títulos
+		lineageTag: 3b3c7ac9-6c9a-4d82-bfd1-dc9b422ff090
+
+	measure Abrir =
+			
+			"Clique para Abrir"
+		displayFolder: 00.Geral\05. Títulos
+		lineageTag: 4c244215-78ef-4556-8126-2b2a2c832864
+
+	measure '% Rep Hectares por Talhao' = ```
+			
+			DIVIDE( [Hectares Monitorados], 
+			        CALCULATE([Hectares Monitorados],
+			        ALL(dim_talhao),
+			        ALL(dim_status_talhao)
+			        ))
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 15eab771-b393-46b4-a509-7cec29a9c623
+
+	measure 'Score Saúde Médio MoM Texto' =
+			
+			FORMAT([Score Saude Medio - MoM], "0.0") & "/100"
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: dc6a5b03-bd1f-4b32-ae6a-93f4123f4b29
+
+	measure 'Analise Sazonal' = ```
+			
+			VAR _Calculo = SELECTEDVALUE(aux_medidas_dinamicas[aux_medidas_dinamicas Pedido])
+			VAR _Label = 
+			    SWITCH(
+			        _Calculo,
+			        0, "Score Saúde",
+			        1, "Indice Vigor",
+			        2, "Uniformidade",
+			        3, "Produtividade Hist."
+			    )
+			RETURN
+			
+			"Análise Sazonal por " & _Label
+			```
+		displayFolder: 00.Geral\05. Títulos
+		lineageTag: 37f5a6de-cdb0-4d3d-854c-71ec0a162128
+
+	measure 'Layout Tela 1' =
+			
+			VAR _Tema = SELECTEDVALUE(d_temas[ID])
+			VAR _Dark = "https://i.imgur.com/0r2zR71.png"
+			VAR _Light = "https://i.imgur.com/Twq1QYv.png"
+			
+			RETURN
+			IF(_Tema = 1,_Dark,_Light)
+		displayFolder: 00.Geral\00.Cadastros
+		lineageTag: 53eb8ce3-f08e-419e-bcc8-cc3fa431ac70
+		dataCategory: ImageUrl
+
+	measure 'Cor Titulos' =
+			
+			VAR _Texto = SELECTEDVALUE(d_temas[Texto])
+			
+			RETURN
+			_Texto
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 06257c92-1bd1-4223-9491-99398d09fc3b
+
+	measure 'Cor SubTitulos' =
+			
+			VAR _Texto = SELECTEDVALUE(d_temas[SubTitulo])
+			
+			RETURN
+			_Texto
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 3a4896cd-c9c6-4b1f-9e30-19ea7d358e89
+
+	measure 'Cor Botoes' =
+			
+			SELECTEDVALUE(d_temas[Fundo Botoes])
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 410b92f8-e49a-4093-8215-347bdc14f994
+
+	measure 'Layout Tela 2' =
+			
+			VAR _Tema = SELECTEDVALUE(d_temas[ID])
+			VAR _Dark = "https://i.imgur.com/xjIzHm1.png"
+			VAR _Light = "https://i.imgur.com/DTflqIl.png"
+			
+			RETURN
+			IF(_Tema = 1,_Dark,_Light)
+		displayFolder: 00.Geral\00.Cadastros
+		lineageTag: 5a416810-770a-4fe1-87fa-ac9e82a0ea5e
+		dataCategory: ImageUrl
+
+	measure 'Distribuicao por Status' =
+			
+			"Distribuição por Status"
+		displayFolder: 00.Geral\05. Títulos
+		lineageTag: e52a3391-3468-4869-b91f-f8b5fb9a3e41
+
+	measure 'Resumo por Talhao' =
+			
+			"Resumo Detalhado por Talhão"
+		displayFolder: 00.Geral\05. Títulos
+		lineageTag: 6e7eb34e-cdd0-4ebb-8265-dd9243fd5d86
+
+	measure Filtros =
+			
+			"Filtros"
+		displayFolder: 00.Geral\05. Títulos
+		lineageTag: c34bd245-8f0a-43d7-b17b-863e7289ffc1
+
+	measure 'SVG Hectares Analise' =
+			
+			VAR _Saudaveis = [Hectares Saudaveis]
+			VAR _Atencao = [Hectares Atenção]
+			VAR _Criticos = [Hectares Criticos]
+			VAR _Total = [Hectares Monitorados]
+			
+			VAR _BarraTotal = 380
+			VAR _AlturaBarra = 34
+			VAR _YBarra = 18
+			
+			VAR _WSaudaveis = ROUND(DIVIDE(_Saudaveis, _Total, 0) * _BarraTotal, 0)
+			VAR _WAtencao = ROUND(DIVIDE(_Atencao, _Total, 0) * _BarraTotal, 0)
+			VAR _WCriticos = _BarraTotal - _WSaudaveis - _WAtencao
+			
+			VAR _XAtencao = _WSaudaveis
+			VAR _XCriticos = _WSaudaveis + _WAtencao
+			
+			VAR _CorTextoHex = SELECTEDVALUE(d_temas[Texto], "#FFFFFF")
+			VAR _CorTexto = SUBSTITUTE(_CorTextoHex, "#", "%23")
+			
+			VAR _Svg =
+			    "data:image/svg+xml;utf8," &
+			    "<svg xmlns='http://www.w3.org/2000/svg' width='500' height='90' viewBox='0 0 500 90'>" &
+			
+			        "<rect x='0' y='" & _YBarra & "' rx='7' ry='7' width='" & _BarraTotal & "' height='" & _AlturaBarra & "' fill='%23E5E7EB'/>" &
+			
+			        "<rect x='0' y='" & _YBarra & "' rx='7' ry='7' width='" & _WSaudaveis & "' height='" & _AlturaBarra & "' fill='%23699056'/>" &
+			
+			        "<rect x='" & _XAtencao & "' y='" & _YBarra & "' width='" & _WAtencao & "' height='" & _AlturaBarra & "' fill='%23F4C169'/>" &
+			
+			        "<rect x='" & _XCriticos & "' y='" & _YBarra & "' rx='7' ry='7' width='" & _WCriticos & "' height='" & _AlturaBarra & "' fill='%23D64550'/>" &
+			
+			        "<text x='" & DIVIDE(_WSaudaveis, 2, 0) & "' y='40' text-anchor='middle' font-family='Segoe UI' font-size='15' font-weight='800' fill='white'>" &
+			            FORMAT(_Saudaveis, "0.00") &
+			        "</text>" &
+			
+			        "<text x='" & (_XAtencao + DIVIDE(_WAtencao, 2, 0)) & "' y='40' text-anchor='middle' font-family='Segoe UI' font-size='15' font-weight='800' fill='black'>" &
+			            FORMAT(_Atencao, "0.00") &
+			        "</text>" &
+			
+			        "<text x='" & (_XCriticos + DIVIDE(_WCriticos, 2, 0)) & "' y='40' text-anchor='middle' font-family='Segoe UI' font-size='15' font-weight='800' fill='white'>" &
+			            FORMAT(_Criticos, "0.00") &
+			        "</text>" &
+			
+			        "<text x='395' y='42' font-family='Segoe UI' font-size='20' font-weight='900' fill='" & _CorTexto & "'>" &
+			            FORMAT(_Total, "0.00") & " ha" &
+			        "</text>" &
+			
+			    "</svg>"
+			
+			RETURN
+			    _Svg
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 6cc07324-34f7-423b-a529-e49231b11293
+		dataCategory: ImageUrl
+
+	measure 'HTML Tabela Talhoes' = ```
+			
+			VAR _Tema = SELECTEDVALUE(d_temas[ID])
+			VAR _CorTema =
+			    SWITCH(
+			        _Tema,
+			        1, "#383838",
+			        2, "#FFFFFF",
+			        "#383838"
+			    )
+			VAR _CorTituloTema = SELECTEDVALUE(d_temas[Texto])
+			VAR _CorSubTituloTema = SELECTEDVALUE(d_temas[SubTitulo])
+			VAR _HtmlLinhas =
+			    CONCATENATEX(
+			        VALUES(dim_talhao[nome_talhao]),
+			        VAR _Talhao = dim_talhao[nome_talhao]
+			
+			        VAR _DataAtual = MAX(dim_calendario[data])
+			
+			        VAR _IdCultura =
+			            CALCULATE(
+			                SELECTEDVALUE(fato_saude_talhao[id_cultura]),
+			                dim_calendario[data] = _DataAtual
+			            )
+			
+			        VAR _Cultura =
+			            COALESCE(
+			                LOOKUPVALUE(
+			                    dim_cultura[cultura],
+			                    dim_cultura[id_cultura], _IdCultura
+			                ),
+			                "-"
+			            )
+			
+			        VAR _Status = SUBSTITUTE(CALCULATE([SVG Status Talhao]), """", "'")
+			        VAR _Score = SUBSTITUTE(CALCULATE([SVG Score Saude]), """", "'")
+			
+			        VAR _Saudaveis = [Hectares Saudaveis]
+			        VAR _Atencao = [Hectares Atenção]
+			        VAR _Criticos = [Hectares Criticos]
+			        VAR _Total = [Hectares Monitorados]
+			
+			        VAR _PercSaudaveis = DIVIDE(_Saudaveis, _Total, 0) * 100
+			        VAR _PercAtencao = DIVIDE(_Atencao, _Total, 0) * 100
+			        VAR _PercCriticos = DIVIDE(_Criticos, _Total, 0) * 100
+			        VAR _LimiteLabel = 8
+			
+			        VAR _Tema = SELECTEDVALUE(d_temas[ID])
+			        VAR _CorTema = SWITCH(
+			                        _Tema,
+			                         1,"#383838",
+			                         2,"#FFFFFF"
+			                    )
+			
+			        RETURN
+			        "
+			        <div class='row'>
+			            <div class='talhao'>" & _Talhao & "</div>
+			            <div class='cultura'>" & _Cultura & "</div>
+			            <div class='status'><img class='img-status' src=""" & _Status & """></div>
+			            <div class='score'><img class='img-score' src=""" & _Score & """></div>
+			
+			            <div class='analise'>
+			                <div class='barra-area'>
+			                    <div class='barra'>
+			                        <div class='seg verde' style='width:" & FORMAT(_PercSaudaveis, "0.00", "en-US") & "%'>" &
+			                            IF(_PercSaudaveis >= _LimiteLabel, FORMAT(_Saudaveis, "0.00"), "") &
+			                        "</div>
+			
+			                        <div class='seg amarelo' style='width:" & FORMAT(_PercAtencao, "0.00", "en-US") & "%'>" &
+			                            IF(_PercAtencao >= _LimiteLabel, FORMAT(_Atencao, "0.00"), "") &
+			                        "</div>
+			
+			                        <div class='seg vermelho' style='width:" & FORMAT(_PercCriticos, "0.00", "en-US") & "%'>" &
+			                            IF(_PercCriticos >= _LimiteLabel, FORMAT(_Criticos, "0.00"), "") &
+			                        "</div>
+			                    </div>
+			
+			                    <div class='valores-barra'>
+			                        <div class='valor v-verde' style='width:" & FORMAT(_PercSaudaveis, "0.00", "en-US") & "%'>" &
+			                            IF(_PercSaudaveis < _LimiteLabel, FORMAT(_Saudaveis, "0.00"), "") &
+			                        "</div>
+			
+			                        <div class='valor v-amarelo' style='width:" & FORMAT(_PercAtencao, "0.00", "en-US") & "%'>" &
+			                            IF(_PercAtencao < _LimiteLabel, FORMAT(_Atencao, "0.00"), "") &
+			                        "</div>
+			
+			                        <div class='valor v-vermelho' style='width:" & FORMAT(_PercCriticos, "0.00", "en-US") & "%'>" &
+			                            IF(_PercCriticos < _LimiteLabel, FORMAT(_Criticos, "0.00"), "") &
+			                        "</div>
+			                    </div>
+			                </div>
+			
+			                <div class='total'>" & FORMAT(_Total, "0.00") & " ha</div>
+			            </div>
+			        </div>
+			        ",
+			        ""
+			    )
+			
+			RETURN
+			"
+			<style>
+			* {
+			    box-sizing: border-box;
+			}
+			
+			.tabela-container {
+			    width: 1840px;
+			    height: 275px;
+			    overflow-y: auto;
+			    overflow-x: hidden;
+			    background: " & _CorTema & ";
+			    border: none;
+			    outline: none;
+			    box-shadow: none;
+			}
+			
+			.cabecalho-fixo {
+			    position: sticky;
+			    top: 0;
+			    z-index: 999;
+			    background: " & _CorTema & ";
+			    border: none;
+			    outline: none;
+			    box-shadow: none;
+			}
+			
+			.tabela {
+			    width: 1830px;
+			    min-width: 1830px;
+			    overflow: visible;
+			    border: none;
+			    outline: none;
+			    box-shadow: none;
+			}
+			
+			.score {
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			}
+			.status {
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			}
+			.tabela-container::-webkit-scrollbar {
+			    width: 12px;
+			}
+			
+			.tabela-container::-webkit-scrollbar-track {
+			    background: " & _CorTema & ";
+			}
+			
+			.tabela-container::-webkit-scrollbar-thumb {
+			    background: #605E5C;
+			    border-radius: 10px;
+			}
+			
+			.tabela-container::-webkit-scrollbar-thumb:hover {
+			    background: #605E5C;
+			}
+			
+			.header-legenda,
+			.header-titulos,
+			.row {
+			    display: grid;
+			    grid-template-columns: 200px 200px 200px 200px 950px;
+			    column-gap: 12px;
+			    align-items: center;
+			    color: " & _CorTituloTema & ";
+			    background: " & _CorTema & ";
+			    border: none;
+			    outline: none;
+			    box-shadow: none;
+			}
+			
+			.row {
+			    padding: 0 18px;
+			    min-height: 82px;
+			  
+			}
+			
+			
+			
+			.header-titulos {
+			    font-size: 16px;
+			    font-weight: 600;
+			    padding: 8px 18px 4px 18px;
+			    color: " & _CorSubTituloTema & ";
+			    text-align: center;
+			}
+			
+			.header-legenda {
+			    padding: 2px 18px 10px 18px;
+			    border-bottom: 2px solid #E6E6E6;
+			    
+			}
+			.legendas {
+			    width: 928px;
+			    display: flex;
+			    justify-content: space-around;
+			    align-items: center;
+			    color: " & _CorSubTituloTema & ";
+			}
+			
+			.legenda {
+			    display: flex;
+			    align-items: center;
+			    gap: 9px;
+			    font-size: 16px;
+			    font-weight: 600;
+			}
+			
+			.titulo-analise {
+			    width: 928px;
+			    text-align: center;
+			    font-size: 16px;
+			    font-weight: 600;
+			    color: " & _CorSubTituloTema & ";
+			}
+			
+			.analise {
+			    width: 928px;
+			    display: grid;
+			    grid-template-columns: 760px 140px;
+			    column-gap: 28px;
+			    align-items: start;
+			}
+			
+			
+			.talhao,
+			.cultura {
+			    font-size: 16px;
+			    font-weight: 600;
+			    white-space: nowrap;
+			}
+			
+			.img-status {
+			    width: 150px;
+			    height: 44px;
+			    display: block;
+			}
+			
+			.img-score {
+			    width: 160px;
+			    height: 56px;
+			    display: block;
+			
+			}
+			
+			
+			
+			.dot {
+			    width: 16px;
+			    height: 16px;
+			    border-radius: 50%;
+			    display: inline-block;
+			}
+			
+			
+			
+			.barra-area {
+			    width: 760px;
+			}
+			
+			.barra {
+			    display: flex;
+			    width: 760px;
+			    height: 40px;
+			    border-radius: 8px;
+			    overflow: hidden;
+			    background: #e5e7eb;
+			}
+			
+			.seg {
+			    height: 40px;
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
+			    font-size: 14px;
+			    font-weight: 600;
+			    white-space: nowrap;
+			    overflow: hidden;
+			}
+			
+			.verde {
+			    background: #699056;
+			    color: #ffffff;
+			}
+			
+			.amarelo {
+			    background: #f4c169;
+			    color: #000000;
+			}
+			
+			.vermelho {
+			    background: #d64550;
+			    color: #ffffff;
+			}
+			
+			.valores-barra {
+			    display: flex;
+			    width: 760px;
+			    margin-top: 5px;
+			    height: 14px;
+			}
+			
+			.valor {
+			    text-align: center;
+			    font-size: 14px;
+			    font-weight: 600;
+			    white-space: nowrap;
+			    overflow: visible;
+			}
+			
+			.v-verde {
+			    color: #8fc77a;
+			}
+			
+			.v-amarelo {
+			    color: #f4c169;
+			}
+			
+			.v-vermelho {
+			    color: #ff6b76;
+			}
+			
+			.total {
+			    font-size: 16px;
+			    font-weight: 600;
+			    white-space: nowrap;
+			    height: 40px;
+			    display: flex;
+			    align-items: center;
+			}
+			</style>
+			
+			<div class='tabela-container'>
+			    <div class='tabela'>
+			
+			        <div class='cabecalho-fixo'>
+			            <div class='header-titulos'>
+			                <div>Talhão</div>
+			                <div>Cultura</div>
+			                <div>Status</div>
+			                <div>Score de Saúde Médio</div>
+			                <div class='titulo-analise'>Hectares por Status</div>
+			            </div>
+			
+			            <div class='header-legenda'>
+			                <div></div>
+			                <div></div>
+			                <div></div>
+			                <div></div>
+			
+			                <div class='legendas'>
+			                    <div class='legenda'><span class='dot verde'></span>Saudáveis</div>
+			                    <div class='legenda'><span class='dot amarelo'></span>Atenção</div>
+			                    <div class='legenda'><span class='dot vermelho'></span>Críticos</div>
+			                </div>
+			            </div>
+			        </div>
+			
+			        " & _HtmlLinhas & "
+			
+			    </div>
+			</div>
+			"
+			```
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 93ac8941-f641-4a07-9a7c-af86fa1b7bbf
+		dataCategory: Uncategorized
+
+	measure 'SVG Status Talhao' =
+			
+			VAR _DataAtual =
+			    MAX(dim_calendario[data])
+			
+			VAR _IdStatus =
+			    CALCULATE(
+			        SELECTEDVALUE(fato_saude_talhao[id_status]),
+			        dim_calendario[data] = _DataAtual
+			    )
+			
+			VAR _Status =
+			    LOOKUPVALUE(
+			        dim_status_talhao[status_talhao],
+			        dim_status_talhao[id_status], _IdStatus
+			    )
+			
+			VAR _CorHexOriginal =
+			    LOOKUPVALUE(
+			        dim_status_talhao[cor_hex],
+			        dim_status_talhao[id_status], _IdStatus
+			    )
+			
+			VAR _OrdemStatus =
+			    LOOKUPVALUE(
+			        dim_status_talhao[ordem_status],
+			        dim_status_talhao[id_status], _IdStatus
+			    )
+			
+			VAR _CorStatus =
+			    SUBSTITUTE(
+			        COALESCE(_CorHexOriginal, "#C0C0C0"),
+			        "#",
+			        "%23"
+			    )
+			
+			VAR _CorTexto =
+			    IF(_OrdemStatus IN {1,2,4}, "black","white")
+			
+			VAR _TextoSvg =
+			    SUBSTITUTE(
+			        COALESCE(_Status, "Sem status"),
+			        "&",
+			        "&amp;"
+			    )
+			
+			VAR _Svg =
+			    "data:image/svg+xml;utf8," &
+			    "<svg xmlns='http://www.w3.org/2000/svg' width='180' height='52' viewBox='0 0 180 52'>" &
+			        "<rect x='1' y='4' rx='14' ry='14' width='178' height='44' fill='" & _CorStatus & "' />" &
+			        "<text x='90' y='31' text-anchor='middle' font-family='Segoe UI' font-size='16' font-weight='600' fill='" & _CorTexto & "'>" &
+			            _TextoSvg &
+			        "</text>" &
+			    "</svg>"
+			
+			RETURN
+			    _Svg
+		displayFolder: 00.Geral\01.Monitoramento
+		lineageTag: 59671481-a6da-4df7-bac2-c67bfe42331a
 
 	partition Medidas = m
 		mode: import

@@ -1,0 +1,58 @@
+table d_temas
+	lineageTag: d8cce531-79ca-4d64-90a1-d0bbcaa28d18
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: e159a42f-b298-4bbd-8caf-343910d658f8
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tema
+		dataType: string
+		lineageTag: e28acf09-ce57-4098-ba83-49f6dc571822
+		summarizeBy: none
+		sourceColumn: Tema
+
+		annotation SummarizationSetBy = Automatic
+
+	column Texto
+		dataType: string
+		lineageTag: 92cacd43-9f46-4708-bcad-b640f1bd53e8
+		summarizeBy: none
+		sourceColumn: Texto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fundo Botoes'
+		dataType: string
+		lineageTag: 77752876-b259-419d-805c-6b080bcecf32
+		summarizeBy: none
+		sourceColumn: Fundo Botoes
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubTitulo
+		dataType: string
+		lineageTag: 361269d5-f8ab-45c6-a438-5f5bad6ca89d
+		summarizeBy: none
+		sourceColumn: SubTitulo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_temas = m
+		mode: import
+		queryGroup: Dimensão
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlTSUXJJLMoGUsquZiAIYrkZuxm5gaSUjS1AUClWJ1rJCMj3yUzPKAGJG4ABiGVmYOpq6gzWBQZKsbEA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ID = _t, Tema = _t, Texto = _t, SubTitulo = _t, #"Fundo Botoes" = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"ID", Int64.Type}, {"Tema", type text}, {"Texto", type text}, {"Fundo Botoes", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

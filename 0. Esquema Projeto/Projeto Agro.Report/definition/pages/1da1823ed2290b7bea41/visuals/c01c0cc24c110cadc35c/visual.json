@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "c01c0cc24c110cadc35c",
   "position": {
-    "x": 352.72398190045249,
-    "y": 13.900452488687781,
-    "z": 2,
-    "height": 1066.8597285067872,
-    "width": 1567.2760180995474,
-    "tabOrder": 2
+    "x": 25,
+    "y": 96.666666666666671,
+    "z": 1000,
+    "height": 970,
+    "width": 1870,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "azureMap",
@@ -60,7 +60,7 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Área Total Cadastrada HA"
+                  "Property": "Area Total Cadastrada HA"
                 }
               },
               "queryRef": "Medidas.Área Total Cadastrada HA",
@@ -74,11 +74,45 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Score Saúde Médio"
+                  "Property": "Score Saude Medio"
                 }
               },
               "queryRef": "Medidas.Score Saúde Médio",
               "nativeQueryRef": "Score Saúde Médio"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "% Rep Hectares por Talhao"
+                }
+              },
+              "queryRef": "Medidas.% Rep Hectares por Talhao",
+              "nativeQueryRef": "% Rep Hectares por Talhao"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_talhao"
+                        }
+                      },
+                      "Property": "nome_talhao"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(dim_talhao.nome_talhao)",
+              "nativeQueryRef": "nome_talhao",
+              "displayName": "nome_talhao"
             }
           ]
         },
@@ -147,21 +181,21 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "16.55D"
+                  "Value": "5.77D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-26.180065860244426D"
+                  "Value": "-20.865476624038507D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-54.527621148850415D"
+                  "Value": "-51.06585105000002D"
                 }
               }
             },
@@ -601,7 +635,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -958,9 +992,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 8,
-                      "Percent": 0.6
+                    "Literal": {
+                      "Value": "'#F4C169'"
                     }
                   }
                 }
@@ -1000,9 +1033,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 9,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#D64550'"
                     }
                   }
                 }
@@ -1157,7 +1189,7 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 0,
-                      "Percent": 0
+                      "Percent": -0.1
                     }
                   }
                 }
@@ -1167,6 +1199,70 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "themedTitleFontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "themedValueFontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "actionFontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "showSentenceFormat": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showChartSpecificTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "sentenceTemplate": {
+              "expr": {
+                "Literal": {
+                  "Value": "'O {nome_talhao} possuí um total de {Area Total Cadastrada HA} ha. Sua representatividade está em {% Rep Hectares por Talhao} dos demais talhões.'"
                 }
               }
             }
@@ -1205,7 +1301,7 @@
             "keepLayerOrder": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -1233,6 +1329,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -1282,106 +1385,47 @@
             }
           }
         }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d1cfca91ac32e1596459",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_talhao"
-              }
-            },
-            "Property": "id_talhao"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a69dd2b1b6e6b8a763dc",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dim_talhao"
-                  }
-                },
-                "Property": "longitude"
-              }
-            },
-            "Function": 1
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "34be6bb9b9db3b9edb7a",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dim_talhao"
-                  }
-                },
-                "Property": "latitude"
-              }
-            },
-            "Function": 1
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1d5781dcf0dce1028bf6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_status_talhao"
-              }
-            },
-            "Property": "status_talhao"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a90b34acd116bdb2c03f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Área Total Cadastrada HA"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "14217833499c4e065e9c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Score Saúde Médio"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

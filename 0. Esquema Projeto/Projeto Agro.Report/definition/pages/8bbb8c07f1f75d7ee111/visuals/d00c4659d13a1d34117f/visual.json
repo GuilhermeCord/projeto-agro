@@ -4,10 +4,10 @@
   "position": {
     "x": 31.17046347211312,
     "y": 15.082482325216025,
-    "z": 1,
+    "z": 1000,
     "height": 118.64886095836607,
     "width": 243.33071484681855,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -112,23 +112,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "56a59cfe15e470a12dc7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "talhoes_goias_lat_long_virgula"
-              }
-            },
-            "Property": "fazenda"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

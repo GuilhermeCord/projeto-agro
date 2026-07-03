@@ -1,0 +1,50 @@
+table aux_medidas_dinamicas
+	lineageTag: 82de6347-afde-48f0-8144-347fda31e573
+
+	column aux_medidas_dinamicas
+		lineageTag: fff15528-2171-4e6b-8434-8f35fbd1e8fc
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'aux_medidas_dinamicas Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'aux_medidas_dinamicas Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'aux_medidas_dinamicas Campos'
+		isHidden
+		lineageTag: 3e89c972-58aa-48b8-baee-947f6c474294
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'aux_medidas_dinamicas Pedido'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'aux_medidas_dinamicas Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: 969fdd43-b599-45a8-b648-b982ae98bd4a
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition aux_medidas_dinamicas = calculated
+		mode: import
+		source =
+				{
+				    ("Score Saúde", NAMEOF('Medidas'[Score Saude Medio]), 0),
+				    ("Indice Vigor", NAMEOF('Medidas'[Indice Vigor Medio]), 1),
+				    ("Uniformidade", NAMEOF('Medidas'[Uniformidade Media]), 2),
+				    ("Produtividade Hist.", NAMEOF('Medidas'[Produtividade Historica Media]), 3)
+				}
+
+	annotation PBI_Id = 8e7807ffa8dc4ce3a8854cd832ec7936
+
