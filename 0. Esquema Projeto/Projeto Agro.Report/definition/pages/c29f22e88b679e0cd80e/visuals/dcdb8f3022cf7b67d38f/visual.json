@@ -298,5 +298,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "65cfdcfcd0a565e0c85b"
+  "parentGroupName": "65cfdcfcd0a565e0c85b",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "260ae484165c7c8188aa",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_fazenda"
+              }
+            },
+            "Property": "nome_fazenda"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

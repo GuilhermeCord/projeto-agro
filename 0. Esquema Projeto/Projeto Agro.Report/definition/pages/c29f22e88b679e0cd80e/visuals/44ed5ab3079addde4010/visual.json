@@ -49,6 +49,42 @@
         }
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Values"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "dim_cultura.grupo_cultura"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_cultura"
+                    }
+                  },
+                  "Property": "grupo_cultura"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "dim_cultura.cultura"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
     "objects": {
       "data": [
         {
@@ -313,5 +349,86 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "65cfdcfcd0a565e0c85b"
+  "parentGroupName": "65cfdcfcd0a565e0c85b",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c7e3c30ccb3a4ecba253",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_cultura"
+              }
+            },
+            "Property": "grupo_cultura"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f8ec7b6c5c4120948174",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_cultura"
+              }
+            },
+            "Property": "cultura"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "13e7c29981ceab655524",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Talhoes Visiveis"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "Medidas",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "m"
+                        }
+                      },
+                      "Property": "Talhoes Visiveis"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
 }

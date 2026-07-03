@@ -298,5 +298,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "65cfdcfcd0a565e0c85b"
+  "parentGroupName": "65cfdcfcd0a565e0c85b",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6ec506e17d52fb9ecb8a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_talhao"
+              }
+            },
+            "Property": "tipo_solo"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

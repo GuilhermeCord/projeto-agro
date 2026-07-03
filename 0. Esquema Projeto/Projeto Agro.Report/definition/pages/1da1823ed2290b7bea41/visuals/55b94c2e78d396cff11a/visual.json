@@ -313,5 +313,86 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "b5cac50127093f1c00f8"
+  "parentGroupName": "b5cac50127093f1c00f8",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "13e7c29981ceab655524",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Talhoes Visiveis"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "Medidas",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "m"
+                        }
+                      },
+                      "Property": "Talhoes Visiveis"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "7a2e9d14e55f911f7581",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_cultura"
+              }
+            },
+            "Property": "grupo_cultura"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0e0b7ac15ecbb7616b27",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_cultura"
+              }
+            },
+            "Property": "cultura"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

@@ -93,7 +93,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Fazenda da Thalyta'"
+                                "Value": "'Guilherme'"
                               }
                             }
                           ]
@@ -334,5 +334,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "b5cac50127093f1c00f8"
+  "parentGroupName": "b5cac50127093f1c00f8",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c058651b870056caf599",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_fazenda"
+              }
+            },
+            "Property": "nome_fazenda"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

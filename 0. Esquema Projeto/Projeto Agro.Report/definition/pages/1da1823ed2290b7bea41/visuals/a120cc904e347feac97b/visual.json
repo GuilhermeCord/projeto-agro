@@ -298,5 +298,72 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "b5cac50127093f1c00f8"
+  "parentGroupName": "b5cac50127093f1c00f8",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a11323a4374cf81a5da4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Talhoes Visiveis"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "Medidas",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "m"
+                        }
+                      },
+                      "Property": "Talhoes Visiveis"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "35a60d6da0c04f5d0d99",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_talhao"
+              }
+            },
+            "Property": "nome_talhao"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

@@ -1273,12 +1273,19 @@ table Medidas
 			    )
 			VAR _CorTituloTema = SELECTEDVALUE(d_temas[Texto])
 			VAR _CorSubTituloTema = SELECTEDVALUE(d_temas[SubTitulo])
+			VAR _DataAtual = MAX(dim_calendario[data])
+			VAR _TalhoesVisiveis =
+			    FILTER(
+			        VALUES(dim_talhao[nome_talhao]),
+			        CALCULATE(
+			            COUNTROWS(fato_saude_talhao),
+			            dim_calendario[data] = _DataAtual
+			        ) > 0
+			    )
 			VAR _HtmlLinhas =
 			    CONCATENATEX(
-			        VALUES(dim_talhao[nome_talhao]),
+			        _TalhoesVisiveis,
 			        VAR _Talhao = dim_talhao[nome_talhao]
-			
-			        VAR _DataAtual = MAX(dim_calendario[data])
 			
 			        VAR _IdCultura =
 			            CALCULATE(
@@ -1695,6 +1702,23 @@ table Medidas
 			    _Svg
 		displayFolder: 00.Geral\01.Monitoramento
 		lineageTag: 59671481-a6da-4df7-bac2-c67bfe42331a
+
+	measure 'Talhoes Visiveis' =
+			
+			VAR _DataAtual =
+			    MAX(dim_calendario[data])
+			RETURN
+			IF(
+			    CALCULATE(
+			        COUNTROWS(fato_saude_talhao),
+			        dim_calendario[data] = _DataAtual
+			    ) > 0,
+			    1,
+			    0
+			)
+		formatString: 0
+		displayFolder: 00.Geral\04. Formatações Condicionais
+		lineageTag: 921545b0-d0ac-4dee-a6c1-333434dae86e
 
 	partition Medidas = m
 		mode: import
