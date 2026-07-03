@@ -1,6 +1,6 @@
 ﻿id_fazenda;nome_fazenda;cidade;uf;estado;regiao;latitude_fazenda;longitude_fazenda;area_total_ha;qtd_talhoes
-FZ001;Fazenda da Thalyta;Ceres;GO;Goiás;Centro-Oeste;-15,36931039;-49,62487982;699,02;13
-FZ002;Fazenda do Guilherme;Cravinhos;SP;São Paulo;Sudeste;-21,26689187;-47,68415148;112,24;9
-FZ003;Fazenda dos Cordeiros;Dourados;MS;Mato Grosso do Sul;Centro-Oeste;-26,18009994;-54,52645744;30,24;7
-FZ004;Fazenda do Tomás e da Maite;Cascavel;PR;Paraná;Sul;-24,24695943;-49,50655233;104,33;4
-FZ005;Fazenda do Nana e da Lulu;Uberaba;MG;Minas Gerais;Sudeste;-18,87237737;-47,60687150;77,86;7
+FZ001;Thalyta;Ceres;GO;Goiás;Centro-Oeste;-15,36931039;-49,62487982;699,02;13
+FZ002;Guilherme;Cravinhos;SP;São Paulo;Sudeste;-21,26689187;-47,68415148;112,24;9
+FZ003;Cordeiros;Dourados;MS;Mato Grosso do Sul;Centro-Oeste;-26,18009994;-54,52645744;30,24;7
+FZ004;Tomás e da Maite;Cascavel;PR;Paraná;Sul;-24,24695943;-49,50655233;104,33;4
+FZ005;Nanami e Luna;Uberaba;MG;Minas Gerais;Sudeste;-18,87237737;-47,6068715;77,86;7

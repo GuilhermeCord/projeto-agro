@@ -658,12 +658,6 @@
               ]
             }
           },
-          "b81d8224b08dc1ffd061": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
           "b9050a46075096678280": {
             "filters": {
               "byExpr": [

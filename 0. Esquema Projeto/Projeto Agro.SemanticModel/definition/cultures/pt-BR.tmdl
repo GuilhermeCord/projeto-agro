@@ -10063,6 +10063,138 @@ cultureInfo pt-BR
 			    }
 			  },
 			  "Relationships": {
+			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_dia": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_notificacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_notificacoe.data_hora.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
+			          }
+			        },
+			        "fato_notificacoe.data_hora.dia": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.dia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "fato_notificacoe.data_hora.dia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_dias"
+			        }
+			      ]
+			    },
+			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_mê": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_notificacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_notificacoe.data_hora.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
+			          }
+			        },
+			        "fato_notificacoe.data_hora.mê": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.mê"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "fato_notificacoe.data_hora.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_mê"
+			        }
+			      ]
+			    },
+			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_notificacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_notificacoe.data_hora.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
+			          }
+			        },
+			        "fato_notificacoe.data_hora.trimestre": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "fato_notificacoe.data_hora.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_trimestres"
+			        }
+			      ]
+			    },
+			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_ano": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_notificacoes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_notificacoe.data_hora.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
+			          }
+			        },
+			        "fato_notificacoe.data_hora.ano": {
+			          "Target": {
+			            "Entity": "fato_notificacoe.data_hora.ano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "fato_notificacoe.data_hora.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_anos"
+			        }
+			      ]
+			    },
 			    "fato_notificacoe_data_hora_has_hierarquia_de_data": {
 			      "Binding": {
 			        "ConceptualEntity": "fato_notificacoes"
@@ -10323,7 +10455,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_dias"
+			          "ID": "hierarquia_de_data_have_dias1"
 			        }
 			      ]
 			    },
@@ -10356,7 +10488,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_mê"
+			          "ID": "hierarquia_de_data_have_mê1"
 			        }
 			      ]
 			    },
@@ -10389,7 +10521,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_trimestres"
+			          "ID": "hierarquia_de_data_have_trimestres1"
 			        }
 			      ]
 			    },
@@ -10422,7 +10554,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_anos"
+			          "ID": "hierarquia_de_data_have_anos1"
 			        }
 			      ]
 			    },
@@ -17844,138 +17976,6 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "talhoes_goias_lat_long_virgulas_are_in_cidades"
-			        }
-			      ]
-			    },
-			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_ano": {
-			      "Binding": {
-			        "ConceptualEntity": "fato_notificacoes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fato_notificacoe.data_hora.hierarquia_de_data": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
-			          }
-			        },
-			        "fato_notificacoe.data_hora.ano": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.ano"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
-			            },
-			            "Object": {
-			              "Role": "fato_notificacoe.data_hora.ano"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_anos1"
-			        }
-			      ]
-			    },
-			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_trimestre": {
-			      "Binding": {
-			        "ConceptualEntity": "fato_notificacoes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fato_notificacoe.data_hora.hierarquia_de_data": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
-			          }
-			        },
-			        "fato_notificacoe.data_hora.trimestre": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.trimestre"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
-			            },
-			            "Object": {
-			              "Role": "fato_notificacoe.data_hora.trimestre"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_trimestres1"
-			        }
-			      ]
-			    },
-			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_mê": {
-			      "Binding": {
-			        "ConceptualEntity": "fato_notificacoes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fato_notificacoe.data_hora.hierarquia_de_data": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
-			          }
-			        },
-			        "fato_notificacoe.data_hora.mê": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.mê"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
-			            },
-			            "Object": {
-			              "Role": "fato_notificacoe.data_hora.mê"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_mê1"
-			        }
-			      ]
-			    },
-			    "fato_notificacoe_data_hora_hierarquia_de_data_has_fato_notificacoe_data_hora_dia": {
-			      "Binding": {
-			        "ConceptualEntity": "fato_notificacoes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fato_notificacoe.data_hora.hierarquia_de_data": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.hierarquia_de_data"
-			          }
-			        },
-			        "fato_notificacoe.data_hora.dia": {
-			          "Target": {
-			            "Entity": "fato_notificacoe.data_hora.dia"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fato_notificacoe.data_hora.hierarquia_de_data"
-			            },
-			            "Object": {
-			              "Role": "fato_notificacoe.data_hora.dia"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hierarquia_de_data_have_dias1"
 			        }
 			      ]
 			    },
