@@ -11,7 +11,8 @@ O projeto foi desenvolvido em formato PBIP, permitindo versionamento do relatori
 - Dashboard executivo com indicadores gerais de fazendas, talhoes, culturas e hectares monitorados.
 - Acompanhamento de score de saude, indice de vigor, uniformidade e produtividade.
 - Classificacao dos talhoes por status: Saudavel, Atencao, Critico, Em desenvolvimento e Plantado.
-- Visualizacao dos talhoes em mapa, com recortes geograficos em arquivo GeoJSON.
+- Visualizacao dos talhoes em mapa, com recortes geograficos em arquivos KMZ e GeoJSON.
+- Layers individuais dos talhoes das fazendas, permitindo a exibicao do contorno de cada area no mapa.
 - Analise de hectares por status, separando areas saudaveis, em atencao e criticas.
 - Indicadores de clima e solo, incluindo chuva, temperatura, umidade do solo, deficit hidrico e risco climatico.
 - Notificacoes e recomendacoes associadas aos talhoes.
@@ -35,6 +36,8 @@ O projeto foi desenvolvido em formato PBIP, permitindo versionamento do relatori
 |   |-- Icones/
 |   |-- Layout/
 |   |-- Mockup/
+|   |-- fazendas_brasil_talhoes.kmz
+|   |-- fazendas_brasil_talhoes.geojson
 |   `-- Tema.json
 `-- README.md
 ```
@@ -54,6 +57,16 @@ As bases de apoio ficam em `1. Complementos/Bases de Dados/`:
 - `fazendas_brasil_talhoes.geojson`: geometrias dos talhoes para visualizacao no mapa.
 
 No estado atual, o conjunto cadastral possui 5 fazendas, 40 talhoes e 8 culturas.
+
+## Arquivos geograficos
+
+Os arquivos geograficos sao fundamentais para a exibicao das layers de cada talhao no mapa do projeto:
+
+- `1. Complementos/fazendas_brasil_talhoes.kmz`: arquivo geografico original com os recortes dos talhoes das fazendas.
+- `1. Complementos/fazendas_brasil_talhoes.geojson`: versao convertida do KMZ para GeoJSON, usada como base para leitura e integracao dos poligonos no Power BI.
+- `1. Complementos/Bases de Dados/fazendas_brasil_talhoes.geojson`: copia organizada junto das bases de dados do projeto, utilizada para alimentar a visualizacao dos talhoes no mapa.
+
+Esses arquivos devem ser mantidos alinhados com a tabela `dim_talhao.csv`, pois os identificadores e nomes dos talhoes sao usados para relacionar os poligonos do mapa aos indicadores do modelo semantico.
 
 ## Modelo semantico
 
@@ -82,7 +95,7 @@ O relatorio esta em `0. Esquema Projeto/Projeto Agro.Report/`.
 Paginas identificadas:
 
 - `Dashboard`: pagina principal do relatorio, com KPIs e visao consolidada das fazendas e talhoes.
-- `Mapa`: pagina de visualizacao geografica dos talhoes, com recorte por fazenda/talhao e status.
+- `Mapa`: pagina de visualizacao geografica dos talhoes, com recorte por fazenda/talhao, status e layers de poligonos vindas do GeoJSON.
 - `Pagina 4`: pagina oculta no modo de exibicao, possivelmente usada como apoio, tooltip, navegacao ou desenvolvimento.
 
 ## Como abrir
@@ -92,12 +105,15 @@ Paginas identificadas:
 3. Selecione o arquivo `0. Esquema Projeto/Projeto Agro.pbip`.
 4. Verifique os caminhos das fontes de dados em caso de mudanca de diretorio.
 5. Atualize o modelo para carregar os CSVs e o GeoJSON da pasta `1. Complementos/Bases de Dados/`.
+6. Confirme se o arquivo GeoJSON das layers esta apontando para a versao correta dos recortes dos talhoes.
 
 ## Recursos visuais
 
 A pasta `1. Complementos/` concentra os materiais de apoio do projeto:
 
 - `Tema.json`: tema visual customizado.
+- `fazendas_brasil_talhoes.kmz`: arquivo geografico original dos talhoes.
+- `fazendas_brasil_talhoes.geojson`: arquivo convertido para uso das layers no mapa.
 - `Icones/`: logotipos, icones de score, vigor, uniformidade, filtros, setas e status.
 - `Layout/`: telas de dashboard e mapa em versoes light/dark.
 - `Mockup/`: imagens de referencia e evolucao visual do relatorio.
@@ -106,5 +122,5 @@ A pasta `1. Complementos/` concentra os materiais de apoio do projeto:
 
 - O projeto usa arquivos de texto e estrutura PBIP, o que facilita versionamento em Git.
 - Ao alterar bases CSV, mantenha os nomes das colunas e delimitadores esperados pelo modelo.
-- Ao atualizar o GeoJSON, preserve as chaves necessarias para relacionar os recortes do mapa aos talhoes do modelo.
+- Ao atualizar o KMZ ou o GeoJSON, preserve as chaves necessarias para relacionar os recortes do mapa aos talhoes do modelo.
 - As medidas de status e saude dependem da data filtrada no relatorio, entao valide sempre o contexto temporal ao comparar resultados.
