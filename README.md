@@ -68,6 +68,53 @@ Os arquivos geograficos sao fundamentais para a exibicao das layers de cada talh
 
 Esses arquivos devem ser mantidos alinhados com a tabela `dim_talhao.csv`, pois os identificadores e nomes dos talhoes sao usados para relacionar os poligonos do mapa aos indicadores do modelo semantico.
 
+## Como funciona a visualizacao dos talhoes no mapa
+
+A visualizacao dos talhoes no Azure Maps depende da relacao entre a base tabular do modelo e a camada geografica em GeoJSON.
+
+Para que cada poligono seja associado corretamente ao seu talhao, o arquivo `fazendas_brasil_talhoes.geojson` precisa conter o identificador do talhao em suas propriedades. Esse identificador deve ser exatamente o mesmo valor existente na coluna `id_talhao` da tabela `dim_talhao.csv`.
+
+Exemplo conceitual:
+
+```json
+{
+  "type": "Feature",
+  "properties": {
+    "id_talhao": "TALHAO_01",
+    "nome_talhao": "Talhao 01"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": []
+  }
+}
+```
+
+No Power BI, o campo `id_talhao` deve ser colocado no campo **Localizacao** do visual Azure Maps. Esse campo funciona como a chave de ligacao entre os dados do modelo e a camada de referencia carregada via GeoJSON.
+
+Fluxo da relacao:
+
+```text
+dim_talhao[id_talhao]
+        |
+        | usado no campo Localizacao do Azure Maps
+        |
+GeoJSON properties[id_talhao]
+        |
+        | identifica o poligono correspondente
+        |
+Layer do talhao no mapa
+```
+
+Com essa configuracao, filtros aplicados no relatorio, como fazenda, cultura, status ou talhao, conseguem refletir corretamente nos poligonos exibidos no mapa.
+
+Pontos importantes:
+
+- O valor de `id_talhao` no GeoJSON deve ser identico ao valor da tabela `dim_talhao.csv`.
+- Evite usar apenas o nome do talhao como chave, pois nomes podem se repetir entre fazendas.
+- Sempre que novos talhoes forem adicionados, atualize tanto a `dim_talhao.csv` quanto o GeoJSON.
+- No Azure Maps, confira se a camada de referencia esta usando o GeoJSON correto e se o campo de associacao corresponde ao `id_talhao`.
+
 ## Modelo semantico
 
 O modelo semantico esta em `0. Esquema Projeto/Projeto Agro.SemanticModel/` e utiliza tabelas dimensionais e fatos relacionados por chaves de fazenda, talhao, cultura, status e data.
