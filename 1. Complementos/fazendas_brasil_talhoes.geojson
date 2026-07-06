@@ -1,0 +1,2094 @@
+{
+  "type": "FeatureCollection",
+  "name": "fazendas_brasil_talhoes",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "TALHAO_01",
+      "properties": {
+        "id_talhao": "TALHAO_01",
+        "nome_talhao": "Talhão 01",
+        "id_fazenda": "FZ001",
+        "nome_fazenda": "Fazenda 1",
+        "grupo_talhoes": "Talhão 1 ao 13",
+        "latitude": -15.37202189,
+        "longitude": -49.62080998,
+        "area_ha_estimado": 380.28,
+        "label_mapa": "Talhão 01 | Fazenda 1"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.6239381,
+              -15.3593036
+            ],
+            [
+              -49.6223073,
+              -15.3676627
+            ],
+            [
+              -49.6291738,
+              -15.3689042
+            ],
+            [
+              -49.6284013,
+              -15.3757732
+            ],
+            [
+              -49.6296029,
+              -15.376187
+            ],
+            [
+              -49.6281438,
+              -15.3845455
+            ],
+            [
+              -49.61793,
+              -15.3835524
+            ],
+            [
+              -49.6120935,
+              -15.3773456
+            ],
+            [
+              -49.6138101,
+              -15.3673317
+            ],
+            [
+              -49.6170717,
+              -15.3679938
+            ],
+            [
+              -49.6184449,
+              -15.3607934
+            ],
+            [
+              -49.6132951,
+              -15.3553309
+            ],
+            [
+              -49.6145826,
+              -15.35351
+            ],
+            [
+              -49.6182733,
+              -15.354586
+            ],
+            [
+              -49.6196466,
+              -15.3582277
+            ],
+            [
+              -49.6211915,
+              -15.3552481
+            ],
+            [
+              -49.6239381,
+              -15.3593036
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_02",
+      "properties": {
+        "id_talhao": "TALHAO_02",
+        "nome_talhao": "Talhão 02",
+        "id_fazenda": "FZ001",
+        "nome_fazenda": "Fazenda 1",
+        "grupo_talhoes": "Talhão 1 ao 13",
+        "latitude": -15.36013179,
+        "longitude": -49.6339961,
+        "area_ha_estimado": 87.17,
+        "label_mapa": "Talhão 02 | Fazenda 1"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.632591,
+              -15.3544959
+            ],
+            [
+              -49.6379983,
+              -15.355158
+            ],
+            [
+              -49.6382558,
+              -15.3578065
+            ],
+            [
+              -49.6374833,
+              -15.3597515
+            ],
+            [
+              -49.6377408,
+              -15.3623172
+            ],
+            [
+              -49.6357238,
+              -15.3648829
+            ],
+            [
+              -49.6337926,
+              -15.3652139
+            ],
+            [
+              -49.6336639,
+              -15.3657519
+            ],
+            [
+              -49.6296727,
+              -15.3652553
+            ],
+            [
+              -49.630574,
+              -15.3583445
+            ],
+            [
+              -49.632591,
+              -15.3544959
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_03",
+      "properties": {
+        "id_talhao": "TALHAO_03",
+        "nome_talhao": "Talhão 03",
+        "id_fazenda": "FZ001",
+        "nome_fazenda": "Fazenda 1",
+        "grupo_talhoes": "Talhão 1 ao 13",
+        "latitude": -15.36928411,
+        "longitude": -49.63344384,
+        "area_ha_estimado": 63.7,
+        "label_mapa": "Talhão 03 | Fazenda 1"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.6288144,
+              -15.3654336
+            ],
+            [
+              -49.6356809,
+              -15.3662612
+            ],
+            [
+              -49.6374833,
+              -15.3677509
+            ],
+            [
+              -49.63817,
+              -15.3706476
+            ],
+            [
+              -49.6373975,
+              -15.3728821
+            ],
+            [
+              -49.6290719,
+              -15.3719718
+            ],
+            [
+              -49.6296727,
+              -15.3687027
+            ],
+            [
+              -49.6288144,
+              -15.3654336
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_04",
+      "properties": {
+        "id_talhao": "TALHAO_04",
+        "nome_talhao": "Talhão 04",
+        "id_fazenda": "FZ001",
+        "nome_fazenda": "Fazenda 1",
+        "grupo_talhoes": "Talhão 1 ao 13",
+        "latitude": -15.37822317,
+        "longitude": -49.63175854,
+        "area_ha_estimado": 62.55,
+        "label_mapa": "Talhão 04 | Fazenda 1"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.6348608,
+              -15.372988
+            ],
+            [
+              -49.6344317,
+              -15.3758018
+            ],
+            [
+              -49.6333159,
+              -15.3843257
+            ],
+            [
+              -49.628681,
+              -15.3834982
+            ],
+            [
+              -49.630226,
+              -15.375719
+            ],
+            [
+              -49.6289385,
+              -15.375057
+            ],
+            [
+              -49.6295393,
+              -15.3726569
+            ],
+            [
+              -49.6348608,
+              -15.372988
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_05",
+      "properties": {
+        "id_talhao": "TALHAO_05",
+        "nome_talhao": "Talhão 05",
+        "id_fazenda": "FZ001",
+        "nome_fazenda": "Fazenda 1",
+        "grupo_talhoes": "Talhão 1 ao 13",
+        "latitude": -15.35797348,
+        "longitude": -49.61371682,
+        "area_ha_estimado": 7.22,
+        "label_mapa": "Talhão 05 | Fazenda 1"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.6134396,
+              -15.3556841
+            ],
+            [
+              -49.6153708,
+              -15.3577119
+            ],
+            [
+              -49.6123667,
+              -15.3607121
+            ],
+            [
+              -49.612238,
+              -15.360319
+            ],
+            [
+              -49.6129246,
+              -15.3596982
+            ],
+            [
+              -49.6127529,
+              -15.3579808
+            ],
+            [
+              -49.6134396,
+              -15.3556841
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_06",
+      "properties": {
+        "id_talhao": "TALHAO_06",
+        "nome_talhao": "Talhão 06",
+        "id_fazenda": "FZ001",
+        "nome_fazenda": "Fazenda 1",
+        "grupo_talhoes": "Talhão 1 ao 13",
+        "latitude": -15.35972471,
+        "longitude": -49.61442638,
+        "area_ha_estimado": 6.09,
+        "label_mapa": "Talhão 06 | Fazenda 1"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.6154351,
+              -15.3578257
+            ],
+            [
+              -49.6161325,
+              -15.3587671
+            ],
+            [
+              -49.6142335,
+              -15.3611673
+            ],
+            [
+              -49.6123131,
+              -15.3609087
+            ],
+            [
+              -49.6154351,
+              -15.3578257
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_07",
+      "properties": {
+        "id_talhao": "TALHAO_07",
+        "nome_talhao": "Talhão 07",
+        "id_fazenda": "FZ001",
+        "nome_fazenda": "Fazenda 1",
+        "grupo_talhoes": "Talhão 1 ao 13",
+        "latitude": -15.3610954,
+        "longitude": -49.61665502,
+        "area_ha_estimado": 7.28,
+        "label_mapa": "Talhão 07 | Fazenda 1"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.6162613,
+              -15.3589223
+            ],
+            [
+              -49.6175058,
+              -15.3606293
+            ],
+            [
+              -49.6179671,
+              -15.3624708
+            ],
+            [
+              -49.6177526,
+              -15.3635261
+            ],
+            [
+              -49.616787,
+              -15.3627812
+            ],
+            [
+              -49.6166797,
+              -15.3618294
+            ],
+            [
+              -49.6148451,
+              -15.3607431
+            ],
+            [
+              -49.6162613,
+              -15.3589223
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_08",
+      "properties": {
+        "id_talhao": "TALHAO_08",
+        "nome_talhao": "Talhão 08",
+        "id_fazenda": "FZ001",
+        "nome_fazenda": "Fazenda 1",
+        "grupo_talhoes": "Talhão 1 ao 13",
+        "latitude": -15.36139612,
+        "longitude": -49.62521673,
+        "area_ha_estimado": 11.08,
+        "label_mapa": "Talhão 08 | Fazenda 1"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.6245081,
+              -15.3591622
+            ],
+            [
+              -49.6260531,
+              -15.3594932
+            ],
+            [
+              -49.6269972,
+              -15.3628038
+            ],
+            [
+              -49.6234782,
+              -15.3631762
+            ],
+            [
+              -49.6245081,
+              -15.3591622
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_09",
+      "properties": {
+        "id_talhao": "TALHAO_09",
+        "nome_talhao": "Talhão 09",
+        "id_fazenda": "FZ001",
+        "nome_fazenda": "Fazenda 1",
+        "grupo_talhoes": "Talhão 1 ao 13",
+        "latitude": -15.36574564,
+        "longitude": -49.62537654,
+        "area_ha_estimado": 25.71,
+        "label_mapa": "Talhão 09 | Fazenda 1"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.6269972,
+              -15.363259
+            ],
+            [
+              -49.6281559,
+              -15.3654108
+            ],
+            [
+              -49.6270831,
+              -15.3683489
+            ],
+            [
+              -49.6225769,
+              -15.3675213
+            ],
+            [
+              -49.6233065,
+              -15.3635487
+            ],
+            [
+              -49.6269972,
+              -15.363259
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_10",
+      "properties": {
+        "id_talhao": "TALHAO_10",
+        "nome_talhao": "Talhão 10",
+        "id_fazenda": "FZ001",
+        "nome_fazenda": "Fazenda 1",
+        "grupo_talhoes": "Talhão 1 ao 13",
+        "latitude": -15.35516664,
+        "longitude": -49.62980891,
+        "area_ha_estimado": 13.54,
+        "label_mapa": "Talhão 10 | Fazenda 1"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.632591,
+              -15.3544959
+            ],
+            [
+              -49.6315033,
+              -15.356224
+            ],
+            [
+              -49.629658,
+              -15.3564309
+            ],
+            [
+              -49.6297009,
+              -15.357093
+            ],
+            [
+              -49.6284134,
+              -15.3572999
+            ],
+            [
+              -49.6285851,
+              -15.3565964
+            ],
+            [
+              -49.6274264,
+              -15.3543617
+            ],
+            [
+              -49.6277268,
+              -15.3536168
+            ],
+            [
+              -49.6325762,
+              -15.3542376
+            ],
+            [
+              -49.632591,
+              -15.3544959
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_11",
+      "properties": {
+        "id_talhao": "TALHAO_11",
+        "nome_talhao": "Talhão 11",
+        "id_fazenda": "FZ001",
+        "nome_fazenda": "Fazenda 1",
+        "grupo_talhoes": "Talhão 1 ao 13",
+        "latitude": -15.36105267,
+        "longitude": -49.62880145,
+        "area_ha_estimado": 18.34,
+        "label_mapa": "Talhão 11 | Fazenda 1"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.6303875,
+              -15.3582518
+            ],
+            [
+              -49.6294434,
+              -15.3652867
+            ],
+            [
+              -49.6288211,
+              -15.3652867
+            ],
+            [
+              -49.6282632,
+              -15.364397
+            ],
+            [
+              -49.6281345,
+              -15.36299
+            ],
+            [
+              -49.6274264,
+              -15.3606933
+            ],
+            [
+              -49.6269758,
+              -15.3605899
+            ],
+            [
+              -49.6269543,
+              -15.3594105
+            ],
+            [
+              -49.6283491,
+              -15.3580035
+            ],
+            [
+              -49.6303875,
+              -15.3582518
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_12",
+      "properties": {
+        "id_talhao": "TALHAO_12",
+        "nome_talhao": "Talhão 12",
+        "id_fazenda": "FZ001",
+        "nome_fazenda": "Fazenda 1",
+        "grupo_talhoes": "Talhão 1 ao 13",
+        "latitude": -15.3658486,
+        "longitude": -49.61414845,
+        "area_ha_estimado": 13.76,
+        "label_mapa": "Talhão 12 | Fazenda 1"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.6170414,
+              -15.3662275
+            ],
+            [
+              -49.6170628,
+              -15.367231
+            ],
+            [
+              -49.6169448,
+              -15.3675879
+            ],
+            [
+              -49.6168697,
+              -15.3677173
+            ],
+            [
+              -49.6170717,
+              -15.3679938
+            ],
+            [
+              -49.6133292,
+              -15.3672414
+            ],
+            [
+              -49.6126211,
+              -15.3659586
+            ],
+            [
+              -49.6111834,
+              -15.3627929
+            ],
+            [
+              -49.6118808,
+              -15.362855
+            ],
+            [
+              -49.6125782,
+              -15.3632481
+            ],
+            [
+              -49.6125996,
+              -15.3638274
+            ],
+            [
+              -49.6135438,
+              -15.3641378
+            ],
+            [
+              -49.6137154,
+              -15.3647378
+            ],
+            [
+              -49.6156681,
+              -15.366062
+            ],
+            [
+              -49.6170414,
+              -15.3662275
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_13",
+      "properties": {
+        "id_talhao": "TALHAO_13",
+        "nome_talhao": "Talhão 13",
+        "id_fazenda": "FZ001",
+        "nome_fazenda": "Fazenda 1",
+        "grupo_talhoes": "Talhão 1 ao 13",
+        "latitude": -15.36196838,
+        "longitude": -49.61351254,
+        "area_ha_estimado": 2.3,
+        "label_mapa": "Talhão 13 | Fazenda 1"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.6141344,
+              -15.3612337
+            ],
+            [
+              -49.6138876,
+              -15.3617717
+            ],
+            [
+              -49.6142417,
+              -15.3630442
+            ],
+            [
+              -49.6140915,
+              -15.3633028
+            ],
+            [
+              -49.6137052,
+              -15.3631063
+            ],
+            [
+              -49.6127611,
+              -15.3615234
+            ],
+            [
+              -49.6124285,
+              -15.3610061
+            ],
+            [
+              -49.6141344,
+              -15.3612337
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_14",
+      "properties": {
+        "id_talhao": "TALHAO_14",
+        "nome_talhao": "Talhão 14",
+        "id_fazenda": "FZ002",
+        "nome_fazenda": "Fazenda 2",
+        "grupo_talhoes": "Talhão 14 ao 22",
+        "latitude": -21.26184104,
+        "longitude": -47.68511188,
+        "area_ha_estimado": 11.14,
+        "label_mapa": "Talhão 14 | Fazenda 2"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6843341,
+              -21.2607714
+            ],
+            [
+              -47.6857663,
+              -21.2606614
+            ],
+            [
+              -47.6871128,
+              -21.2608314
+            ],
+            [
+              -47.6877029,
+              -21.2630511
+            ],
+            [
+              -47.6848276,
+              -21.2627311
+            ],
+            [
+              -47.6828106,
+              -21.2628311
+            ],
+            [
+              -47.6824994,
+              -21.2616413
+            ],
+            [
+              -47.6824512,
+              -21.2612064
+            ],
+            [
+              -47.6843341,
+              -21.2607714
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_15",
+      "properties": {
+        "id_talhao": "TALHAO_15",
+        "nome_talhao": "Talhão 15",
+        "id_fazenda": "FZ002",
+        "nome_fazenda": "Fazenda 2",
+        "grupo_talhoes": "Talhão 14 ao 22",
+        "latitude": -21.26225674,
+        "longitude": -47.68074485,
+        "area_ha_estimado": 7.01,
+        "label_mapa": "Talhão 15 | Fazenda 2"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6821883,
+              -21.2611913
+            ],
+            [
+              -47.6825745,
+              -21.2627711
+            ],
+            [
+              -47.6794202,
+              -21.263571
+            ],
+            [
+              -47.6790555,
+              -21.2615513
+            ],
+            [
+              -47.680579,
+              -21.2612513
+            ],
+            [
+              -47.6821883,
+              -21.2611913
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_16",
+      "properties": {
+        "id_talhao": "TALHAO_16",
+        "nome_talhao": "Talhão 16",
+        "id_fazenda": "FZ002",
+        "nome_fazenda": "Fazenda 2",
+        "grupo_talhoes": "Talhão 14 ao 22",
+        "latitude": -21.2657974,
+        "longitude": -47.68700879,
+        "area_ha_estimado": 18.37,
+        "label_mapa": "Talhão 16 | Fazenda 2"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6848812,
+              -21.2628011
+            ],
+            [
+              -47.6856309,
+              -21.2629223
+            ],
+            [
+              -47.6863377,
+              -21.2629586
+            ],
+            [
+              -47.6877726,
+              -21.263126
+            ],
+            [
+              -47.6890977,
+              -21.2683302
+            ],
+            [
+              -47.6864369,
+              -21.26891
+            ],
+            [
+              -47.6856456,
+              -21.2658556
+            ],
+            [
+              -47.6848812,
+              -21.2628011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_17",
+      "properties": {
+        "id_talhao": "TALHAO_17",
+        "nome_talhao": "Talhão 17",
+        "id_fazenda": "FZ002",
+        "nome_fazenda": "Fazenda 2",
+        "grupo_talhoes": "Talhão 14 ao 22",
+        "latitude": -21.26569405,
+        "longitude": -47.68452202,
+        "area_ha_estimado": 13.29,
+        "label_mapa": "Talhão 17 | Fazenda 2"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6848038,
+              -21.2628022
+            ],
+            [
+              -47.6862308,
+              -21.2685012
+            ],
+            [
+              -47.6842888,
+              -21.2686412
+            ],
+            [
+              -47.6831409,
+              -21.264262
+            ],
+            [
+              -47.6827868,
+              -21.2629522
+            ],
+            [
+              -47.6837792,
+              -21.2628272
+            ],
+            [
+              -47.6848038,
+              -21.2628022
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_18",
+      "properties": {
+        "id_talhao": "TALHAO_18",
+        "nome_talhao": "Talhão 18",
+        "id_fazenda": "FZ002",
+        "nome_fazenda": "Fazenda 2",
+        "grupo_talhoes": "Talhão 14 ao 22",
+        "latitude": -21.2654095,
+        "longitude": -47.68158909,
+        "area_ha_estimado": 17.07,
+        "label_mapa": "Talhão 18 | Fazenda 2"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6826015,
+              -21.2628738
+            ],
+            [
+              -47.6838032,
+              -21.2670031
+            ],
+            [
+              -47.6822207,
+              -21.267583
+            ],
+            [
+              -47.6804236,
+              -21.267843
+            ],
+            [
+              -47.679458,
+              -21.2636337
+            ],
+            [
+              -47.6826015,
+              -21.2628738
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_19",
+      "properties": {
+        "id_talhao": "TALHAO_19",
+        "nome_talhao": "Talhão 19",
+        "id_fazenda": "FZ002",
+        "nome_fazenda": "Fazenda 2",
+        "grupo_talhoes": "Talhão 14 ao 22",
+        "latitude": -21.27040125,
+        "longitude": -47.68832869,
+        "area_ha_estimado": 10.55,
+        "label_mapa": "Talhão 19 | Fazenda 2"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6891705,
+              -21.2685005
+            ],
+            [
+              -47.6901147,
+              -21.2719898
+            ],
+            [
+              -47.6874325,
+              -21.2721397
+            ],
+            [
+              -47.6865098,
+              -21.2690204
+            ],
+            [
+              -47.6891705,
+              -21.2685005
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_20",
+      "properties": {
+        "id_talhao": "TALHAO_20",
+        "nome_talhao": "Talhão 20",
+        "id_fazenda": "FZ002",
+        "nome_fazenda": "Fazenda 2",
+        "grupo_talhoes": "Talhão 14 ao 22",
+        "latitude": -21.27035876,
+        "longitude": -47.68579103,
+        "area_ha_estimado": 7.97,
+        "label_mapa": "Talhão 20 | Fazenda 2"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6862308,
+              -21.2685012
+            ],
+            [
+              -47.6872608,
+              -21.2720997
+            ],
+            [
+              -47.6853618,
+              -21.2721697
+            ],
+            [
+              -47.6842996,
+              -21.2687104
+            ],
+            [
+              -47.6862308,
+              -21.2685012
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_21",
+      "properties": {
+        "id_talhao": "TALHAO_21",
+        "nome_talhao": "Talhão 21",
+        "id_fazenda": "FZ002",
+        "nome_fazenda": "Fazenda 2",
+        "grupo_talhoes": "Talhão 14 ao 22",
+        "latitude": -21.26989054,
+        "longitude": -47.68276606,
+        "area_ha_estimado": 19.43,
+        "label_mapa": "Talhão 21 | Fazenda 2"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6838276,
+              -21.2671507
+            ],
+            [
+              -47.6851687,
+              -21.2721297
+            ],
+            [
+              -47.681478,
+              -21.2722097
+            ],
+            [
+              -47.6803622,
+              -21.2679506
+            ],
+            [
+              -47.6821378,
+              -21.2676806
+            ],
+            [
+              -47.6838276,
+              -21.2671507
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_22",
+      "properties": {
+        "id_talhao": "TALHAO_22",
+        "nome_talhao": "Talhão 22",
+        "id_fazenda": "FZ002",
+        "nome_fazenda": "Fazenda 2",
+        "grupo_talhoes": "Talhão 14 ao 22",
+        "latitude": -21.27055821,
+        "longitude": -47.68000713,
+        "area_ha_estimado": 7.41,
+        "label_mapa": "Talhão 22 | Fazenda 2"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6788157,
+              -21.2689801
+            ],
+            [
+              -47.6804116,
+              -21.2685251
+            ],
+            [
+              -47.6813102,
+              -21.2722594
+            ],
+            [
+              -47.679387,
+              -21.2723194
+            ],
+            [
+              -47.6788157,
+              -21.2689801
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_23",
+      "properties": {
+        "id_talhao": "TALHAO_23",
+        "nome_talhao": "Talhão 23",
+        "id_fazenda": "FZ003",
+        "nome_fazenda": "Fazenda 3",
+        "grupo_talhoes": "Talhão 23 ao 29",
+        "latitude": -26.17850675,
+        "longitude": -54.52484065,
+        "area_ha_estimado": 4.71,
+        "label_mapa": "Talhão 23 | Fazenda 3"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -54.5232947,
+              -26.1777792
+            ],
+            [
+              -54.5263913,
+              -26.1778755
+            ],
+            [
+              -54.5264302,
+              -26.1792138
+            ],
+            [
+              -54.5232746,
+              -26.1791512
+            ],
+            [
+              -54.5232947,
+              -26.1777792
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_24",
+      "properties": {
+        "id_talhao": "TALHAO_24",
+        "nome_talhao": "Talhão 24",
+        "id_fazenda": "FZ003",
+        "nome_fazenda": "Fazenda 3",
+        "grupo_talhoes": "Talhão 23 ao 29",
+        "latitude": -26.17983667,
+        "longitude": -54.52530883,
+        "area_ha_estimado": 2.76,
+        "label_mapa": "Talhão 24 | Fazenda 3"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -54.5264483,
+              -26.1793166
+            ],
+            [
+              -54.5264858,
+              -26.1803709
+            ],
+            [
+              -54.5264483,
+              -26.1793166
+            ],
+            [
+              -54.5241818,
+              -26.1792733
+            ],
+            [
+              -54.5241536,
+              -26.1803757
+            ],
+            [
+              -54.5264858,
+              -26.1803709
+            ],
+            [
+              -54.5264483,
+              -26.1793166
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_25",
+      "properties": {
+        "id_talhao": "TALHAO_25",
+        "nome_talhao": "Talhão 25",
+        "id_fazenda": "FZ003",
+        "nome_fazenda": "Fazenda 3",
+        "grupo_talhoes": "Talhão 23 ao 29",
+        "latitude": -26.17980835,
+        "longitude": -54.5236772,
+        "area_ha_estimado": 0.98,
+        "label_mapa": "Talhão 25 | Fazenda 3"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -54.5240859,
+              -26.1792643
+            ],
+            [
+              -54.5240698,
+              -26.1803571
+            ],
+            [
+              -54.5232705,
+              -26.1803619
+            ],
+            [
+              -54.5232813,
+              -26.1792498
+            ],
+            [
+              -54.5240859,
+              -26.1792643
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_26",
+      "properties": {
+        "id_talhao": "TALHAO_26",
+        "nome_talhao": "Talhão 26",
+        "id_fazenda": "FZ003",
+        "nome_fazenda": "Fazenda 3",
+        "grupo_talhoes": "Talhão 23 ao 29",
+        "latitude": -26.17963242,
+        "longitude": -54.52833073,
+        "area_ha_estimado": 11.79,
+        "label_mapa": "Talhão 26 | Fazenda 3"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -54.5264999,
+              -26.1779019
+            ],
+            [
+              -54.5297293,
+              -26.1779789
+            ],
+            [
+              -54.5264999,
+              -26.1779019
+            ],
+            [
+              -54.5265227,
+              -26.179168
+            ],
+            [
+              -54.5265669,
+              -26.1803956
+            ],
+            [
+              -54.5278987,
+              -26.1804293
+            ],
+            [
+              -54.5279859,
+              -26.1817532
+            ],
+            [
+              -54.529909,
+              -26.1816954
+            ],
+            [
+              -54.5297293,
+              -26.1779789
+            ],
+            [
+              -54.5264999,
+              -26.1779019
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_27",
+      "properties": {
+        "id_talhao": "TALHAO_27",
+        "nome_talhao": "Talhão 27",
+        "id_fazenda": "FZ003",
+        "nome_fazenda": "Fazenda 3",
+        "grupo_talhoes": "Talhão 23 ao 29",
+        "latitude": -26.18101473,
+        "longitude": -54.52610795,
+        "area_ha_estimado": 4.05,
+        "label_mapa": "Talhão 27 | Fazenda 3"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -54.5243621,
+              -26.1804835
+            ],
+            [
+              -54.5278275,
+              -26.1805124
+            ],
+            [
+              -54.5278865,
+              -26.1810564
+            ],
+            [
+              -54.5278383,
+              -26.1815715
+            ],
+            [
+              -54.5243299,
+              -26.1814848
+            ],
+            [
+              -54.5242977,
+              -26.1809938
+            ],
+            [
+              -54.5243621,
+              -26.1804835
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_28",
+      "properties": {
+        "id_talhao": "TALHAO_28",
+        "nome_talhao": "Talhão 28",
+        "id_fazenda": "FZ003",
+        "nome_fazenda": "Fazenda 3",
+        "grupo_talhoes": "Talhão 23 ao 29",
+        "latitude": -26.18145755,
+        "longitude": -54.52374129,
+        "area_ha_estimado": 2.21,
+        "label_mapa": "Talhão 28 | Fazenda 3"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -54.5242226,
+              -26.1804691
+            ],
+            [
+              -54.5242656,
+              -26.1824332
+            ],
+            [
+              -54.5232356,
+              -26.1824428
+            ],
+            [
+              -54.5232463,
+              -26.1804498
+            ],
+            [
+              -54.5242226,
+              -26.1804691
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_29",
+      "properties": {
+        "id_talhao": "TALHAO_29",
+        "nome_talhao": "Talhão 29",
+        "id_fazenda": "FZ003",
+        "nome_fazenda": "Fazenda 3",
+        "grupo_talhoes": "Talhão 23 ao 29",
+        "latitude": -26.182058,
+        "longitude": -54.52614783,
+        "area_ha_estimado": 3.74,
+        "label_mapa": "Talhão 29 | Fazenda 3"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -54.5278383,
+              -26.1815715
+            ],
+            [
+              -54.5278579,
+              -26.1826113
+            ],
+            [
+              -54.5243711,
+              -26.1824668
+            ],
+            [
+              -54.5243389,
+              -26.1815811
+            ],
+            [
+              -54.5278383,
+              -26.1815715
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_30",
+      "properties": {
+        "id_talhao": "TALHAO_30",
+        "nome_talhao": "Talhão 30",
+        "id_fazenda": "FZ004",
+        "nome_fazenda": "Fazenda 4",
+        "grupo_talhoes": "Talhão 30 ao 33",
+        "latitude": -24.25099434,
+        "longitude": -49.50950187,
+        "area_ha_estimado": 59.47,
+        "label_mapa": "Talhão 30 | Fazenda 4"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.5131744,
+              -24.2590261
+            ],
+            [
+              -49.5097841,
+              -24.259613
+            ],
+            [
+              -49.5094408,
+              -24.2577741
+            ],
+            [
+              -49.5102133,
+              -24.2575785
+            ],
+            [
+              -49.509827,
+              -24.2566394
+            ],
+            [
+              -49.5087542,
+              -24.2496747
+            ],
+            [
+              -49.5057501,
+              -24.2477183
+            ],
+            [
+              -49.5053424,
+              -24.2453314
+            ],
+            [
+              -49.5049561,
+              -24.2430031
+            ],
+            [
+              -49.5066513,
+              -24.2427488
+            ],
+            [
+              -49.511372,
+              -24.2486574
+            ],
+            [
+              -49.5114149,
+              -24.2489704
+            ],
+            [
+              -49.5121874,
+              -24.2533136
+            ],
+            [
+              -49.5131744,
+              -24.2590261
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_31",
+      "properties": {
+        "id_talhao": "TALHAO_31",
+        "nome_talhao": "Talhão 31",
+        "id_fazenda": "FZ004",
+        "nome_fazenda": "Fazenda 4",
+        "grupo_talhoes": "Talhão 30 ao 33",
+        "latitude": -24.24125087,
+        "longitude": -49.50275856,
+        "area_ha_estimado": 22.76,
+        "label_mapa": "Talhão 31 | Fazenda 4"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.5065357,
+              -24.2423814
+            ],
+            [
+              -49.5000555,
+              -24.2435945
+            ],
+            [
+              -49.500313,
+              -24.239877
+            ],
+            [
+              -49.5034029,
+              -24.2384683
+            ],
+            [
+              -49.5065357,
+              -24.2423814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_32",
+      "properties": {
+        "id_talhao": "TALHAO_32",
+        "nome_talhao": "Talhão 32",
+        "id_fazenda": "FZ004",
+        "nome_fazenda": "Fazenda 4",
+        "grupo_talhoes": "Talhão 30 ao 33",
+        "latitude": -24.24487053,
+        "longitude": -49.50345543,
+        "area_ha_estimado": 13.31,
+        "label_mapa": "Talhão 32 | Fazenda 4"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.5047655,
+              -24.2430173
+            ],
+            [
+              -49.5056023,
+              -24.2476151
+            ],
+            [
+              -49.5030488,
+              -24.2461086
+            ],
+            [
+              -49.5001091,
+              -24.2437803
+            ],
+            [
+              -49.5047655,
+              -24.2430173
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_33",
+      "properties": {
+        "id_talhao": "TALHAO_33",
+        "nome_talhao": "Talhão 33",
+        "id_fazenda": "FZ004",
+        "nome_fazenda": "Fazenda 4",
+        "grupo_talhoes": "Talhão 30 ao 33",
+        "latitude": -24.23760497,
+        "longitude": -49.50110945,
+        "area_ha_estimado": 8.79,
+        "label_mapa": "Talhão 33 | Fazenda 4"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.5007325,
+              -24.2355242
+            ],
+            [
+              -49.5031787,
+              -24.2384005
+            ],
+            [
+              -49.5004965,
+              -24.2396918
+            ],
+            [
+              -49.4995953,
+              -24.2357395
+            ],
+            [
+              -49.5007325,
+              -24.2355242
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_34",
+      "properties": {
+        "id_talhao": "TALHAO_34",
+        "nome_talhao": "Talhão 34",
+        "id_fazenda": "FZ005",
+        "nome_fazenda": "Fazenda 5",
+        "grupo_talhoes": "Talhão 34 ao 40",
+        "latitude": -18.8692042,
+        "longitude": -47.60843279,
+        "area_ha_estimado": 12.27,
+        "label_mapa": "Talhão 34 | Fazenda 5"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.609058,
+              -18.866576
+            ],
+            [
+              -47.610045,
+              -18.8707994
+            ],
+            [
+              -47.6078563,
+              -18.8718349
+            ],
+            [
+              -47.6067835,
+              -18.8676623
+            ],
+            [
+              -47.609058,
+              -18.866576
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_35",
+      "properties": {
+        "id_talhao": "TALHAO_35",
+        "nome_talhao": "Talhão 35",
+        "id_fazenda": "FZ005",
+        "nome_fazenda": "Fazenda 5",
+        "grupo_talhoes": "Talhão 34 ao 40",
+        "latitude": -18.87226655,
+        "longitude": -47.60959059,
+        "area_ha_estimado": 7.45,
+        "label_mapa": "Talhão 35 | Fazenda 5"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6107686,
+              -18.8707271
+            ],
+            [
+              -47.6112943,
+              -18.8725342
+            ],
+            [
+              -47.6098781,
+              -18.8732626
+            ],
+            [
+              -47.6085236,
+              -18.8739656
+            ],
+            [
+              -47.607904,
+              -18.8718743
+            ],
+            [
+              -47.6093363,
+              -18.8712601
+            ],
+            [
+              -47.610082,
+              -18.870887
+            ],
+            [
+              -47.6107686,
+              -18.8707271
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_36",
+      "properties": {
+        "id_talhao": "TALHAO_36",
+        "nome_talhao": "Talhão 36",
+        "id_fazenda": "FZ005",
+        "nome_fazenda": "Fazenda 5",
+        "grupo_talhoes": "Talhão 34 ao 40",
+        "latitude": -18.87391037,
+        "longitude": -47.61018857,
+        "area_ha_estimado": 5.02,
+        "label_mapa": "Talhão 36 | Fazenda 5"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6084925,
+              -18.874057
+            ],
+            [
+              -47.611325,
+              -18.872571
+            ],
+            [
+              -47.611915,
+              -18.8738159
+            ],
+            [
+              -47.609088,
+              -18.8751712
+            ],
+            [
+              -47.6089002,
+              -18.8749073
+            ],
+            [
+              -47.6087876,
+              -18.8749634
+            ],
+            [
+              -47.6086937,
+              -18.8748292
+            ],
+            [
+              -47.6086186,
+              -18.874505
+            ],
+            [
+              -47.6084925,
+              -18.874057
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_37",
+      "properties": {
+        "id_talhao": "TALHAO_37",
+        "nome_talhao": "Talhão 37",
+        "id_fazenda": "FZ005",
+        "nome_fazenda": "Fazenda 5",
+        "grupo_talhoes": "Talhão 34 ao 40",
+        "latitude": -18.87524179,
+        "longitude": -47.61049354,
+        "area_ha_estimado": 5.68,
+        "label_mapa": "Talhão 37 | Fazenda 5"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6119226,
+              -18.8738714
+            ],
+            [
+              -47.6124162,
+              -18.8748662
+            ],
+            [
+              -47.6113647,
+              -18.875587
+            ],
+            [
+              -47.6112682,
+              -18.8757038
+            ],
+            [
+              -47.6101738,
+              -18.8763129
+            ],
+            [
+              -47.6083338,
+              -18.8760388
+            ],
+            [
+              -47.6087576,
+              -18.8752977
+            ],
+            [
+              -47.6091744,
+              -18.8751594
+            ],
+            [
+              -47.6095697,
+              -18.8749703
+            ],
+            [
+              -47.6103495,
+              -18.8746023
+            ],
+            [
+              -47.6119226,
+              -18.8738714
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_38",
+      "properties": {
+        "id_talhao": "TALHAO_38",
+        "nome_talhao": "Talhão 38",
+        "id_fazenda": "FZ005",
+        "nome_fazenda": "Fazenda 5",
+        "grupo_talhoes": "Talhão 34 ao 40",
+        "latitude": -18.87321746,
+        "longitude": -47.60550055,
+        "area_ha_estimado": 10.36,
+        "label_mapa": "Talhão 38 | Fazenda 5"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6025911,
+              -18.8740564
+            ],
+            [
+              -47.6084062,
+              -18.873955
+            ],
+            [
+              -47.6079555,
+              -18.8722494
+            ],
+            [
+              -47.602811,
+              -18.8725539
+            ],
+            [
+              -47.6026755,
+              -18.8732988
+            ],
+            [
+              -47.6025911,
+              -18.8740564
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_39",
+      "properties": {
+        "id_talhao": "TALHAO_39",
+        "nome_talhao": "Talhão 39",
+        "id_fazenda": "FZ005",
+        "nome_fazenda": "Fazenda 5",
+        "grupo_talhoes": "Talhão 34 ao 40",
+        "latitude": -18.87521355,
+        "longitude": -47.60530515,
+        "area_ha_estimado": 16.41,
+        "label_mapa": "Talhão 39 | Fazenda 5"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6083913,
+              -18.8740209
+            ],
+            [
+              -47.60874,
+              -18.8752239
+            ],
+            [
+              -47.6082572,
+              -18.8760005
+            ],
+            [
+              -47.6075169,
+              -18.876234
+            ],
+            [
+              -47.606149,
+              -18.8763584
+            ],
+            [
+              -47.6054275,
+              -18.8762378
+            ],
+            [
+              -47.6036867,
+              -18.8762492
+            ],
+            [
+              -47.6017931,
+              -18.8767365
+            ],
+            [
+              -47.6025548,
+              -18.8741376
+            ],
+            [
+              -47.6083913,
+              -18.8740209
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TALHAO_40",
+      "properties": {
+        "id_talhao": "TALHAO_40",
+        "nome_talhao": "Talhão 40",
+        "id_fazenda": "FZ005",
+        "nome_fazenda": "Fazenda 5",
+        "grupo_talhoes": "Talhão 34 ao 40",
+        "latitude": -18.87046879,
+        "longitude": -47.60509441,
+        "area_ha_estimado": 20.67,
+        "label_mapa": "Talhão 40 | Fazenda 5"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -47.6023248,
+              -18.8696743
+            ],
+            [
+              -47.6066539,
+              -18.867753
+            ],
+            [
+              -47.6078502,
+              -18.8721057
+            ],
+            [
+              -47.6027915,
+              -18.8724332
+            ],
+            [
+              -47.6023248,
+              -18.8696743
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
